@@ -1,0 +1,29 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\unreal projects\\multiplayercourse\\anotherishoot\\source\\anotherishoot\\gamestate\\blastergamestate.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unreal projects\\multiplayercourse\\anotherishoot\\intermediate\\build\\win64\\x64\\anotherishooteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\unreal projects\\multiplayercourse\\anotherishoot\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\anotherishoot\\definitions.anotherishoot.h",
+            "c:\\unreal projects\\multiplayercourse\\anotherishoot\\source\\anotherishoot\\gamestate\\blastergamestate.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamestate.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamestatebase.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamestatebase.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamestate.generated.h",
+            "c:\\unreal projects\\multiplayercourse\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\blastergamestate.generated.h",
+            "c:\\unreal projects\\multiplayercourse\\anotherishoot\\source\\anotherishoot\\playerstate\\blasterplayerstate.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
+            "c:\\unreal projects\\multiplayercourse\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\blasterplayerstate.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\public\\net\\unrealnetwork.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

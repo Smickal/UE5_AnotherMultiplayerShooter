@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\unreal projects\\multiplayercourse\\anotherishoot\\source\\anotherishoot\\interfaces\\interactwithcrosshairinterface.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unreal projects\\multiplayercourse\\anotherishoot\\intermediate\\build\\win64\\x64\\anotherishooteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\unreal projects\\multiplayercourse\\anotherishoot\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\anotherishoot\\definitions.anotherishoot.h",
+            "c:\\unreal projects\\multiplayercourse\\anotherishoot\\source\\anotherishoot\\interfaces\\interactwithcrosshairinterface.h",
+            "c:\\unreal projects\\multiplayercourse\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\interactwithcrosshairinterface.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
