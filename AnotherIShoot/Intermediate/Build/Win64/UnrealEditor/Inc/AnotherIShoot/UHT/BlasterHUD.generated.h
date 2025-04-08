@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ANOTHERISHOOT_BlasterHUD_generated_h
 
-#define FID_Unreal_Projects_MultiplayerCourse_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_12_GENERATED_BODY \
+#define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_12_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHUDPackage_Statics; \
 	ANOTHERISHOOT_API static class UScriptStruct* StaticStruct();
 
 
 template<> ANOTHERISHOOT_API UScriptStruct* StaticStruct<struct FHUDPackage>();
 
-#define FID_Unreal_Projects_MultiplayerCourse_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABlasterHUD(); \
 	friend struct Z_Construct_UClass_ABlasterHUD_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(ABlasterHUD)
 
 
-#define FID_Unreal_Projects_MultiplayerCourse_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABlasterHUD(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -44,12 +44,12 @@ public: \
 	NO_API virtual ~ABlasterHUD();
 
 
-#define FID_Unreal_Projects_MultiplayerCourse_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_25_PROLOG
-#define FID_Unreal_Projects_MultiplayerCourse_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_GENERATED_BODY \
+#define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_25_PROLOG
+#define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Projects_MultiplayerCourse_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Projects_MultiplayerCourse_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h_28_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -57,7 +57,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> ANOTHERISHOOT_API UClass* StaticClass<class ABlasterHUD>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Projects_MultiplayerCourse_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h
+#define CURRENT_FILE_ID FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_BlasterHUD_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -1,4 +1,4 @@
-"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.cpp"
+"C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.cpp"
 /I "."
 /I "Runtime\Core\Public"
 /I "Runtime\Core\Internal"
@@ -11,10 +11,10 @@
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
 /Yc"SharedPCH.Core.RTTI.Cpp20.h"
-/Fp"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.h.pch"
-/Fo"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.h.obj"
-/experimental:log "C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.h.sarif"
-/sourceDependencies "C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.h.dep.json"
+/Fp"C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.h.pch"
+/Fo"C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.h.obj"
+/experimental:log "C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.h.sarif"
+/sourceDependencies "C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\Core\SharedPCH.Core.RTTI.Cpp20.h.dep.json"
 /d2ssa-cfg-question-
 /Zc:inline
 /nologo

@@ -1,9 +1,9 @@
 {
 	"SourceFiles": [
-		"C:\\Unreal Projects\\MultiplayerCourse\\AnotherIShoot\\Source\\AnotherIShoot\\AnotherIShoot.Build.cs",
-		"C:\\Unreal Projects\\MultiplayerCourse\\AnotherIShoot\\Plugins\\MultiplayerSessions\\Source\\MultiplayerSessions\\MultiplayerSessions.Build.cs",
-		"C:\\Unreal Projects\\MultiplayerCourse\\AnotherIShoot\\Source\\AnotherIShoot.Target.cs",
-		"C:\\Unreal Projects\\MultiplayerCourse\\AnotherIShoot\\Source\\AnotherIShootEditor.Target.cs"
+		"C:\\Unreal Projects\\Third Person Shooter\\UE5_AnotherMultiplayerShooter\\AnotherIShoot\\Source\\AnotherIShoot\\AnotherIShoot.Build.cs",
+		"C:\\Unreal Projects\\Third Person Shooter\\UE5_AnotherMultiplayerShooter\\AnotherIShoot\\Plugins\\MultiplayerSessions\\Source\\MultiplayerSessions\\MultiplayerSessions.Build.cs",
+		"C:\\Unreal Projects\\Third Person Shooter\\UE5_AnotherMultiplayerShooter\\AnotherIShoot\\Source\\AnotherIShoot.Target.cs",
+		"C:\\Unreal Projects\\Third Person Shooter\\UE5_AnotherMultiplayerShooter\\AnotherIShoot\\Source\\AnotherIShootEditor.Target.cs"
 	],
 	"EngineVersion": "5.5.3"
 }

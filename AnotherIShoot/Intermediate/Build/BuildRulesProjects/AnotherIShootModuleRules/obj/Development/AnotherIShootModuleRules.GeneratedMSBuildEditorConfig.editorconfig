@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AnotherIShootModuleRules
-build_property.ProjectDir = C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\BuildRulesProjects\AnotherIShootModuleRules\
+build_property.ProjectDir = C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Intermediate\Build\BuildRulesProjects\AnotherIShootModuleRules\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

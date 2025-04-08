@@ -31,6 +31,7 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 	virtual void PlayerEliminated(ABlasterCharacter* VictimCharacter, ABlasterPlayerController* VictimController, ABlasterPlayerController* AttackerController);
 	virtual void RequestRespawn(ACharacter* CharacterToRespawn, AController* ElimmedController);
+	void PlayerLeftGame(ABlasterPlayerState* PlayerLeaving);
 
 
 public:

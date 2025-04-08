@@ -1,11 +1,13 @@
-"E:\Unreal\MPTest\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp"
-/FI"E:\Unreal\MPTest\Intermediate\Build\Win64\x64\MPTestEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/FI"E:\Unreal\MPTest\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Definitions.MultiplayerSessions.h"
-/Yu"E:\Unreal\MPTest\Intermediate\Build\Win64\x64\MPTestEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/Fp"E:\Unreal\MPTest\Intermediate\Build\Win64\x64\MPTestEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
-/Fo"E:\Unreal\MPTest\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
-/sourceDependencies "E:\Unreal\MPTest\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.dep.json"
-@"E:\Unreal\MPTest\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\MultiplayerSessions.Shared.rsp"
+"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp"
+/FI"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
+/FI"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Definitions.MultiplayerSessions.h"
+/Yu"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
+/Fp"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
+/Fo"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
+/experimental:log "C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.sarif"
+/sourceDependencies "C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.dep.json"
+@"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\MultiplayerSessions.Shared.rsp"
+/d2ssa-cfg-question-
 /Zc:inline
 /nologo
 /Oi

@@ -196,10 +196,22 @@
     <ClCompile Include="..\..\Source\AnotherIShoot\HUD\CharacterOverlay.h">
       <Filter>Source\AnotherIShoot\HUD</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\HUD\ElimmedAnnoucement.cpp">
+      <Filter>Source\AnotherIShoot\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\HUD\ElimmedAnnoucement.h">
+      <Filter>Source\AnotherIShoot\HUD</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\HUD\OverheadWidget.cpp">
       <Filter>Source\AnotherIShoot\HUD</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\HUD\OverheadWidget.h">
+      <Filter>Source\AnotherIShoot\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\HUD\ReturnToMainMenu.cpp">
+      <Filter>Source\AnotherIShoot\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\HUD\ReturnToMainMenu.h">
       <Filter>Source\AnotherIShoot\HUD</Filter>
     </ClCompile>
     <Filter Include="Source\AnotherIShoot\Interfaces">

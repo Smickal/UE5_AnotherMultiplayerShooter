@@ -12,8 +12,12 @@
 #include "AnotherIShoot/PlayerState/BlasterPlayerState.h"
 #include "BlasterCharacter.generated.h"
 
+class UNiagaraComponent;
+class UNiagaraSystem;
 class UBoxComponent;
 class ABlasterPlayerController;
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLeftGame);
 
 UCLASS()
 class ANOTHERISHOOT_API ABlasterCharacter : public ACharacter, public  IInteractWithCrosshairInterface
@@ -46,10 +50,11 @@ public:
 	
 	virtual void OnRep_ReplicatedMovement() override;
 
-	void Elim();
+	
+	void Elim(bool bPlayerLeftGame);
 	
 	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_Elim();
+	void Multicast_Elim(bool bPlayerLeftGame);
 
 	virtual void Destroyed() override;
 
@@ -62,6 +67,17 @@ public:
 	
 	void SpawnDefaultWeapon();
 
+	
+	UFUNCTION(Server, Reliable)
+	void Server_LeaveGame();
+	FOnLeftGame OnLeftGame;
+
+	UFUNCTION(NetMulticast, Reliable)
+	void Multicast_GainedTheLead();
+
+	UFUNCTION(NetMulticast, Reliable)
+	void Multicast_LostTheLead();
+	
 	//HitBoxes For Server-side rewind
 	//
 	//
@@ -199,7 +215,10 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float ElimDelay = 3.f;
 
+	bool bLeftGame = false;
 
+
+	
 	//Dissolve Effect
 	FOnTimelineFloat DissolveTrack;
 
@@ -233,6 +252,13 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Elim")
 	USoundCue* ElimBotSound;
 
+	//CrownNiagara
+	UPROPERTY(EditAnywhere)
+	UNiagaraSystem* CrownSystem;
+
+	UPROPERTY()
+	UNiagaraComponent* CrownComponent;
+	
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* AttachedGrenade;
 	

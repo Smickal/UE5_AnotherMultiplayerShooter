@@ -13,8 +13,11 @@
 #include "AnotherIShoot/Gamemode/BlasterGameMode.h"
 #include "AnotherIShoot/GameState/BlasterGameState.h"
 #include "AnotherIShoot/HUD/Announcement.h"
+#include "AnotherIShoot/HUD/ReturnToMainMenu.h"
 #include "Kismet/GameplayStatics.h"
 #include "Net/UnrealNetwork.h"
+
+
 
 void ABlasterPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
@@ -30,6 +33,14 @@ void ABlasterPlayerController::BeginPlay()
 	BlasterHUD = Cast<ABlasterHUD>(GetHUD());
 	Server_CheckMatchState();
 	
+}
+
+void ABlasterPlayerController::SetupInputComponent()
+{
+	Super::SetupInputComponent();
+	if(InputComponent == nullptr )return;
+
+	InputComponent->BindAction("Quit", IE_Pressed, this, &ABlasterPlayerController::ShowReturnToMainMenu);
 }
 
 
@@ -659,6 +670,30 @@ void ABlasterPlayerController::StopHighPingWarning()
 			BlasterHUD->CharacterOverlay->StopAnimation(BlasterHUD->CharacterOverlay->HighPingAnimation);
 		}
 	}
+}
+
+void ABlasterPlayerController::ShowReturnToMainMenu()
+{
+	//TODO: 1. Show TO return mainmenu widget,
+	if(ReturnToMainMenuWidget == nullptr) return;
+
+	if(ReturnToMainMenu == nullptr)
+	{
+		ReturnToMainMenu = CreateWidget<UReturnToMainMenu>(this, ReturnToMainMenuWidget);
+	}
+	if(ReturnToMainMenu)
+	{
+		bIsReturnToMainMenuOpen = !bIsReturnToMainMenuOpen;
+		if(bIsReturnToMainMenuOpen)
+		{
+			ReturnToMainMenu->MenuSetup();
+		}
+		else
+		{
+			ReturnToMainMenu->MenuTearDown();
+		}
+	}
+	
 }
 
 

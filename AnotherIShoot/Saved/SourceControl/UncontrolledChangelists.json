@@ -5,7 +5,14 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Unreal Projects/MultiplayerCourse/AnotherIShoot/Content/StarterContent/Architecture/Floor_400x400.uasset"
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/WBP_ReturnToMainMenu.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/PlayerController/BP_BlasterPlayerController.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Plugins/MultiplayerSessions/Content/WBP_MenuWidget.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Maps/Sandbox.umap",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/sA_PickupSet_1/Fx/NiagaraSystems/NS_Crown.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Character/BP_BlasterCharacter.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/WBP_ElimAnnoucement.uasset"
 			]
 		}
 	]

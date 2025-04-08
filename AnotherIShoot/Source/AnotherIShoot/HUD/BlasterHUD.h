@@ -6,6 +6,8 @@
 #include "GameFramework/HUD.h"
 #include "BlasterHUD.generated.h"
 
+class UElimmedAnnoucement;
+
 USTRUCT(BlueprintType)
 struct FHUDPackage
 {
@@ -52,6 +54,10 @@ private:
 	float CrosshairSpreadMax = 16.f;
 
 	void DrawCrosshair(UTexture2D* Texture, FVector2d ViewportCenter, FVector2d Spread, FLinearColor CrosshairColor);
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UElimmedAnnoucement> ElimAnnouncementClass;
+	
 public:
 	FORCEINLINE void SetHUDPackage(const FHUDPackage& Package) {HUDPackage = Package;}
 

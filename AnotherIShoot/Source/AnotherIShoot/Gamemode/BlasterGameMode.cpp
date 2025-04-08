@@ -17,8 +17,8 @@ namespace  MatchState
 
 ABlasterGameMode::ABlasterGameMode()
 {
-	//this is used so that the gameModeClass will stay at watingToStart state until StartMatch is called.
-	//this will spawn a default spawn for all players, they will able to fly around the map
+	//this is used so that the gameModeClass will stay at waitingToStart state until StartMatch is called.
+	//this will spawn a default spawn for all players, they will be able to fly around the map
 	bDelayedStart = true;
 	
 }
@@ -87,10 +87,39 @@ void ABlasterGameMode::PlayerEliminated(ABlasterCharacter* VictimCharacter, ABla
 
 
 	ABlasterGameState* BlasterGameState = GetGameState<ABlasterGameState>();
+	
+	
 	if(AttackerPlayerState && AttackerPlayerState != VictimPlayerState && BlasterGameState)
 	{
+		TArray<ABlasterPlayerState*> PlayersCurrentlyInTheLead;
+		for(auto LeadPlayer : BlasterGameState->TopScoringPlayer)
+		{
+			PlayersCurrentlyInTheLead.Add(LeadPlayer);
+		}
+		
 		AttackerPlayerState->AddToScore(1.f);
 		BlasterGameState->UpdateTopScore(AttackerPlayerState);
+
+		if(BlasterGameState->TopScoringPlayer.Contains(AttackerPlayerState))
+		{
+			ABlasterCharacter* Leader = Cast<ABlasterCharacter>(AttackerPlayerState->GetPawn());
+			if(Leader)
+			{
+				Leader->Multicast_GainedTheLead();
+			}
+		}
+
+		for(int32 i = 0; i < PlayersCurrentlyInTheLead.Num(); i++)
+		{
+			if(!BlasterGameState->TopScoringPlayer.Contains(PlayersCurrentlyInTheLead[i]))
+			{
+				ABlasterCharacter* Loser = Cast<ABlasterCharacter>(PlayersCurrentlyInTheLead[i]->GetPawn());
+				if(Loser)
+				{
+					Loser->Multicast_LostTheLead();
+				}
+			}
+		}
 	}
 
 	if(VictimPlayerState && VictimPlayerState != AttackerPlayerState)
@@ -101,10 +130,26 @@ void ABlasterGameMode::PlayerEliminated(ABlasterCharacter* VictimCharacter, ABla
 	
 	if(VictimCharacter)
 	{
-		VictimCharacter->Elim();
+		VictimCharacter->Elim(false);
 	}
 
 	
+}
+
+void ABlasterGameMode::PlayerLeftGame(ABlasterPlayerState* PlayerLeaving)
+{
+	//TODO: Call Elim, passing in true for bLeftGame
+	ABlasterGameState* BlasterGameState = GetGameState<ABlasterGameState>();
+	if(BlasterGameState && BlasterGameState->TopScoringPlayer.Contains(PlayerLeaving))
+	{
+		BlasterGameState->TopScoringPlayer.Remove(PlayerLeaving);
+	}
+
+	ABlasterCharacter* BlasterCharacter = Cast<ABlasterCharacter>(PlayerLeaving->GetPawn());
+	if(BlasterCharacter)
+	{
+		BlasterCharacter->Elim(true);
+	}
 }
 
 void ABlasterGameMode::RequestRespawn(ACharacter* CharacterToRespawn, AController* ElimmedController)
@@ -128,5 +173,7 @@ void ABlasterGameMode::RequestRespawn(ACharacter* CharacterToRespawn, AControlle
 	}
 		
 }
+
+
 
 

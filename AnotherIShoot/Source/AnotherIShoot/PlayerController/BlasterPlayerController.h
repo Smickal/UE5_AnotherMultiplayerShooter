@@ -20,6 +20,8 @@ class ANOTHERISHOOT_API ABlasterPlayerController : public APlayerController
 	GENERATED_BODY()
 
 public:
+	
+	
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 	void SetHUDHealth(float CurrHealth, float MaxHealh);
 	void SetHUDShield(float CurrShield, float MaxShield);
@@ -49,8 +51,10 @@ public:
 	FHighPingDelegate HighPingDelegate;
 protected:
 	virtual void BeginPlay() override;
-	void CheckPing(float DeltaSeconds);
 	virtual void Tick(float DeltaSeconds) override;
+
+	virtual void SetupInputComponent() override; 
+	void CheckPing(float DeltaSeconds);
 
 	void CheckTimeSync(float DeltaSeconds);
 	void SetHudCountdownTime();
@@ -72,9 +76,20 @@ protected:
 
 	UFUNCTION(Server, Reliable)
 	void Server_ReportPingStatus(bool bHighPing);
+
+	void ShowReturnToMainMenu();
 private:
 	UPROPERTY()
 	class ABlasterHUD* BlasterHUD;
+
+	//Return to MainMenu
+	UPROPERTY(EditAnywhere, Category = "HUD")
+	TSubclassOf<UUserWidget> ReturnToMainMenuWidget;
+
+	UPROPERTY()
+	class UReturnToMainMenu* ReturnToMainMenu;
+
+	bool bIsReturnToMainMenuOpen = false;
 
 	float MatchTime = 0.f;
 	float WarmUpTime = 0.f;
