@@ -80,6 +80,7 @@
             "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\components\\timelinecomponent.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\timelinecomponent.generated.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\playerstate\\blasterplayerstate.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\blastertypes\\team.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\blasterplayerstate.generated.h",
@@ -130,17 +131,7 @@
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\elimmedannoucement.generated.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\healthpickup.gen.cpp",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\pickups\\healthpickup.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\healthpickup.generated.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\hitscanweapon.gen.cpp",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\weapon\\hitscanweapon.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\hitscanweapon.generated.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\interactwithcrosshairinterface.gen.cpp",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\jumppickup.gen.cpp",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\pickups\\jumppickup.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\jumppickup.generated.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\lagcompensationcomponent.gen.cpp",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\blastercomponent\\lagcompensationcomponent.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\lagcompensationcomponent.generated.h"
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\healthpickup.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

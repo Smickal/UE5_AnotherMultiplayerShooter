@@ -49,6 +49,9 @@ public:
 	float SingleTripTime = 0.f;
 
 	FHighPingDelegate HighPingDelegate;
+
+	void BroadcastElim(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim);
+	
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaSeconds) override;
@@ -78,6 +81,10 @@ protected:
 	void Server_ReportPingStatus(bool bHighPing);
 
 	void ShowReturnToMainMenu();
+
+	UFUNCTION(Client, Reliable)
+	void Client_ElimAnnouncement(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim);
+	
 private:
 	UPROPERTY()
 	class ABlasterHUD* BlasterHUD;

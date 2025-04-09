@@ -120,6 +120,15 @@ void ABlasterGameMode::PlayerEliminated(ABlasterCharacter* VictimCharacter, ABla
 				}
 			}
 		}
+
+		for(FConstPlayerControllerIterator Iterator = GetWorld()->GetPlayerControllerIterator(); Iterator; ++Iterator)
+		{
+			ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(*Iterator);
+			if(BlasterPlayerController && AttackerPlayerState && VictimPlayerState)
+			{
+				BlasterPlayerController->BroadcastElim(AttackerPlayerState, VictimPlayerState);
+			}
+		}
 	}
 
 	if(VictimPlayerState && VictimPlayerState != AttackerPlayerState)

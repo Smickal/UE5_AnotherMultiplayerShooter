@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ABlasterPlayerState;
 #ifdef ANOTHERISHOOT_BlasterPlayerController_generated_h
 #error "BlasterPlayerController.generated.h already included, missing '#pragma once' in BlasterPlayerController.h"
 #endif
@@ -21,11 +22,13 @@ ANOTHERISHOOT_API void FHighPingDelegate_DelegateWrapper(const FMulticastScriptD
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerController_BlasterPlayerController_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void Client_ReportServerTIme_Implementation(float TimeOfClientReq, float TimeOfServerReceivedClientRequest); \
 	virtual void Server_RequestServerTime_Implementation(float timeOfClientReq); \
+	virtual void Client_ElimAnnouncement_Implementation(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim); \
 	virtual void Server_ReportPingStatus_Implementation(bool bHighPing); \
 	virtual void Client_JoinMidGame_Implementation(FName StateOfMatch, float Warmup, float Match, float StartingTime, float Cooldown); \
 	virtual void Server_CheckMatchState_Implementation(); \
 	DECLARE_FUNCTION(execClient_ReportServerTIme); \
 	DECLARE_FUNCTION(execServer_RequestServerTime); \
+	DECLARE_FUNCTION(execClient_ElimAnnouncement); \
 	DECLARE_FUNCTION(execServer_ReportPingStatus); \
 	DECLARE_FUNCTION(execClient_JoinMidGame); \
 	DECLARE_FUNCTION(execServer_CheckMatchState); \

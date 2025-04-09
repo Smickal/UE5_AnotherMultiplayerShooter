@@ -26,6 +26,7 @@ void ABlasterPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProper
 	DOREPLIFETIME(ABlasterPlayerController, MatchState);
 }
 
+
 void ABlasterPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -695,6 +696,50 @@ void ABlasterPlayerController::ShowReturnToMainMenu()
 	}
 	
 }
+
+void ABlasterPlayerController::BroadcastElim(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim)
+{
+	Client_ElimAnnouncement(Attacker, Victim);
+}
+
+void ABlasterPlayerController::Client_ElimAnnouncement_Implementation(ABlasterPlayerState* Attacker,
+	ABlasterPlayerState* Victim)
+{
+	APlayerState* Self = GetPlayerState<APlayerState>();
+	
+	if(Attacker && Victim && Self)
+	{
+		BlasterHUD = BlasterHUD == nullptr ?  Cast<ABlasterHUD>(GetHUD()) : BlasterHUD;
+		if(BlasterHUD)
+		{
+			if(Attacker == Self && Victim != Self)
+			{
+				BlasterHUD->AddElimAnnouncement("You", Victim->GetPlayerName());
+				return;
+			}
+			if(Victim == Self && Attacker != Self)
+			{
+				BlasterHUD->AddElimAnnouncement(Attacker->GetPlayerName(), "You");
+				return;
+			}
+			if(Attacker == Victim && Attacker == Self)
+			{
+				BlasterHUD->AddElimAnnouncement("You", "Yourself!");
+				return;
+			}
+			if(Attacker == Victim && Attacker != Self)
+			{
+				BlasterHUD->AddElimAnnouncement(Attacker->GetPlayerName(), "ThemSelf!");
+				return;
+			}
+			
+			BlasterHUD->AddElimAnnouncement(Attacker->GetPlayerName(), Victim->GetPlayerName());	
+		}
+	}
+}
+
+
+
 
 
 

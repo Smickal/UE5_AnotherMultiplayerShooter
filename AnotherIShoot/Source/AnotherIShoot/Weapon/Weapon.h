@@ -108,8 +108,11 @@ protected:
 	//Increment in in spendround, decrement it on Client_Spendround
 	int32 Sequence = 0;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
 	float Damage = 20.f;
+
+	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
+	float HeadShotDamage = 40.f;
 
 	UPROPERTY(EditAnywhere, Replicated)
 	bool bUseServerSideRewind = false;
@@ -210,6 +213,7 @@ public:
 	FORCEINLINE int32 GetCurrentAmmo() const {return Ammo;}
 	FORCEINLINE int32 GetMagCapacity() const {return MagCapacity;}
 	FORCEINLINE float GetDamage() const {return Damage;}
+	FORCEINLINE float GetHeadShotDamage() const {return HeadShotDamage;}
 	bool IsEmpty();
 	bool IsFull();
 

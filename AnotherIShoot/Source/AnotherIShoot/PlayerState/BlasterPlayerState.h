@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AnotherIShoot/BlasterTypes/Team.h"
 
 #include "GameFramework/PlayerState.h"
 #include "BlasterPlayerState.generated.h"
@@ -17,7 +18,7 @@ class ANOTHERISHOOT_API ABlasterPlayerState : public APlayerState
 
 	
 public:
-
+	
 	void AddToScore(float ScoreToAdd);
 	void AddToDefeats(FString AttackerName, int32 Defeats);
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
@@ -25,6 +26,7 @@ public:
 	UFUNCTION()
 	virtual void OnRep_Defeats();
 	virtual void OnRep_Score() override;
+	
 private:
 	UPROPERTY()
 	class ABlasterCharacter* Character;
@@ -39,4 +41,11 @@ private:
 
 	UPROPERTY(Replicated)
 	FString AttackerNameToSave;
+
+	UPROPERTY(Replicated)
+	ETeam Team = ETeam::ET_NoTeam;
+
+public:
+	FORCEINLINE ETeam GetTeam() const {return Team;}
+	FORCEINLINE void SetTeam(ETeam TeamToSet) {Team = TeamToSet;}
 };

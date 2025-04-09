@@ -643,6 +643,7 @@ void UCombatComponent::LocalShotgunFire(const TArray<FVector_NetQuantize>& Trace
 		AShotgunWeapon* Shotgun = Cast<AShotgunWeapon>(EquippedWeapon);
 		if(Shotgun)
 		{
+			bIsLocallyReloading = false;
 			Shotgun->FireShotgun(TraceHitTargets);
 			CombatState = ECombatState::ECS_Unoccupied;
 		}

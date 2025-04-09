@@ -18,13 +18,14 @@
 			"CharacterOverlay.gen.cpp.obj",
 			"CombatComponent.gen.cpp.obj",
 			"CombatState.gen.cpp.obj",
-			"HealthPickup.gen.cpp.obj",
+			"ElimmedAnnoucement.gen.cpp.obj",
+			"HealthPickup.gen.cpp.obj"
+		],
+		"Module.AnotherIShoot.2.cpp.obj": [
 			"HitScanWeapon.gen.cpp.obj",
 			"InteractWithCrosshairInterface.gen.cpp.obj",
 			"JumpPickup.gen.cpp.obj",
-			"LagCompensationComponent.gen.cpp.obj"
-		],
-		"Module.AnotherIShoot.2.cpp.obj": [
+			"LagCompensationComponent.gen.cpp.obj",
 			"LobbyGameMode.gen.cpp.obj",
 			"OverheadWidget.gen.cpp.obj",
 			"Pickup.gen.cpp.obj",
@@ -40,6 +41,7 @@
 			"ShieldPickup.gen.cpp.obj",
 			"ShotgunWeapon.gen.cpp.obj",
 			"SpeedPickup.gen.cpp.obj",
+			"Team.gen.cpp.obj",
 			"TurningInPlace.gen.cpp.obj",
 			"Weapon.gen.cpp.obj",
 			"WeaponTypes.gen.cpp.obj",
@@ -50,7 +52,9 @@
 			"CombatComponent.cpp.obj",
 			"LagCompensationComponent.cpp.obj",
 			"BlasterAnimInstance.cpp.obj",
-			"BlasterCharacter.cpp.obj",
+			"BlasterCharacter.cpp.obj"
+		],
+		"Module.AnotherIShoot.3.cpp.obj": [
 			"BlasterGameMode.cpp.obj",
 			"LobbyGameMode.cpp.obj",
 			"SandboxGameMode.cpp.obj",
@@ -58,6 +62,7 @@
 			"Announcement.cpp.obj",
 			"BlasterHUD.cpp.obj",
 			"CharacterOverlay.cpp.obj",
+			"ElimmedAnnoucement.cpp.obj",
 			"OverheadWidget.cpp.obj",
 			"ReturnToMainMenu.cpp.obj",
 			"InteractWithCrosshairInterface.cpp.obj",

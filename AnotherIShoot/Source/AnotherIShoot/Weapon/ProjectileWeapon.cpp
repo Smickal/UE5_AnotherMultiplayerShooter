@@ -42,6 +42,7 @@ void AProjectileWeapon::Fire(const FVector HitTarget)
 					SpawnedProjectile = World->SpawnActor<AProjectile>(ProjectileClass, MuzzleTransform.GetLocation(), TargetRotation, SpawnParams);
 					SpawnedProjectile->bUseServerSideRewind = false;
 					SpawnedProjectile->Damage = Damage;
+					SpawnedProjectile->HeadShotDamage = HeadShotDamage;
 				}
 				//Server - NotHost -> SPawn non replicated projectile non SSR
 				else
@@ -61,6 +62,7 @@ void AProjectileWeapon::Fire(const FVector HitTarget)
 					SpawnedProjectile->TraceStart = MuzzleTransform.GetLocation();
 					SpawnedProjectile->InitialVelocity = SpawnedProjectile->GetActorForwardVector() * SpawnedProjectile->InitialSpeed;
 					SpawnedProjectile->Damage = Damage;
+					SpawnedProjectile->HeadShotDamage = HeadShotDamage;
 				}
 				//Client - Simulated -> Spawn NonREplicatedProjectile, no use SSR
 				else
@@ -79,6 +81,7 @@ void AProjectileWeapon::Fire(const FVector HitTarget)
 				SpawnedProjectile = World->SpawnActor<AProjectile>(ProjectileClass, MuzzleTransform.GetLocation(), TargetRotation, SpawnParams);
 				SpawnedProjectile->bUseServerSideRewind = false;
 				SpawnedProjectile->Damage = Damage;
+				SpawnedProjectile->HeadShotDamage = HeadShotDamage;
 			}
 		}
 		

@@ -14,6 +14,7 @@ ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterGameMode_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterHUD_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterPlayerController();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterPlayerController_NoRegister();
+ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterPlayerState_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_UCharacterOverlay_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_UReturnToMainMenu_NoRegister();
 ANOTHERISHOOT_API UFunction* Z_Construct_UDelegateFunction_AnotherIShoot_HighPingDelegate__DelegateSignature();
@@ -75,6 +76,62 @@ void FHighPingDelegate_DelegateWrapper(const FMulticastScriptDelegate& HighPingD
 	HighPingDelegate.ProcessMulticastDelegate<UObject>(&Parms);
 }
 // End Delegate FHighPingDelegate
+
+// Begin Class ABlasterPlayerController Function Client_ElimAnnouncement
+struct BlasterPlayerController_eventClient_ElimAnnouncement_Parms
+{
+	ABlasterPlayerState* Attacker;
+	ABlasterPlayerState* Victim;
+};
+static const FName NAME_ABlasterPlayerController_Client_ElimAnnouncement = FName(TEXT("Client_ElimAnnouncement"));
+void ABlasterPlayerController::Client_ElimAnnouncement(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim)
+{
+	BlasterPlayerController_eventClient_ElimAnnouncement_Parms Parms;
+	Parms.Attacker=Attacker;
+	Parms.Victim=Victim;
+	UFunction* Func = FindFunctionChecked(NAME_ABlasterPlayerController_Client_ElimAnnouncement);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "PlayerController/BlasterPlayerController.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Attacker;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Victim;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::NewProp_Attacker = { "Attacker", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterPlayerController_eventClient_ElimAnnouncement_Parms, Attacker), Z_Construct_UClass_ABlasterPlayerState_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::NewProp_Victim = { "Victim", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterPlayerController_eventClient_ElimAnnouncement_Parms, Victim), Z_Construct_UClass_ABlasterPlayerState_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::NewProp_Attacker,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::NewProp_Victim,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterPlayerController, nullptr, "Client_ElimAnnouncement", nullptr, nullptr, Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::PropPointers), sizeof(BlasterPlayerController_eventClient_ElimAnnouncement_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x01080CC0, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::Function_MetaDataParams) };
+static_assert(sizeof(BlasterPlayerController_eventClient_ElimAnnouncement_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterPlayerController::execClient_ElimAnnouncement)
+{
+	P_GET_OBJECT(ABlasterPlayerState,Z_Param_Attacker);
+	P_GET_OBJECT(ABlasterPlayerState,Z_Param_Victim);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->Client_ElimAnnouncement_Implementation(Z_Param_Attacker,Z_Param_Victim);
+	P_NATIVE_END;
+}
+// End Class ABlasterPlayerController Function Client_ElimAnnouncement
 
 // Begin Class ABlasterPlayerController Function Client_JoinMidGame
 struct BlasterPlayerController_eventClient_JoinMidGame_Parms
@@ -392,6 +449,7 @@ void ABlasterPlayerController::StaticRegisterNativesABlasterPlayerController()
 {
 	UClass* Class = ABlasterPlayerController::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "Client_ElimAnnouncement", &ABlasterPlayerController::execClient_ElimAnnouncement },
 		{ "Client_JoinMidGame", &ABlasterPlayerController::execClient_JoinMidGame },
 		{ "Client_ReportServerTIme", &ABlasterPlayerController::execClient_ReportServerTIme },
 		{ "OnRep_MatchState", &ABlasterPlayerController::execOnRep_MatchState },
@@ -481,6 +539,7 @@ struct Z_Construct_UClass_ABlasterPlayerController_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_ABlasterPlayerController_Client_ElimAnnouncement, "Client_ElimAnnouncement" }, // 82111563
 		{ &Z_Construct_UFunction_ABlasterPlayerController_Client_JoinMidGame, "Client_JoinMidGame" }, // 120159344
 		{ &Z_Construct_UFunction_ABlasterPlayerController_Client_ReportServerTIme, "Client_ReportServerTIme" }, // 4080845304
 		{ &Z_Construct_UFunction_ABlasterPlayerController_OnRep_MatchState, "OnRep_MatchState" }, // 2879060983
@@ -567,10 +626,10 @@ ABlasterPlayerController::~ABlasterPlayerController() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerController_BlasterPlayerController_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABlasterPlayerController, ABlasterPlayerController::StaticClass, TEXT("ABlasterPlayerController"), &Z_Registration_Info_UClass_ABlasterPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterPlayerController), 817176558U) },
+		{ Z_Construct_UClass_ABlasterPlayerController, ABlasterPlayerController::StaticClass, TEXT("ABlasterPlayerController"), &Z_Registration_Info_UClass_ABlasterPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterPlayerController), 571961996U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerController_BlasterPlayerController_h_3357210084(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerController_BlasterPlayerController_h_722217113(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerController_BlasterPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerController_BlasterPlayerController_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

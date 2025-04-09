@@ -124,6 +124,9 @@
     <ClCompile Include="..\..\Source\AnotherIShoot\BlasterTypes\CombatState.h">
       <Filter>Source\AnotherIShoot\BlasterTypes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\BlasterTypes\Team.h">
+      <Filter>Source\AnotherIShoot\BlasterTypes</Filter>
+    </ClCompile>
     <Filter Include="Source\AnotherIShoot\Character">
       <UniqueIdentifier>{CFD0801F-1F4F-330B-AD35-7499BDDE959F}</UniqueIdentifier>
     </Filter>
@@ -164,6 +167,12 @@
       <Filter>Source\AnotherIShoot\Gamemode</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\Gamemode\SandboxGameMode.h">
+      <Filter>Source\AnotherIShoot\Gamemode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\Gamemode\TeamsGameMode.cpp">
+      <Filter>Source\AnotherIShoot\Gamemode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\Gamemode\TeamsGameMode.h">
       <Filter>Source\AnotherIShoot\Gamemode</Filter>
     </ClCompile>
     <Filter Include="Source\AnotherIShoot\GameState">

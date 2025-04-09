@@ -42,6 +42,7 @@ public:
 	
 	void AddCharacterOverlay();
 	void AddAnnoucement();
+	void AddElimAnnouncement(FString Attacker, FString Victim);
 	
 protected:
 	virtual void BeginPlay() override;
@@ -57,7 +58,18 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UElimmedAnnoucement> ElimAnnouncementClass;
-	
+
+	UPROPERTY()
+	APlayerController* OwningPlayer;
+
+	UPROPERTY(EditAnywhere)
+	float ElimAnnouncementTime = 1.5f;
+
+	UFUNCTION()
+	void ElimAnnouncementTimerFinished(UElimmedAnnoucement* MsgToRemove);
+
+	UPROPERTY()
+	TArray<UElimmedAnnoucement*> ElimmedMessages;
 public:
 	FORCEINLINE void SetHUDPackage(const FHUDPackage& Package) {HUDPackage = Package;}
 

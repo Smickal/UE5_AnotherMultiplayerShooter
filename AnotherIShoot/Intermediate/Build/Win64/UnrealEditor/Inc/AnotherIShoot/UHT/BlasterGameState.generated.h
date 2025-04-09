@@ -14,6 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ANOTHERISHOOT_BlasterGameState_generated_h
 
+#define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_GameState_BlasterGameState_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnRepBlueTeamScore); \
+	DECLARE_FUNCTION(execOnRepRedTeamScore);
+
+
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_GameState_BlasterGameState_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABlasterGameState(); \
@@ -25,7 +30,9 @@ public: \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
 		TopScoringPlayer=NETFIELD_REP_START, \
-		NETFIELD_REP_END=TopScoringPlayer	}; \
+		RedTeamScore, \
+		BlueTeamScore, \
+		NETFIELD_REP_END=BlueTeamScore	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
@@ -47,6 +54,7 @@ public: \
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_GameState_BlasterGameState_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_GameState_BlasterGameState_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_GameState_BlasterGameState_h_16_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_GameState_BlasterGameState_h_16_ENHANCED_CONSTRUCTORS \
 private: \

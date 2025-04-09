@@ -10,7 +10,6 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ABlasterCharacter;
-class AWeapon;
 struct FVector_NetQuantize100;
 struct FVector_NetQuantize;
 #ifdef ANOTHERISHOOT_LagCompensationComponent_generated_h
@@ -49,7 +48,7 @@ template<> ANOTHERISHOOT_API UScriptStruct* StaticStruct<struct FShotgunServerSi
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_LagCompensationComponent_h_71_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void Server_ProjectileScoreRequest_Implementation(ABlasterCharacter* HitCharacter, FVector_NetQuantize const& TraceStart, FVector_NetQuantize100 const& InitialProjectileVelocity, float HitTime); \
 	virtual void Server_ShotgunScoreRequest_Implementation(TArray<ABlasterCharacter*> const& HitCharacters, FVector_NetQuantize const& TraceStart, TArray<FVector_NetQuantize> const& HitLocations, float HitTime); \
-	virtual void Server_ScoreRequest_Implementation(ABlasterCharacter* HitCharacter, FVector_NetQuantize const& TraceStart, FVector_NetQuantize const& HitLocation, float HitTime, AWeapon* DamageCauser); \
+	virtual void Server_ScoreRequest_Implementation(ABlasterCharacter* HitCharacter, FVector_NetQuantize const& TraceStart, FVector_NetQuantize const& HitLocation, float HitTime); \
 	DECLARE_FUNCTION(execServer_ProjectileScoreRequest); \
 	DECLARE_FUNCTION(execServer_ShotgunScoreRequest); \
 	DECLARE_FUNCTION(execServer_ScoreRequest);

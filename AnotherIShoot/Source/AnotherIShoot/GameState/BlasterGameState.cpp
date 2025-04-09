@@ -13,6 +13,8 @@ void ABlasterGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 
 
 	DOREPLIFETIME(ABlasterGameState, TopScoringPlayer);
+	DOREPLIFETIME(ABlasterGameState, RedTeamScore);
+	DOREPLIFETIME(ABlasterGameState, BlueTeamScore);
 }
 
 void ABlasterGameState::UpdateTopScore(ABlasterPlayerState* ScoringPlayer)
@@ -32,6 +34,16 @@ void ABlasterGameState::UpdateTopScore(ABlasterPlayerState* ScoringPlayer)
 		TopScoringPlayer.Add(ScoringPlayer);
 		TopScore = ScoringPlayer->GetScore();
 	}
+}
+
+void ABlasterGameState::OnRepRedTeamScore()
+{
+	
+}
+
+void ABlasterGameState::OnRepBlueTeamScore()
+{
+	
 }
 
 

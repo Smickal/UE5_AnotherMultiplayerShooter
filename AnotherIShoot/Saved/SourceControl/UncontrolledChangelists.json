@@ -12,7 +12,20 @@
 				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Maps/Sandbox.umap",
 				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/sA_PickupSet_1/Fx/NiagaraSystems/NS_Crown.uasset",
 				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Character/BP_BlasterCharacter.uasset",
-				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/WBP_ElimAnnoucement.uasset"
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/WBP_ElimAnnoucement.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/BP_BlasterHUD.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/BP_RocketLauncher.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/BP_GrenadeLauncher.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/BP_Pistol.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/BP_Shotgun.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/BP_AssaultRifle.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/Projectiles/BP_ThrowGrenade.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/BP_SniperRifle.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/Projectiles/BP_ProjectileRocket.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/BP_SubmachineGun.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/BP_Weapon.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Maps/BlasterMap.umap",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Gamodes/BP_TeamGameMode.uasset"
 			]
 		}
 	]

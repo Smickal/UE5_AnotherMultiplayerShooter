@@ -14,6 +14,7 @@ ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterCharacter_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterPlayerController_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterPlayerState();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterPlayerState_NoRegister();
+ANOTHERISHOOT_API UEnum* Z_Construct_UEnum_AnotherIShoot_ETeam();
 ENGINE_API UClass* Z_Construct_UClass_APlayerState();
 UPackage* Z_Construct_UPackage__Script_AnotherIShoot();
 // End Cross Module References
@@ -85,11 +86,16 @@ struct Z_Construct_UClass_ABlasterPlayerState_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttackerNameToSave_MetaData[] = {
 		{ "ModuleRelativePath", "PlayerState/BlasterPlayerState.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Team_MetaData[] = {
+		{ "ModuleRelativePath", "PlayerState/BlasterPlayerState.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Character;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Controller;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_DefeatsAmount;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_AttackerNameToSave;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_Team_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_Team;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -105,11 +111,15 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterPlayer
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_Controller = { "Controller", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterPlayerState, Controller), Z_Construct_UClass_ABlasterPlayerController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Controller_MetaData), NewProp_Controller_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_DefeatsAmount = { "DefeatsAmount", "OnRep_Defeats", (EPropertyFlags)0x0040000100000020, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterPlayerState, DefeatsAmount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DefeatsAmount_MetaData), NewProp_DefeatsAmount_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_AttackerNameToSave = { "AttackerNameToSave", nullptr, (EPropertyFlags)0x0040000000000020, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterPlayerState, AttackerNameToSave), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackerNameToSave_MetaData), NewProp_AttackerNameToSave_MetaData) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_Team_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_Team = { "Team", nullptr, (EPropertyFlags)0x0040000000000020, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterPlayerState, Team), Z_Construct_UEnum_AnotherIShoot_ETeam, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Team_MetaData), NewProp_Team_MetaData) }; // 1690429139
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABlasterPlayerState_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_Character,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_Controller,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_DefeatsAmount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_AttackerNameToSave,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_Team_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterPlayerState_Statics::NewProp_Team,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABlasterPlayerState_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ABlasterPlayerState_Statics::DependentSingletons[])() = {
@@ -148,9 +158,11 @@ void ABlasterPlayerState::ValidateGeneratedRepEnums(const TArray<struct FRepReco
 {
 	static const FName Name_DefeatsAmount(TEXT("DefeatsAmount"));
 	static const FName Name_AttackerNameToSave(TEXT("AttackerNameToSave"));
+	static const FName Name_Team(TEXT("Team"));
 	const bool bIsValid = true
 		&& Name_DefeatsAmount == ClassReps[(int32)ENetFields_Private::DefeatsAmount].Property->GetFName()
-		&& Name_AttackerNameToSave == ClassReps[(int32)ENetFields_Private::AttackerNameToSave].Property->GetFName();
+		&& Name_AttackerNameToSave == ClassReps[(int32)ENetFields_Private::AttackerNameToSave].Property->GetFName()
+		&& Name_Team == ClassReps[(int32)ENetFields_Private::Team].Property->GetFName();
 	checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in ABlasterPlayerState"));
 }
 ABlasterPlayerState::ABlasterPlayerState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
@@ -162,10 +174,10 @@ ABlasterPlayerState::~ABlasterPlayerState() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerState_BlasterPlayerState_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABlasterPlayerState, ABlasterPlayerState::StaticClass, TEXT("ABlasterPlayerState"), &Z_Registration_Info_UClass_ABlasterPlayerState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterPlayerState), 62972591U) },
+		{ Z_Construct_UClass_ABlasterPlayerState, ABlasterPlayerState::StaticClass, TEXT("ABlasterPlayerState"), &Z_Registration_Info_UClass_ABlasterPlayerState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterPlayerState), 3335202083U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerState_BlasterPlayerState_h_2963639299(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerState_BlasterPlayerState_h_4149520792(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerState_BlasterPlayerState_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerState_BlasterPlayerState_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
