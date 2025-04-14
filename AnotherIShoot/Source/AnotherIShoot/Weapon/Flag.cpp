@@ -31,7 +31,8 @@ void AFlag::Dropped()
 	SetOwner(nullptr);
 	BlasterOwnerCharacter = nullptr;
 	BlasterOwnerController = nullptr;
-	
+
+	UE_LOG(LogTemp, Warning, TEXT("Dropped Flagh"));
 }
 
 void AFlag::OnEquipHandleState()

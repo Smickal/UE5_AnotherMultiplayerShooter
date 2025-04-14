@@ -249,7 +249,7 @@ void AWeapon::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* 
 	if(BlasterCharacter)
 	{
 		if(BlasterCharacter->GetTeam() == Team && WeaponType == EWeaponType::EWT_Flag) return;
-		
+		if(BlasterCharacter->IsHoldingAFlag()) return;
 		BlasterCharacter->SetOverlappingWeapon(this);
 		
 	}
@@ -262,6 +262,7 @@ void AWeapon::OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActo
 	if(BlasterCharacter)
 	{
 		if(BlasterCharacter->GetTeam() == Team && WeaponType == EWeaponType::EWT_Flag) return;
+		if(BlasterCharacter->IsHoldingAFlag()) return;
 		
 		BlasterCharacter->SetOverlappingWeapon(nullptr);
 	}

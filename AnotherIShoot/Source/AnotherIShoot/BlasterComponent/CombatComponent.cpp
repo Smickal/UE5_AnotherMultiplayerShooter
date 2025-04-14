@@ -235,6 +235,7 @@ void UCombatComponent::EquipWeapon(AWeapon* WeaponToEquip)
 		bIsCarryingAFlag = true;
 		PlayerCharacter->Crouch();
 
+		EquippedWeapon = WeaponToEquip;
 		WeaponToEquip->SetWeaponState(EWeaponState::EWS_Equipped);
 		WeaponToEquip->SetOwner(PlayerCharacter);
 		

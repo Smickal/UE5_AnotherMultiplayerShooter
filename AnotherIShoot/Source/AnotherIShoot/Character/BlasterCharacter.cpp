@@ -422,6 +422,10 @@ void ABlasterCharacter::Elim(bool bPlayerLeftGame)
 		GetSecondaryWeapon()->Dropped();
 	}
 
+	if(CombatComp && CombatComp->bIsCarryingAFlag)
+	{
+		GetEquippedWeapon()->Dropped();
+	}
 	
 	
 	Multicast_Elim(bPlayerLeftGame);
