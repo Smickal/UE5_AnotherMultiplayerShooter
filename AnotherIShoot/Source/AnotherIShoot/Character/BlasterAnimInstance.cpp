@@ -52,6 +52,7 @@ void UBlasterAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	bLocallyControlled =PlayerCharacter->IsLocallyControlled();
 	bRotateRootBone = PlayerCharacter->ShouldRotateRootBone();
 	bIsEliminated = PlayerCharacter->IsEliminated();
+	bHoldingTheFlag = PlayerCharacter->IsHoldingAFlag();
 	
 	bUseFABRIK = PlayerCharacter->GetCombatState() == ECombatState::ECS_Unoccupied;
 	if(PlayerCharacter->IsLocallyControlled() && PlayerCharacter->GetCombatState() != ECombatState::ECS_ThrowingGrenade  && PlayerCharacter->bFinishedSwapping)

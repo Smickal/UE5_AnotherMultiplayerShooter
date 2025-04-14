@@ -26,6 +26,7 @@ struct FVector_NetQuantize;
 	virtual void Server_Fire_Implementation(FVector_NetQuantize const& TraceHitTarget, float FireDelay); \
 	virtual void Server_SetAiming_Implementation(bool bAiming); \
 	virtual void Server_Reload_Implementation(); \
+	DECLARE_FUNCTION(execOnRep_bCarryingFlag); \
 	DECLARE_FUNCTION(execOnRep_CombatState); \
 	DECLARE_FUNCTION(execOnRep_Grenade); \
 	DECLARE_FUNCTION(execServer_LaunchGrenade); \
@@ -65,7 +66,8 @@ public: \
 		CarriedAmmo, \
 		CurrentGrenade, \
 		CombatState, \
-		NETFIELD_REP_END=CombatState	}; \
+		bIsCarryingAFlag, \
+		NETFIELD_REP_END=bIsCarryingAFlag	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 

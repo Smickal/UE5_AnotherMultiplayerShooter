@@ -139,7 +139,7 @@ private:
 	UFUNCTION()
 	void OnRep_OverlappingWeapon(AWeapon* LastWeapon);
 
-	void HideCameraIfCharacterClose();
+	void HideCharacterIfCameraClose();
 	//Variables
 	//
 	//
@@ -240,8 +240,25 @@ private:
 	UMaterialInstanceDynamic* DynamicMaterialDissolveInstance;
 
 	//Material instance that we set on the  bluepprint, used with the dynamic material instance
-	UPROPERTY(EditAnywhere, Category = "Elim")
+	UPROPERTY(VisibleAnywhere, Category = "Elim")
 	UMaterialInstance* DissolvedMaterialInstance;
+
+	//TeamColors
+	UPROPERTY(EditAnywhere, Category = "Elim")
+	UMaterialInstance* RedMaterial;
+
+	UPROPERTY(EditAnywhere, Category = "Elim")
+	UMaterialInstance* BlueMaterial;
+	
+	UPROPERTY(EditAnywhere, Category = "Elim")
+	UMaterialInstance* OriginalMaterial;
+	
+	UPROPERTY(EditAnywhere, Category = "Elim")
+	UMaterialInstance* RedDissolveMatInst;
+
+	UPROPERTY(EditAnywhere, Category = "Elim")
+	UMaterialInstance* BlueDissolveMatInst;
+	
 
 	UPROPERTY(EditAnywhere, Category = "Elim")
 	UParticleSystem* ElimBotEffect;
@@ -263,7 +280,8 @@ private:
 	UStaticMeshComponent* AttachedGrenade;
 	
 public:
-
+	
+	void SetTeamColor(ETeam Team);
 protected:
 	//functions
 	//
@@ -305,7 +323,9 @@ private:
 	
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AWeapon> DefaultWeaponClass;
-	
+
+	UPROPERTY()
+	class ABlasterGameMode* BlasterGameMode;
 	
 public:
 	ABlasterPlayerState* PlayerState;
@@ -356,7 +376,10 @@ public:
 	FORCEINLINE UStaticMeshComponent* GetAttachedGrenade() const {return AttachedGrenade;}
 	FORCEINLINE UBuffComponent* GetBuffComponent() const {return BuffComp;}
 	FORCEINLINE ULagCompensationComponent* GetLapComp() const {return LagCompensation;}
+	FORCEINLINE bool IsHoldingAFlag() const;
 	bool IsLocallyReloading();
+	ETeam GetTeam();
+	
 	
 	ECombatState GetCombatState() const ;
 	FVector GetHitTarget() const;

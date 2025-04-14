@@ -17,11 +17,12 @@
 			"BulletCasing.gen.cpp.obj",
 			"CharacterOverlay.gen.cpp.obj",
 			"CombatComponent.gen.cpp.obj",
-			"CombatState.gen.cpp.obj",
-			"ElimmedAnnoucement.gen.cpp.obj",
-			"HealthPickup.gen.cpp.obj"
+			"CombatState.gen.cpp.obj"
 		],
 		"Module.AnotherIShoot.2.cpp.obj": [
+			"ElimmedAnnoucement.gen.cpp.obj",
+			"Flag.gen.cpp.obj",
+			"HealthPickup.gen.cpp.obj",
 			"HitScanWeapon.gen.cpp.obj",
 			"InteractWithCrosshairInterface.gen.cpp.obj",
 			"JumpPickup.gen.cpp.obj",
@@ -51,11 +52,11 @@
 			"AnotherIShootCharacter.cpp.obj",
 			"BuffComponent.cpp.obj",
 			"CombatComponent.cpp.obj",
-			"LagCompensationComponent.cpp.obj",
-			"BlasterAnimInstance.cpp.obj",
-			"BlasterCharacter.cpp.obj"
+			"LagCompensationComponent.cpp.obj"
 		],
 		"Module.AnotherIShoot.3.cpp.obj": [
+			"BlasterAnimInstance.cpp.obj",
+			"BlasterCharacter.cpp.obj",
 			"BlasterGameMode.cpp.obj",
 			"LobbyGameMode.cpp.obj",
 			"SandboxGameMode.cpp.obj",
@@ -78,6 +79,7 @@
 			"BlasterPlayerController.cpp.obj",
 			"BlasterPlayerState.cpp.obj",
 			"BulletCasing.cpp.obj",
+			"Flag.cpp.obj",
 			"HitScanWeapon.cpp.obj",
 			"Projectile.cpp.obj",
 			"ProjectileBullet.cpp.obj",

@@ -280,6 +280,35 @@ DEFINE_FUNCTION(UCombatComponent::execOnRep_Aiming)
 }
 // End Class UCombatComponent Function OnRep_Aiming
 
+// Begin Class UCombatComponent Function OnRep_bCarryingFlag
+struct Z_Construct_UFunction_UCombatComponent_OnRep_bCarryingFlag_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BlasterComponent/CombatComponent.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCombatComponent_OnRep_bCarryingFlag_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCombatComponent, nullptr, "OnRep_bCarryingFlag", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatComponent_OnRep_bCarryingFlag_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCombatComponent_OnRep_bCarryingFlag_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UCombatComponent_OnRep_bCarryingFlag()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatComponent_OnRep_bCarryingFlag_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UCombatComponent::execOnRep_bCarryingFlag)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnRep_bCarryingFlag();
+	P_NATIVE_END;
+}
+// End Class UCombatComponent Function OnRep_bCarryingFlag
+
 // Begin Class UCombatComponent Function OnRep_CarriedAmmo
 struct Z_Construct_UFunction_UCombatComponent_OnRep_CarriedAmmo_Statics
 {
@@ -810,6 +839,7 @@ void UCombatComponent::StaticRegisterNativesUCombatComponent()
 		{ "Multicast_Fire", &UCombatComponent::execMulticast_Fire },
 		{ "Multicast_ShotgunFire", &UCombatComponent::execMulticast_ShotgunFire },
 		{ "OnRep_Aiming", &UCombatComponent::execOnRep_Aiming },
+		{ "OnRep_bCarryingFlag", &UCombatComponent::execOnRep_bCarryingFlag },
 		{ "OnRep_CarriedAmmo", &UCombatComponent::execOnRep_CarriedAmmo },
 		{ "OnRep_CombatState", &UCombatComponent::execOnRep_CombatState },
 		{ "OnRep_EquippedWeapon", &UCombatComponent::execOnRep_EquippedWeapon },
@@ -930,6 +960,9 @@ struct Z_Construct_UClass_UCombatComponent_Statics
 		{ "Category", "CombatComponent" },
 		{ "ModuleRelativePath", "BlasterComponent/CombatComponent.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsCarryingAFlag_MetaData[] = {
+		{ "ModuleRelativePath", "BlasterComponent/CombatComponent.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FClassPropertyParams NewProp_GrenadeClass;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_EquippedWeapon;
@@ -956,6 +989,8 @@ struct Z_Construct_UClass_UCombatComponent_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentGrenade;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_CombatState_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_CombatState;
+	static void NewProp_bIsCarryingAFlag_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsCarryingAFlag;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -966,6 +1001,7 @@ struct Z_Construct_UClass_UCombatComponent_Statics
 		{ &Z_Construct_UFunction_UCombatComponent_Multicast_Fire, "Multicast_Fire" }, // 2253917351
 		{ &Z_Construct_UFunction_UCombatComponent_Multicast_ShotgunFire, "Multicast_ShotgunFire" }, // 1607091445
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_Aiming, "OnRep_Aiming" }, // 105150701
+		{ &Z_Construct_UFunction_UCombatComponent_OnRep_bCarryingFlag, "OnRep_bCarryingFlag" }, // 3346243389
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_CarriedAmmo, "OnRep_CarriedAmmo" }, // 1006875674
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_CombatState, "OnRep_CombatState" }, // 2700311886
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_EquippedWeapon, "OnRep_EquippedWeapon" }, // 4116278674
@@ -1014,6 +1050,11 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UCombatComponent_
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_CurrentGrenade = { "CurrentGrenade", "OnRep_Grenade", (EPropertyFlags)0x0040000100000020, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, CurrentGrenade), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentGrenade_MetaData), NewProp_CurrentGrenade_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_CombatState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_CombatState = { "CombatState", "OnRep_CombatState", (EPropertyFlags)0x0040000100020021, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, CombatState), Z_Construct_UEnum_AnotherIShoot_ECombatState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CombatState_MetaData), NewProp_CombatState_MetaData) }; // 805346639
+void Z_Construct_UClass_UCombatComponent_Statics::NewProp_bIsCarryingAFlag_SetBit(void* Obj)
+{
+	((UCombatComponent*)Obj)->bIsCarryingAFlag = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_bIsCarryingAFlag = { "bIsCarryingAFlag", "OnRep_bCarryingFlag", (EPropertyFlags)0x0040000100000020, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UCombatComponent), &Z_Construct_UClass_UCombatComponent_Statics::NewProp_bIsCarryingAFlag_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsCarryingAFlag_MetaData), NewProp_bIsCarryingAFlag_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCombatComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_GrenadeClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_EquippedWeapon,
@@ -1039,6 +1080,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCombatCo
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_CurrentGrenade,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_CombatState_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_CombatState,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_bIsCarryingAFlag,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UCombatComponent_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UCombatComponent_Statics::DependentSingletons[])() = {
@@ -1081,13 +1123,15 @@ void UCombatComponent::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>
 	static const FName Name_CarriedAmmo(TEXT("CarriedAmmo"));
 	static const FName Name_CurrentGrenade(TEXT("CurrentGrenade"));
 	static const FName Name_CombatState(TEXT("CombatState"));
+	static const FName Name_bIsCarryingAFlag(TEXT("bIsCarryingAFlag"));
 	const bool bIsValid = true
 		&& Name_EquippedWeapon == ClassReps[(int32)ENetFields_Private::EquippedWeapon].Property->GetFName()
 		&& Name_SecondaryWeapon == ClassReps[(int32)ENetFields_Private::SecondaryWeapon].Property->GetFName()
 		&& Name_bIsAiming == ClassReps[(int32)ENetFields_Private::bIsAiming].Property->GetFName()
 		&& Name_CarriedAmmo == ClassReps[(int32)ENetFields_Private::CarriedAmmo].Property->GetFName()
 		&& Name_CurrentGrenade == ClassReps[(int32)ENetFields_Private::CurrentGrenade].Property->GetFName()
-		&& Name_CombatState == ClassReps[(int32)ENetFields_Private::CombatState].Property->GetFName();
+		&& Name_CombatState == ClassReps[(int32)ENetFields_Private::CombatState].Property->GetFName()
+		&& Name_bIsCarryingAFlag == ClassReps[(int32)ENetFields_Private::bIsCarryingAFlag].Property->GetFName();
 	checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in UCombatComponent"));
 }
 DEFINE_VTABLE_PTR_HELPER_CTOR(UCombatComponent);
@@ -1098,10 +1142,10 @@ UCombatComponent::~UCombatComponent() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCombatComponent, UCombatComponent::StaticClass, TEXT("UCombatComponent"), &Z_Registration_Info_UClass_UCombatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCombatComponent), 1265564323U) },
+		{ Z_Construct_UClass_UCombatComponent, UCombatComponent::StaticClass, TEXT("UCombatComponent"), &Z_Registration_Info_UClass_UCombatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCombatComponent), 3980421186U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_2890264703(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_2172219419(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

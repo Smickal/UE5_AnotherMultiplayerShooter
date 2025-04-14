@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeElimmedAnnoucement() {}
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_UElimmedAnnoucement();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_UElimmedAnnoucement_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UHorizontalBox_NoRegister();
+UMG_API UClass* Z_Construct_UClass_UImage_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UTextBlock_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_AnotherIShoot();
@@ -42,14 +43,26 @@ struct Z_Construct_UClass_UElimmedAnnoucement_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "HUD/ElimmedAnnoucement.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AnnoucementText_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AnnoucementTextAttacker_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "HUD/ElimmedAnnoucement.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AnnoucementImageWeaponType_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "HUD/ElimmedAnnoucement.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AnnoucementTextVictim_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "HUD/ElimmedAnnoucement.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnnoucementBox;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnnoucementText;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnnoucementTextAttacker;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnnoucementImageWeaponType;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AnnoucementTextVictim;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -58,10 +71,14 @@ struct Z_Construct_UClass_UElimmedAnnoucement_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementBox = { "AnnoucementBox", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UElimmedAnnoucement, AnnoucementBox), Z_Construct_UClass_UHorizontalBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnnoucementBox_MetaData), NewProp_AnnoucementBox_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementText = { "AnnoucementText", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UElimmedAnnoucement, AnnoucementText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnnoucementText_MetaData), NewProp_AnnoucementText_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementTextAttacker = { "AnnoucementTextAttacker", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UElimmedAnnoucement, AnnoucementTextAttacker), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnnoucementTextAttacker_MetaData), NewProp_AnnoucementTextAttacker_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementImageWeaponType = { "AnnoucementImageWeaponType", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UElimmedAnnoucement, AnnoucementImageWeaponType), Z_Construct_UClass_UImage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnnoucementImageWeaponType_MetaData), NewProp_AnnoucementImageWeaponType_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementTextVictim = { "AnnoucementTextVictim", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UElimmedAnnoucement, AnnoucementTextVictim), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AnnoucementTextVictim_MetaData), NewProp_AnnoucementTextVictim_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UElimmedAnnoucement_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementBox,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementText,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementTextAttacker,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementImageWeaponType,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UElimmedAnnoucement_Statics::NewProp_AnnoucementTextVictim,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UElimmedAnnoucement_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UElimmedAnnoucement_Statics::DependentSingletons[])() = {
@@ -105,10 +122,10 @@ UElimmedAnnoucement::~UElimmedAnnoucement() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ElimmedAnnoucement_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UElimmedAnnoucement, UElimmedAnnoucement::StaticClass, TEXT("UElimmedAnnoucement"), &Z_Registration_Info_UClass_UElimmedAnnoucement, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UElimmedAnnoucement), 761185922U) },
+		{ Z_Construct_UClass_UElimmedAnnoucement, UElimmedAnnoucement::StaticClass, TEXT("UElimmedAnnoucement"), &Z_Registration_Info_UClass_UElimmedAnnoucement, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UElimmedAnnoucement), 2673468446U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ElimmedAnnoucement_h_2865460163(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ElimmedAnnoucement_h_779424372(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ElimmedAnnoucement_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ElimmedAnnoucement_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

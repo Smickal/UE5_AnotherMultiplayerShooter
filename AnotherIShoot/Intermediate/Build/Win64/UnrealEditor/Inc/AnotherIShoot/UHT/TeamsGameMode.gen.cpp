@@ -76,7 +76,6 @@ template<> ANOTHERISHOOT_API UClass* StaticClass<ATeamsGameMode>()
 {
 	return ATeamsGameMode::StaticClass();
 }
-ATeamsGameMode::ATeamsGameMode() {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(ATeamsGameMode);
 ATeamsGameMode::~ATeamsGameMode() {}
 // End Class ATeamsGameMode

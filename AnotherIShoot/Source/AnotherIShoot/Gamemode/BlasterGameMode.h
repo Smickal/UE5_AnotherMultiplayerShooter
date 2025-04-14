@@ -32,7 +32,7 @@ public:
 	virtual void PlayerEliminated(ABlasterCharacter* VictimCharacter, ABlasterPlayerController* VictimController, ABlasterPlayerController* AttackerController);
 	virtual void RequestRespawn(ACharacter* CharacterToRespawn, AController* ElimmedController);
 	void PlayerLeftGame(ABlasterPlayerState* PlayerLeaving);
-
+	virtual  float CalculateDamage(AController* Attacker, AController* Victim, float BaseDamage);
 
 public:
 
@@ -47,7 +47,7 @@ public:
 	
 	float LevelStartingTime = 0.f;
 	
-
+	bool bTeamsMatch = false;
 protected:
 	virtual void BeginPlay() override;
 	virtual void OnMatchStateSet() override;

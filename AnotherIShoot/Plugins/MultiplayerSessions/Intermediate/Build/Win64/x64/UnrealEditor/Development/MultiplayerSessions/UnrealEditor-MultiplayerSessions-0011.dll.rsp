@@ -36,12 +36,9 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
 /NOIMPLIB
-"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
-"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
-"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Menu.cpp.obj"
-"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\MultiplayerSessions.cpp.obj"
-"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\MultiplayerSessionsSubsystem.cpp.obj"
-"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Default.rc2.res"
+"C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Intermediate\Build\Win64\x64\AnotherIShootEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
+"C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Slate\UnrealEditor-Slate.lib"
@@ -75,6 +72,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Binaries\Win64\UnrealEditor-MultiplayerSessions-0011.dll"
-/PDB:"C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Binaries\Win64\UnrealEditor-MultiplayerSessions-0011.pdb"
+/OUT:"C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Plugins\MultiplayerSessions\Binaries\Win64\UnrealEditor-MultiplayerSessions-0011.dll"
+/PDB:"C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Plugins\MultiplayerSessions\Binaries\Win64\UnrealEditor-MultiplayerSessions-0011.pdb"
 /ignore:4078

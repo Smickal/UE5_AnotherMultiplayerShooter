@@ -4,10 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/Image.h"
 #include "ElimmedAnnoucement.generated.h"
 
 class UTextBlock;
 class UHorizontalBox;
+class ABlasterPlayerState;
 /**
  * 
  */
@@ -18,11 +20,20 @@ class ANOTHERISHOOT_API UElimmedAnnoucement : public UUserWidget
 
 
 public:
-	void SetElimAnnouncementText(FString AttackerName, FString VictimName);
+	void SetElimAnnouncementText(ABlasterPlayerState* AttackerPState, ABlasterPlayerState* VictimPState, UTexture2D* WeaponTexture2D);
 	
 	UPROPERTY(meta = (BindWidget))
 	UHorizontalBox* AnnoucementBox;
 
 	UPROPERTY(meta = (BindWidget))
-	UTextBlock* AnnoucementText;
+	UTextBlock* AnnoucementTextAttacker;
+
+	UPROPERTY(meta = (BindWidget))
+	UImage* AnnoucementImageWeaponType;
+	
+	UPROPERTY(meta = (BindWidget))
+	UTextBlock* AnnoucementTextVictim;
+
+private:
+	FColor GetTeamColor(ABlasterPlayerState* BlasterPlayerState);
 };

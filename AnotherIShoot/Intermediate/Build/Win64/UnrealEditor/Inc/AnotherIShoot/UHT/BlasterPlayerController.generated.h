@@ -28,6 +28,7 @@ ANOTHERISHOOT_API void FHighPingDelegate_DelegateWrapper(const FMulticastScriptD
 	virtual void Server_CheckMatchState_Implementation(); \
 	DECLARE_FUNCTION(execClient_ReportServerTIme); \
 	DECLARE_FUNCTION(execServer_RequestServerTime); \
+	DECLARE_FUNCTION(execOnRep_ShowTeamScore); \
 	DECLARE_FUNCTION(execClient_ElimAnnouncement); \
 	DECLARE_FUNCTION(execServer_ReportPingStatus); \
 	DECLARE_FUNCTION(execClient_JoinMidGame); \
@@ -46,7 +47,8 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		MatchState=NETFIELD_REP_START, \
+		bShowTeamScore=NETFIELD_REP_START, \
+		MatchState, \
 		NETFIELD_REP_END=MatchState	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 

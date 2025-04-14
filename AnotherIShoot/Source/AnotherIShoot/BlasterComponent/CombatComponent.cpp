@@ -39,6 +39,7 @@ void UCombatComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 	DOREPLIFETIME(UCombatComponent, CombatState);
 	DOREPLIFETIME(UCombatComponent, CurrentGrenade);
 	DOREPLIFETIME(UCombatComponent, SecondaryWeapon);
+	DOREPLIFETIME(UCombatComponent, bIsCarryingAFlag);
 }
 
 
@@ -229,14 +230,27 @@ void UCombatComponent::EquipWeapon(AWeapon* WeaponToEquip)
 	if(!PlayerCharacter || !WeaponToEquip) return;
 	if(CombatState != ECombatState::ECS_Unoccupied) return;
 
-	//Checks if there's a primary without a secondary
-	if(EquippedWeapon != nullptr && SecondaryWeapon == nullptr)
+	if(WeaponToEquip->GetWeaponType() == EWeaponType::EWT_Flag)
 	{
-		EquipSecondaryWeapon(WeaponToEquip);
+		bIsCarryingAFlag = true;
+		PlayerCharacter->Crouch();
+
+		WeaponToEquip->SetWeaponState(EWeaponState::EWS_Equipped);
+		WeaponToEquip->SetOwner(PlayerCharacter);
+		
+		AttachFlagToLeftHand(WeaponToEquip);
 	}
 	else
 	{
-		EquipPrimaryWeapon(WeaponToEquip);
+		//Checks if there's a primary without a secondary
+		if(EquippedWeapon != nullptr && SecondaryWeapon == nullptr)
+		{
+			EquipSecondaryWeapon(WeaponToEquip);
+		}
+		else
+		{
+			EquipPrimaryWeapon(WeaponToEquip);
+		}
 	}
 	
 	
@@ -268,6 +282,14 @@ void UCombatComponent::SwapWeapon()
 		SecondaryWeapon->EnableCustomDepth(false);
 	}
 	
+}
+
+void UCombatComponent::OnRep_bCarryingFlag()
+{
+	if(bIsCarryingAFlag && PlayerCharacter && PlayerCharacter->IsLocallyControlled())
+	{
+		PlayerCharacter->Crouch();
+	}
 }
 
 void UCombatComponent::EquipPrimaryWeapon(AWeapon* WeaponToEquip)
@@ -384,6 +406,17 @@ void UCombatComponent::AttachAnActorToBackpack(AActor* ActorToAttach)
 		BackpackSocket->AttachActor(ActorToAttach, PlayerCharacter->GetMesh());
 	}
 	
+}
+
+void UCombatComponent::AttachFlagToLeftHand(AWeapon* Flag)
+{
+	if(!PlayerCharacter || !Flag || !PlayerCharacter->GetMesh()) return;
+	
+	const USkeletalMeshSocket* LeftFlagSocket = PlayerCharacter->GetMesh()->GetSocketByName(FName("FlagSocket"));
+	if(LeftFlagSocket)
+	{
+		LeftFlagSocket->AttachActor(Flag, PlayerCharacter->GetMesh());
+	}
 }
 
 void UCombatComponent::UpdateCarriedAmmo()

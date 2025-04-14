@@ -6,6 +6,8 @@
 #include "Announcement.h"
 #include "CharacterOverlay.h"
 #include "ElimmedAnnoucement.h"
+#include "AnotherIShoot/Character/BlasterCharacter.h"
+#include "AnotherIShoot/Weapon/Weapon.h"
 #include "Blueprint/UserWidget.h"
 #include "Blueprint/WidgetLayoutLibrary.h"
 #include "Components/CanvasPanelSlot.h"
@@ -37,7 +39,7 @@ void ABlasterHUD::AddAnnoucement()
 	}
 }
 
-void ABlasterHUD::AddElimAnnouncement(FString Attacker, FString Victim)
+void ABlasterHUD::AddElimAnnouncement(ABlasterPlayerState* AttackerPState, ABlasterPlayerState* VictimPState)
 {
 	OwningPlayer = OwningPlayer == nullptr ? GetOwningPlayerController() : OwningPlayer;
 	if(OwningPlayer && ElimAnnouncementClass)
@@ -45,7 +47,19 @@ void ABlasterHUD::AddElimAnnouncement(FString Attacker, FString Victim)
 		UElimmedAnnoucement* ElimAnnouncementWidget = CreateWidget<UElimmedAnnoucement>(OwningPlayer, ElimAnnouncementClass);
 		if(ElimAnnouncementWidget)
 		{
-			ElimAnnouncementWidget->SetElimAnnouncementText(Attacker, Victim);
+			//Attacker
+			ABlasterCharacter* AttackerBChar = Cast<ABlasterCharacter>(AttackerPState->GetPawn());
+			FString AttackerName = AttackerPState->GetPlayerName();
+
+			AWeapon* EquippedMurderWeapon = AttackerBChar->GetEquippedWeapon();
+			UTexture2D* WeaponTexture = nullptr;
+			if(EquippedMurderWeapon)
+			{
+				WeaponTexture = EquippedMurderWeapon->WeaponTypeTexture;
+			}
+			
+			
+			ElimAnnouncementWidget->SetElimAnnouncementText(AttackerPState, VictimPState, WeaponTexture);
 			ElimAnnouncementWidget->AddToViewport();
 
 			for(auto Msg : ElimmedMessages)

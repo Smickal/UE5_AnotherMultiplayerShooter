@@ -7,6 +7,11 @@
 #include "AnotherIShoot/PlayerState/BlasterPlayerState.h"
 #include "Kismet/GameplayStatics.h"
 
+ATeamsGameMode::ATeamsGameMode()
+{
+	bTeamsMatch = true;
+}
+
 void ATeamsGameMode::PostLogin(APlayerController* NewPlayer)
 {
 	Super::PostLogin(NewPlayer);
@@ -52,6 +57,7 @@ void ATeamsGameMode::Logout(AController* Exiting)
 	}
 }
 
+
 void ATeamsGameMode::HandleMatchHasStarted()
 {
 	Super::HandleMatchHasStarted();
@@ -75,6 +81,47 @@ void ATeamsGameMode::HandleMatchHasStarted()
 					BPState->SetTeam(ETeam::ET_BlueTeam);
 				}
 			}
+		}
+	}
+}
+
+float ATeamsGameMode::CalculateDamage(AController* Attacker, AController* Victim, float BaseDamage)
+{
+	ABlasterPlayerState* AttackerPState = Attacker->GetPlayerState<ABlasterPlayerState>();
+	ABlasterPlayerState* VictimPState = Victim->GetPlayerState<ABlasterPlayerState>();
+	
+	if(AttackerPState == nullptr || VictimPState == nullptr) return BaseDamage;
+	if(AttackerPState == VictimPState) return BaseDamage;
+
+	if(AttackerPState->GetTeam() == VictimPState->GetTeam())
+	{
+		return 0.f;
+	}
+
+	return BaseDamage;
+	
+}
+
+void ATeamsGameMode::PlayerEliminated(ABlasterCharacter* VictimCharacter, ABlasterPlayerController* VictimController,
+	ABlasterPlayerController* AttackerController)
+{
+	Super::PlayerEliminated(VictimCharacter, VictimController, AttackerController);
+
+	ABlasterGameState* BlasterGameState = Cast<ABlasterGameState>(UGameplayStatics::GetGameState(this));
+	ABlasterPlayerState* AttackerPState = AttackerController != nullptr ? AttackerController->GetPlayerState<ABlasterPlayerState>() : nullptr;
+
+
+	UE_LOG(LogTemp, Warning, TEXT("SetTeamScore"));
+	
+	if(BlasterGameState && AttackerPState)
+	{
+		if(AttackerPState->GetTeam() == ETeam::ET_BlueTeam)
+		{
+			BlasterGameState->BlueTeamScores();
+		}
+		if(AttackerPState->GetTeam() == ETeam::ET_RedTeam)
+		{
+			BlasterGameState->RedTeamScores();
 		}
 	}
 }

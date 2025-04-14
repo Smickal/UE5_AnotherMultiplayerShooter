@@ -35,6 +35,8 @@ void ABlasterPlayerState::OnRep_Score()
 	
 }
 
+
+
 void ABlasterPlayerState::AddToDefeats(FString AttackerName, int32 Defeats)
 {
 	DefeatsAmount += Defeats;
@@ -80,3 +82,30 @@ void ABlasterPlayerState::OnRep_Defeats()
 		}
 	}
 }
+
+
+void ABlasterPlayerState::SetTeam(ETeam TeamToSet)
+{
+	Team = TeamToSet;
+	//UE_LOG(LogTemp, Warning, TEXT("%s -> team set %d"), *GetPlayerName(), );
+	
+	ABlasterCharacter* BCharacter = Cast<ABlasterCharacter>(GetPawn());
+	if(BCharacter)
+	{
+		BCharacter->SetTeamColor(Team);
+	}
+
+	
+}
+void ABlasterPlayerState::OnRep_Team()
+{
+	ABlasterCharacter* BCharacter = Cast<ABlasterCharacter>(GetPawn());
+	if(BCharacter)
+	{
+		BCharacter->SetTeamColor(Team);
+	}
+
+	
+}
+
+

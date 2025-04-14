@@ -107,7 +107,7 @@ FServerSideRewindResult ULagCompensationComponent::ProjectileServerSideRewind(AB
 	const FVector_NetQuantize& TraceStart, const FVector_NetQuantize100& InitialProjectileVelocity, float HitTime)
 {
 	FFramePackage FrameToCheck = GetFrameToCheck(HitCharacter, HitTime);
-	UE_LOG(LogTemp, Warning, TEXT("%s"),*FrameToCheck.HitBoxInfo[FName("pelvis")].Location.ToString());
+	//UE_LOG(LogTemp, Warning, TEXT("%s"),*FrameToCheck.HitBoxInfo[FName("pelvis")].Location.ToString());
 	
 	return  ProjectilConfirmedHit(FrameToCheck, HitCharacter, TraceStart, InitialProjectileVelocity, HitTime);
 }
@@ -143,14 +143,14 @@ FServerSideRewindResult ULagCompensationComponent::ConfirmHit(const FFramePackag
 		
 		if(ConfirmedHitResult.bBlockingHit) //hit headshot return early
 		{
-			if(ConfirmedHitResult.Component.IsValid())
-			{
-				UBoxComponent* Box = Cast<UBoxComponent>(ConfirmedHitResult.Component);
-				if(Box)
-				{
-					DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(), FQuat(Box->GetComponentRotation()), FColor::Red, false, 8.f);
-				}
-			}
+			// if(ConfirmedHitResult.Component.IsValid())
+			// {
+			// 	UBoxComponent* Box = Cast<UBoxComponent>(ConfirmedHitResult.Component);
+			// 	if(Box)
+			// 	{
+			// 		DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(), FQuat(Box->GetComponentRotation()), FColor::Red, false, 8.f);
+			// 	}
+			// }
 			ResetHitBoxes(HitCharacter, CurrentFrame);
 			EnableCharacterMeshCollision(HitCharacter, ECollisionEnabled::Type::QueryAndPhysics);
 			return FServerSideRewindResult{ true, true};
@@ -175,14 +175,14 @@ FServerSideRewindResult ULagCompensationComponent::ConfirmHit(const FFramePackag
 	
 			if(ConfirmedHitResult.bBlockingHit)
 			{
-				if(ConfirmedHitResult.Component.IsValid())
-				{
-					UBoxComponent* Box = Cast<UBoxComponent>(ConfirmedHitResult.Component);
-					if(Box)
-					{
-						DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(), FQuat(Box->GetComponentRotation()), FColor::Blue, false, 8.f);
-					}
-				}
+				// if(ConfirmedHitResult.Component.IsValid())
+				// {
+				// 	UBoxComponent* Box = Cast<UBoxComponent>(ConfirmedHitResult.Component);
+				// 	if(Box)
+				// 	{
+				// 		DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(), FQuat(Box->GetComponentRotation()), FColor::Blue, false, 8.f);
+				// 	}
+				// }
 				
 				ResetHitBoxes(HitCharacter, CurrentFrame);
 				EnableCharacterMeshCollision(HitCharacter, ECollisionEnabled::Type::QueryAndPhysics);
@@ -201,7 +201,7 @@ FServerSideRewindResult ULagCompensationComponent::ProjectilConfirmedHit(const F
 {
 	if(HitCharacter == nullptr) return FServerSideRewindResult();
 
-	UE_LOG(LogTemp, Warning, TEXT("Test124"));
+	//UE_LOG(LogTemp, Warning, TEXT("Test124"));
 	
 	FFramePackage CurrentFrame;
 	CacheBoxPosition(HitCharacter, CurrentFrame);
@@ -233,15 +233,15 @@ FServerSideRewindResult ULagCompensationComponent::ProjectilConfirmedHit(const F
 	//Hits the head, return early
 	if(PathResult.HitResult.bBlockingHit)
 	{
-		if(PathResult.HitResult.Component.IsValid())
-		{
-			UBoxComponent* Box = Cast<UBoxComponent>(PathResult.HitResult.Component);
-			if(Box)
-			{
-				DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(),
-					FQuat(Box->GetComponentRotation()), FColor::Red, false, 4.f);
-			}
-		}
+		// if(PathResult.HitResult.Component.IsValid())
+		// {
+		// 	UBoxComponent* Box = Cast<UBoxComponent>(PathResult.HitResult.Component);
+		// 	if(Box)
+		// 	{
+		// 		DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(),
+		// 			FQuat(Box->GetComponentRotation()), FColor::Red, false, 4.f);
+		// 	}
+		// }
 		
 		ResetHitBoxes(HitCharacter, CurrentFrame);
 		EnableCharacterMeshCollision(HitCharacter, ECollisionEnabled::Type::QueryAndPhysics);
@@ -262,15 +262,15 @@ FServerSideRewindResult ULagCompensationComponent::ProjectilConfirmedHit(const F
 		
 		if(PathResult.HitResult.bBlockingHit)
 		{
-			if(PathResult.HitResult.Component.IsValid())
-			{
-				UBoxComponent* Box = Cast<UBoxComponent>(PathResult.HitResult.Component);
-				if(Box)
-				{
-					DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(),
-						FQuat(Box->GetComponentRotation()), FColor::Red, false, 4.f);
-				}
-			}
+			// if(PathResult.HitResult.Component.IsValid())
+			// {
+			// 	UBoxComponent* Box = Cast<UBoxComponent>(PathResult.HitResult.Component);
+			// 	if(Box)
+			// 	{
+			// 		DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(),
+			// 			FQuat(Box->GetComponentRotation()), FColor::Red, false, 4.f);
+			// 	}
+			// }
 		
 			ResetHitBoxes(HitCharacter, CurrentFrame);
 			EnableCharacterMeshCollision(HitCharacter, ECollisionEnabled::Type::QueryAndPhysics);
@@ -344,22 +344,22 @@ FShotgunServerSideRewindResult ULagCompensationComponent::ShotgunConfirmedHit(
 				ABlasterCharacter* HitCharacter = Cast<ABlasterCharacter>(ConfirmedHitResult.GetActor());	
 				if(HitCharacter)
 				{
-					if(ConfirmedHitResult.Component.IsValid())
-					{
-						UBoxComponent* Box = Cast<UBoxComponent>(ConfirmedHitResult.Component);
-						if(Box)
-						{
-							DrawDebugBox(
-								GetWorld(),
-								Box->GetComponentLocation(),
-								Box->GetScaledBoxExtent(),
-								FQuat(Box->GetComponentRotation()),
-								FColor::Red,
-								false,
-								8.f
-								);
-						}
-					}
+					// if(ConfirmedHitResult.Component.IsValid())
+					// {
+					// 	UBoxComponent* Box = Cast<UBoxComponent>(ConfirmedHitResult.Component);
+					// 	if(Box)
+					// 	{
+					// 		DrawDebugBox(
+					// 			GetWorld(),
+					// 			Box->GetComponentLocation(),
+					// 			Box->GetScaledBoxExtent(),
+					// 			FQuat(Box->GetComponentRotation()),
+					// 			FColor::Red,
+					// 			false,
+					// 			8.f
+					// 			);
+					// 	}
+					// }
 					
 					if(ShotgunResult.HeadShots.Contains(HitCharacter))
 					{
@@ -409,22 +409,22 @@ FShotgunServerSideRewindResult ULagCompensationComponent::ShotgunConfirmedHit(
 				ABlasterCharacter* HitCharacter = Cast<ABlasterCharacter>(ConfirmedHitResult.GetActor());	
 				if(HitCharacter)
 				{
-					if(ConfirmedHitResult.Component.IsValid())
-					{
-						UBoxComponent* Box = Cast<UBoxComponent>(ConfirmedHitResult.Component);
-						if(Box)
-						{
-							DrawDebugBox(
-								GetWorld(),
-								Box->GetComponentLocation(),
-								Box->GetScaledBoxExtent(),
-								FQuat(Box->GetComponentRotation()),
-								FColor::Red,
-								false,
-								8.f
-								);
-						}
-					}
+					// if(ConfirmedHitResult.Component.IsValid())
+					// {
+					// 	UBoxComponent* Box = Cast<UBoxComponent>(ConfirmedHitResult.Component);
+					// 	if(Box)
+					// 	{
+					// 		DrawDebugBox(
+					// 			GetWorld(),
+					// 			Box->GetComponentLocation(),
+					// 			Box->GetScaledBoxExtent(),
+					// 			FQuat(Box->GetComponentRotation()),
+					// 			FColor::Red,
+					// 			false,
+					// 			8.f
+					// 			);
+					// 	}
+					// }
 					
 					if(ShotgunResult.BodyShots.Contains(HitCharacter))
 					{

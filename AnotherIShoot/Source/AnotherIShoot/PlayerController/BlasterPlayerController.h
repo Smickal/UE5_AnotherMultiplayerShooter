@@ -27,6 +27,12 @@ public:
 	void SetHUDShield(float CurrShield, float MaxShield);
 	
 	void SetHUDScore(float Score);
+	void HideTeamScore();
+	void InitTeamScore();
+	void SetHudRedTeamScore(int32 RedScore);
+	void SetHudBlueTeamScore(int32 BlueScore);
+
+	
 	void SetHUDDefeatsByAndAmount(FString AttackerName, int Defeats);
 	void ActivateEliminatedOverlay(bool bActivated);
 	void SetHUDWeaponAmmo(int32 Ammo);
@@ -41,10 +47,10 @@ public:
 	virtual float GetServerTime(); //Sync with server world Clock
 	virtual void ReceivedPlayer() override; //Sync with server clock as soon as possible
 	
-	void HandleMatchHasStarted();
+	void HandleMatchHasStarted(bool bTeamsMatch = false);
 	void HandleCooldownHasStarted();
 	
-	void OnMatchStateSet(FName State);
+	void OnMatchStateSet(FName State, bool bTeamsMatch = false);
 
 	float SingleTripTime = 0.f;
 
@@ -84,7 +90,15 @@ protected:
 
 	UFUNCTION(Client, Reliable)
 	void Client_ElimAnnouncement(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim);
-	
+
+	UPROPERTY(ReplicatedUsing = OnRep_ShowTeamScore)
+	bool bShowTeamScore = false;
+
+	UFUNCTION()
+	void OnRep_ShowTeamScore();
+
+	FString GetInfoText(const TArray<ABlasterPlayerState*>& Players);
+	FString GetTeamsInfoText(class ABlasterGameState* BlasterGameState);
 private:
 	UPROPERTY()
 	class ABlasterHUD* BlasterHUD;

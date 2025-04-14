@@ -15,6 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define ANOTHERISHOOT_BlasterPlayerState_generated_h
 
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_PlayerState_BlasterPlayerState_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnRep_Team); \
 	DECLARE_FUNCTION(execOnRep_Defeats);
 
 

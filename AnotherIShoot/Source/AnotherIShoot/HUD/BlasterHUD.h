@@ -6,6 +6,7 @@
 #include "GameFramework/HUD.h"
 #include "BlasterHUD.generated.h"
 
+class ABlasterPlayerState;
 class UElimmedAnnoucement;
 
 USTRUCT(BlueprintType)
@@ -42,7 +43,7 @@ public:
 	
 	void AddCharacterOverlay();
 	void AddAnnoucement();
-	void AddElimAnnouncement(FString Attacker, FString Victim);
+	void AddElimAnnouncement(ABlasterPlayerState* AttackerPState, ABlasterPlayerState* VictimPState);
 	
 protected:
 	virtual void BeginPlay() override;

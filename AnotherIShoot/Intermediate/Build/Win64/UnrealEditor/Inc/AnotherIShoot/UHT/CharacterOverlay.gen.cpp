@@ -69,6 +69,21 @@ struct Z_Construct_UClass_UCharacterOverlay_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "HUD/CharacterOverlay.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BlueTeamScore_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "HUD/CharacterOverlay.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RedTeamScore_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "HUD/CharacterOverlay.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ScoreSpacerText_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "HUD/CharacterOverlay.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DefeatsAmount_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "EditInline", "true" },
@@ -133,6 +148,9 @@ struct Z_Construct_UClass_UCharacterOverlay_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ShieldBar;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ShieldText;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ScoreAmount;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_BlueTeamScore;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_RedTeamScore;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ScoreSpacerText;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DefeatsAmount;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_EliminatedText;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponAmmoAmount;
@@ -158,6 +176,9 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOver
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_ShieldBar = { "ShieldBar", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, ShieldBar), Z_Construct_UClass_UProgressBar_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShieldBar_MetaData), NewProp_ShieldBar_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_ShieldText = { "ShieldText", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, ShieldText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShieldText_MetaData), NewProp_ShieldText_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_ScoreAmount = { "ScoreAmount", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, ScoreAmount), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ScoreAmount_MetaData), NewProp_ScoreAmount_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_BlueTeamScore = { "BlueTeamScore", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, BlueTeamScore), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BlueTeamScore_MetaData), NewProp_BlueTeamScore_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_RedTeamScore = { "RedTeamScore", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, RedTeamScore), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RedTeamScore_MetaData), NewProp_RedTeamScore_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_ScoreSpacerText = { "ScoreSpacerText", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, ScoreSpacerText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ScoreSpacerText_MetaData), NewProp_ScoreSpacerText_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_DefeatsAmount = { "DefeatsAmount", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, DefeatsAmount), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DefeatsAmount_MetaData), NewProp_DefeatsAmount_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_EliminatedText = { "EliminatedText", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, EliminatedText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EliminatedText_MetaData), NewProp_EliminatedText_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_WeaponAmmoAmount = { "WeaponAmmoAmount", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCharacterOverlay, WeaponAmmoAmount), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponAmmoAmount_MetaData), NewProp_WeaponAmmoAmount_MetaData) };
@@ -177,6 +198,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCharacte
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_ShieldBar,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_ShieldText,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_ScoreAmount,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_BlueTeamScore,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_RedTeamScore,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_ScoreSpacerText,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_DefeatsAmount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_EliminatedText,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCharacterOverlay_Statics::NewProp_WeaponAmmoAmount,
@@ -232,10 +256,10 @@ UCharacterOverlay::~UCharacterOverlay() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_CharacterOverlay_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCharacterOverlay, UCharacterOverlay::StaticClass, TEXT("UCharacterOverlay"), &Z_Registration_Info_UClass_UCharacterOverlay, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterOverlay), 166439029U) },
+		{ Z_Construct_UClass_UCharacterOverlay, UCharacterOverlay::StaticClass, TEXT("UCharacterOverlay"), &Z_Registration_Info_UClass_UCharacterOverlay, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCharacterOverlay), 2527810871U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_CharacterOverlay_h_1441561544(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_CharacterOverlay_h_248119781(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_CharacterOverlay_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_CharacterOverlay_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -35,6 +35,8 @@ struct Z_Construct_UEnum_AnotherIShoot_EWeaponType_Statics
 		{ "BlueprintType", "true" },
 		{ "EWT_AssaultRifle.DisplayName", "Assault Rifle" },
 		{ "EWT_AssaultRifle.Name", "EWeaponType::EWT_AssaultRifle" },
+		{ "EWT_Flag.DisplayName", "Flag" },
+		{ "EWT_Flag.Name", "EWeaponType::EWT_Flag" },
 		{ "EWT_GrenadeLauncher.DisplayName", "Grenade Launcher" },
 		{ "EWT_GrenadeLauncher.Name", "EWeaponType::EWT_GrenadeLauncher" },
 		{ "EWT_MAX.DisplayName", "DEFAULT_MAX" },
@@ -60,6 +62,7 @@ struct Z_Construct_UEnum_AnotherIShoot_EWeaponType_Statics
 		{ "EWeaponType::EWT_ShotGun", (int64)EWeaponType::EWT_ShotGun },
 		{ "EWeaponType::EWT_SniperRifle", (int64)EWeaponType::EWT_SniperRifle },
 		{ "EWeaponType::EWT_GrenadeLauncher", (int64)EWeaponType::EWT_GrenadeLauncher },
+		{ "EWeaponType::EWT_Flag", (int64)EWeaponType::EWT_Flag },
 		{ "EWeaponType::EWT_MAX", (int64)EWeaponType::EWT_MAX },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
@@ -90,10 +93,10 @@ UEnum* Z_Construct_UEnum_AnotherIShoot_EWeaponType()
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_WeaponTypes_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EWeaponType_StaticEnum, TEXT("EWeaponType"), &Z_Registration_Info_UEnum_EWeaponType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3464269060U) },
+		{ EWeaponType_StaticEnum, TEXT("EWeaponType"), &Z_Registration_Info_UEnum_EWeaponType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1012533644U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_WeaponTypes_h_3887867917(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_WeaponTypes_h_378849669(TEXT("/Script/AnotherIShoot"),
 	nullptr, 0,
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_WeaponTypes_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_WeaponTypes_h_Statics::EnumInfo));

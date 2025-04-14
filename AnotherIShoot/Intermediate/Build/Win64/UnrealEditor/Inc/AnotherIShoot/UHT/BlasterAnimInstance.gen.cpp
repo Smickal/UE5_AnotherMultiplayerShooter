@@ -147,6 +147,11 @@ struct Z_Construct_UClass_UBlasterAnimInstance_Statics
 		{ "Category", "BlasterAnimInstance" },
 		{ "ModuleRelativePath", "Character/BlasterAnimInstance.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bHoldingTheFlag_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "BlasterAnimInstance" },
+		{ "ModuleRelativePath", "Character/BlasterAnimInstance.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerCharacter;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Speed;
@@ -181,6 +186,8 @@ struct Z_Construct_UClass_UBlasterAnimInstance_Statics
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bUseAimOffsets;
 	static void NewProp_bTransformRightHand_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bTransformRightHand;
+	static void NewProp_bHoldingTheFlag_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bHoldingTheFlag;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -254,6 +261,11 @@ void Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bTransformRightHan
 	((UBlasterAnimInstance*)Obj)->bTransformRightHand = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bTransformRightHand = { "bTransformRightHand", nullptr, (EPropertyFlags)0x0040000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UBlasterAnimInstance), &Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bTransformRightHand_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bTransformRightHand_MetaData), NewProp_bTransformRightHand_MetaData) };
+void Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bHoldingTheFlag_SetBit(void* Obj)
+{
+	((UBlasterAnimInstance*)Obj)->bHoldingTheFlag = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bHoldingTheFlag = { "bHoldingTheFlag", nullptr, (EPropertyFlags)0x0040000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UBlasterAnimInstance), &Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bHoldingTheFlag_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bHoldingTheFlag_MetaData), NewProp_bHoldingTheFlag_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBlasterAnimInstance_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_PlayerCharacter,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_Speed,
@@ -277,6 +289,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBlasterA
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bUseFABRIK,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bUseAimOffsets,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bTransformRightHand,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBlasterAnimInstance_Statics::NewProp_bHoldingTheFlag,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBlasterAnimInstance_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UBlasterAnimInstance_Statics::DependentSingletons[])() = {
@@ -320,10 +333,10 @@ UBlasterAnimInstance::~UBlasterAnimInstance() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterAnimInstance_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UBlasterAnimInstance, UBlasterAnimInstance::StaticClass, TEXT("UBlasterAnimInstance"), &Z_Registration_Info_UClass_UBlasterAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBlasterAnimInstance), 1712092304U) },
+		{ Z_Construct_UClass_UBlasterAnimInstance, UBlasterAnimInstance::StaticClass, TEXT("UBlasterAnimInstance"), &Z_Registration_Info_UClass_UBlasterAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBlasterAnimInstance), 2769929567U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterAnimInstance_h_3536459549(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterAnimInstance_h_1554150050(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterAnimInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterAnimInstance_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

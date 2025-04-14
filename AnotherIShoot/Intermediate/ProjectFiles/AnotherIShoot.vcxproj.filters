@@ -121,6 +121,9 @@
     <Filter Include="Source\AnotherIShoot\BlasterTypes">
       <UniqueIdentifier>{2D8EB749-91E9-390F-8433-D2CF406A7413}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\AnotherIShoot\BlasterTypes\AnnouncementData.h">
+      <Filter>Source\AnotherIShoot\BlasterTypes</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\BlasterTypes\CombatState.h">
       <Filter>Source\AnotherIShoot\BlasterTypes</Filter>
     </ClCompile>
@@ -302,6 +305,12 @@
       <Filter>Source\AnotherIShoot\Weapon</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\Weapon\BulletCasing.h">
+      <Filter>Source\AnotherIShoot\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\Weapon\Flag.cpp">
+      <Filter>Source\AnotherIShoot\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\Weapon\Flag.h">
       <Filter>Source\AnotherIShoot\Weapon</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\Weapon\HitScanWeapon.cpp">

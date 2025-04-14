@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "WeaponTypes.h"
+#include "AnotherIShoot/BlasterTypes/Team.h"
 #include "Components/SphereComponent.h"
 #include "Components/WidgetComponent.h"
 #include "GameFramework/Actor.h"
@@ -55,7 +56,7 @@ public:
 
 	virtual void Fire(const FVector HitTarget);
 
-	void Dropped();
+	virtual void Dropped();
 
 	void SpendRound();
 	void AddAmmo(int32 AmmoToAdd);
@@ -125,6 +126,9 @@ protected:
 
 	UFUNCTION()
 	void OnPingTooHigh(bool bPingTooHigh);
+
+	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
+	ETeam Team;
 public:
 	//Variables
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
@@ -214,6 +218,7 @@ public:
 	FORCEINLINE int32 GetMagCapacity() const {return MagCapacity;}
 	FORCEINLINE float GetDamage() const {return Damage;}
 	FORCEINLINE float GetHeadShotDamage() const {return HeadShotDamage;}
+	FORCEINLINE UWidgetComponent* GetPickUpWidget() const {return PickUpWidget;}
 	bool IsEmpty();
 	bool IsFull();
 

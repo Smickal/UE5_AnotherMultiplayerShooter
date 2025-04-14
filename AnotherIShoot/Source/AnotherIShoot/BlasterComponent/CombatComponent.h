@@ -107,9 +107,12 @@ protected:
 	void ReloadEmptyWeapon();
 	void PlayEquipWeaponSound(AWeapon* Weapon);
 	void UpdateCarriedAmmo();
+	
 	void AttachAnActorToRightHand(AActor* ActorToAttach);
 	void AttachAnActorToLeftHand(AActor* ActorToAttach);
 	void AttachAnActorToBackpack(AActor* ActorToAttach);
+	void AttachFlagToLeftHand(AWeapon* Flag);
+	
 	void DropEquippedWeapon();
 	void ShowAttachedGrenade(bool bShowGrenade);
 	
@@ -254,6 +257,13 @@ private:
 	void OnRep_CombatState();
 
 	void UpdateHUDGrenade();
+
+	UPROPERTY(ReplicatedUsing = OnRep_bCarryingFlag)
+	bool bIsCarryingAFlag = false;
+
+
+	UFUNCTION()
+	void OnRep_bCarryingFlag();
 protected:
 
 	void EquipPrimaryWeapon(AWeapon* WeaponToEquip);

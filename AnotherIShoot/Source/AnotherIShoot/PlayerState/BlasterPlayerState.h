@@ -26,7 +26,9 @@ public:
 	UFUNCTION()
 	virtual void OnRep_Defeats();
 	virtual void OnRep_Score() override;
-	
+
+	UFUNCTION()
+	void OnRep_Team();
 private:
 	UPROPERTY()
 	class ABlasterCharacter* Character;
@@ -41,11 +43,12 @@ private:
 
 	UPROPERTY(Replicated)
 	FString AttackerNameToSave;
-
-	UPROPERTY(Replicated)
+	
+	UPROPERTY(ReplicatedUsing = OnRep_Team)
 	ETeam Team = ETeam::ET_NoTeam;
 
+	
 public:
 	FORCEINLINE ETeam GetTeam() const {return Team;}
-	FORCEINLINE void SetTeam(ETeam TeamToSet) {Team = TeamToSet;}
+	void SetTeam(ETeam TeamToSet);
 };

@@ -24,8 +24,6 @@ public: \
 
 
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Gamemode_TeamsGameMode_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ATeamsGameMode(); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ATeamsGameMode(ATeamsGameMode&&); \

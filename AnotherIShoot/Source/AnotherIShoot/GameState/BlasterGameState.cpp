@@ -3,6 +3,7 @@
 
 #include "BlasterGameState.h"
 
+#include "AnotherIShoot/PlayerController/BlasterPlayerController.h"
 #include "AnotherIShoot/PlayerState/BlasterPlayerState.h"
 #include "Net/UnrealNetwork.h"
 
@@ -36,14 +37,44 @@ void ABlasterGameState::UpdateTopScore(ABlasterPlayerState* ScoringPlayer)
 	}
 }
 
+void ABlasterGameState::RedTeamScores()
+{
+	++RedTeamScore;
+
+	ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(GetWorld()->GetFirstPlayerController());
+	if(BlasterPlayerController)
+	{
+		BlasterPlayerController->SetHudRedTeamScore(RedTeamScore);
+	}
+}
+
+void ABlasterGameState::BlueTeamScores()
+{
+	++BlueTeamScore;
+
+	ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(GetWorld()->GetFirstPlayerController());
+	if(BlasterPlayerController)
+	{
+		BlasterPlayerController->SetHudBlueTeamScore(BlueTeamScore);
+	}
+}
+
 void ABlasterGameState::OnRepRedTeamScore()
 {
-	
+	ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(GetWorld()->GetFirstPlayerController());
+	if(BlasterPlayerController)
+	{
+		BlasterPlayerController->SetHudRedTeamScore(RedTeamScore);
+	}
 }
 
 void ABlasterGameState::OnRepBlueTeamScore()
 {
-	
+	ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(GetWorld()->GetFirstPlayerController());
+	if(BlasterPlayerController)
+	{
+		BlasterPlayerController->SetHudBlueTeamScore(BlueTeamScore);
+	}
 }
 
 

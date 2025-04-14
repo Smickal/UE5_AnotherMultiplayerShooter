@@ -15,5 +15,3 @@
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/CharacterOverlay.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/CombatComponent.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/CombatState.gen.cpp"
-#include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/ElimmedAnnoucement.gen.cpp"
-#include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/HealthPickup.gen.cpp"
