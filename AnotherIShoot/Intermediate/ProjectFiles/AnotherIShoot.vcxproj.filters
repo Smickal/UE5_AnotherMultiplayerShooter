@@ -130,6 +130,15 @@
     <ClCompile Include="..\..\Source\AnotherIShoot\BlasterTypes\Team.h">
       <Filter>Source\AnotherIShoot\BlasterTypes</Filter>
     </ClCompile>
+    <Filter Include="Source\AnotherIShoot\CaptureTheFlag">
+      <UniqueIdentifier>{084641EB-62A6-3ABC-B156-95ADD6205A10}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\AnotherIShoot\CaptureTheFlag\FlagZone.cpp">
+      <Filter>Source\AnotherIShoot\CaptureTheFlag</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\CaptureTheFlag\FlagZone.h">
+      <Filter>Source\AnotherIShoot\CaptureTheFlag</Filter>
+    </ClCompile>
     <Filter Include="Source\AnotherIShoot\Character">
       <UniqueIdentifier>{CFD0801F-1F4F-330B-AD35-7499BDDE959F}</UniqueIdentifier>
     </Filter>
@@ -158,6 +167,12 @@
       <Filter>Source\AnotherIShoot\Gamemode</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\Gamemode\BlasterGameMode.h">
+      <Filter>Source\AnotherIShoot\Gamemode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\Gamemode\CaptureTheFlagGameMode.cpp">
+      <Filter>Source\AnotherIShoot\Gamemode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\Gamemode\CaptureTheFlagGameMode.h">
       <Filter>Source\AnotherIShoot\Gamemode</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\Gamemode\LobbyGameMode.cpp">
@@ -288,6 +303,15 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\PlayerController\BlasterPlayerController.h">
       <Filter>Source\AnotherIShoot\PlayerController</Filter>
+    </ClCompile>
+    <Filter Include="Source\AnotherIShoot\PlayerStart">
+      <UniqueIdentifier>{CB6C2AFF-2B9F-362C-AC80-90FA7D859BDA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\AnotherIShoot\PlayerStart\TeamPlayerStart.cpp">
+      <Filter>Source\AnotherIShoot\PlayerStart</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\PlayerStart\TeamPlayerStart.h">
+      <Filter>Source\AnotherIShoot\PlayerStart</Filter>
     </ClCompile>
     <Filter Include="Source\AnotherIShoot\PlayerState">
       <UniqueIdentifier>{4060D379-8BD6-3920-9300-FDED279B29F1}</UniqueIdentifier>

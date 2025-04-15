@@ -402,6 +402,35 @@ DEFINE_FUNCTION(UCombatComponent::execOnRep_EquippedWeapon)
 }
 // End Class UCombatComponent Function OnRep_EquippedWeapon
 
+// Begin Class UCombatComponent Function OnRep_Flag
+struct Z_Construct_UFunction_UCombatComponent_OnRep_Flag_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BlasterComponent/CombatComponent.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UCombatComponent_OnRep_Flag_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UCombatComponent, nullptr, "OnRep_Flag", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UCombatComponent_OnRep_Flag_Statics::Function_MetaDataParams), Z_Construct_UFunction_UCombatComponent_OnRep_Flag_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UCombatComponent_OnRep_Flag()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UCombatComponent_OnRep_Flag_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UCombatComponent::execOnRep_Flag)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnRep_Flag();
+	P_NATIVE_END;
+}
+// End Class UCombatComponent Function OnRep_Flag
+
 // Begin Class UCombatComponent Function OnRep_Grenade
 struct Z_Construct_UFunction_UCombatComponent_OnRep_Grenade_Statics
 {
@@ -843,6 +872,7 @@ void UCombatComponent::StaticRegisterNativesUCombatComponent()
 		{ "OnRep_CarriedAmmo", &UCombatComponent::execOnRep_CarriedAmmo },
 		{ "OnRep_CombatState", &UCombatComponent::execOnRep_CombatState },
 		{ "OnRep_EquippedWeapon", &UCombatComponent::execOnRep_EquippedWeapon },
+		{ "OnRep_Flag", &UCombatComponent::execOnRep_Flag },
 		{ "OnRep_Grenade", &UCombatComponent::execOnRep_Grenade },
 		{ "OnRep_SecondaryWeapon", &UCombatComponent::execOnRep_SecondaryWeapon },
 		{ "Server_Fire", &UCombatComponent::execServer_Fire },
@@ -878,6 +908,9 @@ struct Z_Construct_UClass_UCombatComponent_Statics
 		{ "ModuleRelativePath", "BlasterComponent/CombatComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SecondaryWeapon_MetaData[] = {
+		{ "ModuleRelativePath", "BlasterComponent/CombatComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Flag_MetaData[] = {
 		{ "ModuleRelativePath", "BlasterComponent/CombatComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerCharacter_MetaData[] = {
@@ -967,6 +1000,7 @@ struct Z_Construct_UClass_UCombatComponent_Statics
 	static const UECodeGen_Private::FClassPropertyParams NewProp_GrenadeClass;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_EquippedWeapon;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SecondaryWeapon;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Flag;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerCharacter;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerController;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_HUD;
@@ -1005,6 +1039,7 @@ struct Z_Construct_UClass_UCombatComponent_Statics
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_CarriedAmmo, "OnRep_CarriedAmmo" }, // 1006875674
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_CombatState, "OnRep_CombatState" }, // 2700311886
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_EquippedWeapon, "OnRep_EquippedWeapon" }, // 4116278674
+		{ &Z_Construct_UFunction_UCombatComponent_OnRep_Flag, "OnRep_Flag" }, // 2525299260
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_Grenade, "OnRep_Grenade" }, // 1073353748
 		{ &Z_Construct_UFunction_UCombatComponent_OnRep_SecondaryWeapon, "OnRep_SecondaryWeapon" }, // 4290192520
 		{ &Z_Construct_UFunction_UCombatComponent_Server_Fire, "Server_Fire" }, // 621465073
@@ -1025,6 +1060,7 @@ struct Z_Construct_UClass_UCombatComponent_Statics
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_GrenadeClass = { "GrenadeClass", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, GrenadeClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AProjectile_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GrenadeClass_MetaData), NewProp_GrenadeClass_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_EquippedWeapon = { "EquippedWeapon", "OnRep_EquippedWeapon", (EPropertyFlags)0x0040000100000020, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, EquippedWeapon), Z_Construct_UClass_AWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EquippedWeapon_MetaData), NewProp_EquippedWeapon_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_SecondaryWeapon = { "SecondaryWeapon", "OnRep_SecondaryWeapon", (EPropertyFlags)0x0040000100000020, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, SecondaryWeapon), Z_Construct_UClass_AWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SecondaryWeapon_MetaData), NewProp_SecondaryWeapon_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_Flag = { "Flag", "OnRep_Flag", (EPropertyFlags)0x0040000100000020, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, Flag), Z_Construct_UClass_AWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Flag_MetaData), NewProp_Flag_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_PlayerCharacter = { "PlayerCharacter", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, PlayerCharacter), Z_Construct_UClass_ABlasterCharacter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerCharacter_MetaData), NewProp_PlayerCharacter_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_PlayerController = { "PlayerController", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, PlayerController), Z_Construct_UClass_ABlasterPlayerController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerController_MetaData), NewProp_PlayerController_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UCombatComponent_Statics::NewProp_HUD = { "HUD", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UCombatComponent, HUD), Z_Construct_UClass_ABlasterHUD_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_HUD_MetaData), NewProp_HUD_MetaData) };
@@ -1059,6 +1095,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UCombatCo
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_GrenadeClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_EquippedWeapon,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_SecondaryWeapon,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_Flag,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_PlayerCharacter,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_PlayerController,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UCombatComponent_Statics::NewProp_HUD,
@@ -1119,6 +1156,7 @@ void UCombatComponent::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>
 {
 	static const FName Name_EquippedWeapon(TEXT("EquippedWeapon"));
 	static const FName Name_SecondaryWeapon(TEXT("SecondaryWeapon"));
+	static const FName Name_Flag(TEXT("Flag"));
 	static const FName Name_bIsAiming(TEXT("bIsAiming"));
 	static const FName Name_CarriedAmmo(TEXT("CarriedAmmo"));
 	static const FName Name_CurrentGrenade(TEXT("CurrentGrenade"));
@@ -1127,6 +1165,7 @@ void UCombatComponent::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>
 	const bool bIsValid = true
 		&& Name_EquippedWeapon == ClassReps[(int32)ENetFields_Private::EquippedWeapon].Property->GetFName()
 		&& Name_SecondaryWeapon == ClassReps[(int32)ENetFields_Private::SecondaryWeapon].Property->GetFName()
+		&& Name_Flag == ClassReps[(int32)ENetFields_Private::Flag].Property->GetFName()
 		&& Name_bIsAiming == ClassReps[(int32)ENetFields_Private::bIsAiming].Property->GetFName()
 		&& Name_CarriedAmmo == ClassReps[(int32)ENetFields_Private::CarriedAmmo].Property->GetFName()
 		&& Name_CurrentGrenade == ClassReps[(int32)ENetFields_Private::CurrentGrenade].Property->GetFName()
@@ -1142,10 +1181,10 @@ UCombatComponent::~UCombatComponent() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCombatComponent, UCombatComponent::StaticClass, TEXT("UCombatComponent"), &Z_Registration_Info_UClass_UCombatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCombatComponent), 3980421186U) },
+		{ Z_Construct_UClass_UCombatComponent, UCombatComponent::StaticClass, TEXT("UCombatComponent"), &Z_Registration_Info_UClass_UCombatComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCombatComponent), 1994097468U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_2172219419(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_908600499(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_BlasterComponent_CombatComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -12,6 +12,6 @@
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BlasterPlayerState.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BuffComponent.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BulletCasing.gen.cpp"
+#include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/CaptureTheFlagGameMode.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/CharacterOverlay.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/CombatComponent.gen.cpp"
-#include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/CombatState.gen.cpp"

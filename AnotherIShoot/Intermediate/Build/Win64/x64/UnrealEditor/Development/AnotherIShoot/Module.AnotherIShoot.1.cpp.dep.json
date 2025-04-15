@@ -119,13 +119,19 @@
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\bulletcasing.gen.cpp",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\weapon\\bulletcasing.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\bulletcasing.generated.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\capturetheflaggamemode.gen.cpp",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\gamemode\\capturetheflaggamemode.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\gamemode\\teamsgamemode.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\teamsgamemode.generated.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\weapon\\flag.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\flag.generated.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\capturetheflaggamemode.generated.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\characteroverlay.gen.cpp",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\hud\\characteroverlay.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\characteroverlay.generated.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\combatcomponent.gen.cpp",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\blastercomponent\\combatcomponent.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\combatcomponent.generated.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\combatstate.gen.cpp"
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\combatcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

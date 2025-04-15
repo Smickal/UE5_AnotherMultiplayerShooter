@@ -111,7 +111,7 @@ void ATeamsGameMode::PlayerEliminated(ABlasterCharacter* VictimCharacter, ABlast
 	ABlasterPlayerState* AttackerPState = AttackerController != nullptr ? AttackerController->GetPlayerState<ABlasterPlayerState>() : nullptr;
 
 
-	UE_LOG(LogTemp, Warning, TEXT("SetTeamScore"));
+	//UE_LOG(LogTemp, Warning, TEXT("SetTeamScore"));
 	
 	if(BlasterGameState && AttackerPState)
 	{

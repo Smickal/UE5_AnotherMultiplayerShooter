@@ -74,6 +74,9 @@ protected:
 	
 	UFUNCTION()
 	void OnRep_SecondaryWeapon();
+
+	UFUNCTION()
+	void OnRep_Flag();
 	
 	void Fire();
 	void FireProjectileWeapon();
@@ -111,7 +114,7 @@ protected:
 	void AttachAnActorToRightHand(AActor* ActorToAttach);
 	void AttachAnActorToLeftHand(AActor* ActorToAttach);
 	void AttachAnActorToBackpack(AActor* ActorToAttach);
-	void AttachFlagToLeftHand(AWeapon* Flag);
+	void AttachFlagToLeftHand(AWeapon* FlagToAttach);
 	
 	void DropEquippedWeapon();
 	void ShowAttachedGrenade(bool bShowGrenade);
@@ -155,8 +158,10 @@ private:
 
 	UPROPERTY(ReplicatedUsing = OnRep_SecondaryWeapon)
 	AWeapon* SecondaryWeapon;
-	
-	
+
+	UPROPERTY(ReplicatedUsing = OnRep_Flag)
+	AWeapon* Flag;
+		
 	UPROPERTY()
 	ABlasterCharacter* PlayerCharacter;
 	UPROPERTY()
@@ -261,7 +266,7 @@ private:
 	UPROPERTY(ReplicatedUsing = OnRep_bCarryingFlag)
 	bool bIsCarryingAFlag = false;
 
-
+	
 	UFUNCTION()
 	void OnRep_bCarryingFlag();
 protected:

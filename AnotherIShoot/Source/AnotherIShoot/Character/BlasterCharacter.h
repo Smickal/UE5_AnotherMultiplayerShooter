@@ -355,6 +355,8 @@ protected:
 	//Poll for any relevant classes and initilize HUD
 	void PollInit();
 
+	void SetSpawnPoint();
+	void OnPlayerStateInitialize();
 	
 	//Setters
 public:
@@ -377,6 +379,7 @@ public:
 	FORCEINLINE UBuffComponent* GetBuffComponent() const {return BuffComp;}
 	FORCEINLINE ULagCompensationComponent* GetLapComp() const {return LagCompensation;}
 	FORCEINLINE bool IsHoldingAFlag() const;
+	void SetHoldingTheFlag(bool bHolding);
 	bool IsLocallyReloading();
 	ETeam GetTeam();
 	
@@ -384,5 +387,6 @@ public:
 	ECombatState GetCombatState() const ;
 	FVector GetHitTarget() const;
 	AWeapon* GetEquippedWeapon();
-	AWeapon* GetSecondaryWeapon();
+	AWeapon* GetSecondaryWeapon();	
+	AWeapon* GetFlag();
 };

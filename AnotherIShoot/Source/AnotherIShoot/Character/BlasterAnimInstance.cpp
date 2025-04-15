@@ -55,7 +55,7 @@ void UBlasterAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	bHoldingTheFlag = PlayerCharacter->IsHoldingAFlag();
 	
 	bUseFABRIK = PlayerCharacter->GetCombatState() == ECombatState::ECS_Unoccupied;
-	if(PlayerCharacter->IsLocallyControlled() && PlayerCharacter->GetCombatState() != ECombatState::ECS_ThrowingGrenade  && PlayerCharacter->bFinishedSwapping)
+	if(PlayerCharacter->IsLocallyControlled() && PlayerCharacter->GetCombatState() != ECombatState::ECS_ThrowingGrenade  && PlayerCharacter->bFinishedSwapping && !bHoldingTheFlag)
 	{
 		bUseFABRIK = !PlayerCharacter->IsLocallyReloading();
 	}

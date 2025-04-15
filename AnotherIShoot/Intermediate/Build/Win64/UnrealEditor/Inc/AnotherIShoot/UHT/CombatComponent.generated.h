@@ -40,6 +40,7 @@ struct FVector_NetQuantize;
 	DECLARE_FUNCTION(execServer_ShotgunFire); \
 	DECLARE_FUNCTION(execServer_Fire); \
 	DECLARE_FUNCTION(execOnRep_Aiming); \
+	DECLARE_FUNCTION(execOnRep_Flag); \
 	DECLARE_FUNCTION(execOnRep_SecondaryWeapon); \
 	DECLARE_FUNCTION(execOnRep_EquippedWeapon); \
 	DECLARE_FUNCTION(execServer_SetAiming); \
@@ -62,6 +63,7 @@ public: \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
 		EquippedWeapon=NETFIELD_REP_START, \
 		SecondaryWeapon, \
+		Flag, \
 		bIsAiming, \
 		CarriedAmmo, \
 		CurrentGrenade, \
