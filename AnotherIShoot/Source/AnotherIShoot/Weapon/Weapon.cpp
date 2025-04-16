@@ -93,6 +93,8 @@ void AWeapon::OnPingTooHigh(bool bPingTooHigh)
 }
 
 
+
+
 void AWeapon::OnWeaponStateSet()
 {
 	switch (WeaponState)
@@ -283,6 +285,24 @@ void AWeapon::Dropped()
 	SetOwner(nullptr);
 	BlasterOwnerCharacter = nullptr;
 	BlasterOwnerController = nullptr;
+
+	if(HasAuthority() && WeaponType != EWeaponType::EWT_Flag)
+	{
+		//set Timer if weapon is not equipped in the next 5 sec.
+		GetWorldTimerManager().SetTimer(
+			WeaponDissolveTHandler,
+			this,
+			&AWeapon::OnTimerWeaponDissolveEnd,
+			TimeToDissolveWeaponAfterDropped);
+	}
+}
+
+void AWeapon::OnTimerWeaponDissolveEnd()
+{
+	if(WeaponState == EWeaponState::EWS_Dropped)
+	{
+		Destroy();
+	}
 }
 
 void AWeapon::OnRep_Owner()

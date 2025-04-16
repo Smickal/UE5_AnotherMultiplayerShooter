@@ -20,6 +20,12 @@ class ANOTHERISHOOT_API ACaptureTheFlagGameMode : public ATeamsGameMode
 
 public:
 	virtual void PlayerEliminated(ABlasterCharacter* VictimCharacter, ABlasterPlayerController* VictimController, ABlasterPlayerController* AttackerController) override;
-
+	virtual void PostLogin(APlayerController* NewPlayer) override;
+	virtual void HandleMatchHasStarted() override;
+	
 	void FlagCaptured(AFlag* Flag, AFlagZone* FlagZone);
+
+
+protected:
+	
 };

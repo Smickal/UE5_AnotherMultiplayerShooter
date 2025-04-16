@@ -11,6 +11,7 @@
 #include "AnotherIShoot/BlasterComponent/LagCompensationComponent.h"
 #include "AnotherIShoot/Gamemode/BlasterGameMode.h"
 #include "AnotherIShoot/GameState/BlasterGameState.h"
+#include "AnotherIShoot/HUD/OverheadWidget.h"
 #include "AnotherIShoot/PlayerController/BlasterPlayerController.h"
 #include "AnotherIShoot/PlayerStart/TeamPlayerStart.h"
 #include "AnotherIShoot/PlayerState/BlasterPlayerState.h"
@@ -245,7 +246,7 @@ void ABlasterCharacter::BeginPlay()
 	
 	SpawnDefaultWeapon();
 
-	
+	PollInit();
 }
 
 
@@ -336,6 +337,15 @@ void ABlasterCharacter::UpdateHUDAmmo()
 	}
 }
 
+void ABlasterCharacter::UpdateHUDTeam(ETeam TeamToSet)
+{
+	BlasterPlayerController = BlasterPlayerController == nullptr ?  Cast<ABlasterPlayerController>(Controller) : BlasterPlayerController;
+	if(BlasterPlayerController)
+	{
+		BlasterPlayerController->SetHUDTeam(TeamToSet);
+	}
+}
+
 void ABlasterCharacter::SpawnDefaultWeapon()
 {
 	BlasterGameMode = BlasterGameMode == nullptr ? Cast<ABlasterGameMode>(UGameplayStatics::GetGameMode(this)) : BlasterGameMode;
@@ -416,6 +426,8 @@ void ABlasterCharacter::OnRep_CurrentShield(float LastShield)
 		PlayHitReactMontage();
 	}
 }
+
+
 
 void ABlasterCharacter::Elim(bool bPlayerLeftGame)
 {
@@ -715,32 +727,39 @@ void ABlasterCharacter::Jump()
 	}
 }
 
+
+
 void ABlasterCharacter::PollInit()
 {
+	
 	if(PlayerState == nullptr)
 	{
 		PlayerState = GetPlayerState<ABlasterPlayerState>();
-
 		if(PlayerState)
 		{
-			
+			OnPlayerStateInitialized();
 			
 			ABlasterGameState* BlasterGameState = Cast<ABlasterGameState>( UGameplayStatics::GetGameState(this));
 			if(BlasterGameState && BlasterGameState->TopScoringPlayer.Contains(PlayerState))
 			{
 				Multicast_GainedTheLead();
 			}
-
-			OnPlayerStateInitialize();
-
-			
 		}
 
-		
 	}
 	
 }
-void ABlasterCharacter::OnPlayerStateInitialize()
+
+void ABlasterCharacter::ActivateOverheadWidget()
+{
+	UOverheadWidget* Overhead = Cast<UOverheadWidget>( OverheadWidget->GetUserWidgetObject());
+	if(Overhead)
+	{
+		Overhead->ShowPlayerName(this);
+	}
+}
+
+void ABlasterCharacter::OnPlayerStateInitialized()
 {
 	PlayerState->AddToDefeats("" ,0);
 	PlayerState->AddToScore(0);
@@ -750,8 +769,15 @@ void ABlasterCharacter::OnPlayerStateInitialize()
 	UpdateHUDHealth();
 	UpdateHUDShield();
 	UpdateHUDAmmo();
+	UpdateHUDTeam(PlayerState->GetTeam());
 	
 	SetSpawnPoint();
+	
+	BlasterPlayerController = BlasterPlayerController == nullptr ? Cast<ABlasterPlayerController>(Controller) : BlasterPlayerController;
+	if(BlasterPlayerController)
+	{
+		BlasterPlayerController->ShowPlayerOverHead();
+	}
 }
 
 void ABlasterCharacter::SetSpawnPoint()
@@ -764,7 +790,7 @@ void ABlasterCharacter::SetSpawnPoint()
 		TArray<AActor*> PlayerStarts;
 		UGameplayStatics::GetAllActorsOfClass(this, ATeamPlayerStart::StaticClass(), PlayerStarts);
 
-		//Reduce them to exact TEam as player!
+		//Reduce them to exact Team as player!
 		TArray<ATeamPlayerStart*> TeamPlayerStarts;
 		for(auto Start : PlayerStarts)
 		{
@@ -781,7 +807,17 @@ void ABlasterCharacter::SetSpawnPoint()
 			ATeamPlayerStart* ChosenPlayerStart = TeamPlayerStarts[FMath::RandRange(0, TeamPlayerStarts.Num() - 1)];
 			if(ChosenPlayerStart)
 			{
-				SetActorLocationAndRotation(ChosenPlayerStart->GetActorLocation(), ChosenPlayerStart->GetActorRotation());
+				FHitResult* OutSweepHitResult = nullptr;
+				SetActorLocationAndRotation(
+					ChosenPlayerStart->GetActorLocation(),
+					ChosenPlayerStart->GetActorRotation(),
+					true,
+					OutSweepHitResult
+					);
+				// if(OutSweepHitResult &&  OutSweepHitResult->bBlockingHit)
+				// {
+				// 	UE_LOG(LogTemp, Warning, TEXT("Spawn Loc Hit With Something!"));
+				// }
 			}
 		}
 		
@@ -1158,6 +1194,7 @@ void ABlasterCharacter::SetTeamColor(ETeam Team)
 {
 	if(GetMesh() == nullptr || OriginalMaterial ==  nullptr) return;
 	
+	
 	switch (Team)
 	{
 		case ETeam::ET_RedTeam:
@@ -1172,11 +1209,11 @@ void ABlasterCharacter::SetTeamColor(ETeam Team)
 			GetMesh()->SetMaterial(0, OriginalMaterial);
 			DissolvedMaterialInstance = OriginalMaterial;
 			break;
-
-	
 		case ETeam::ET_MAX:
 			break;
 	}
+
+
 }
 
 void ABlasterCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
@@ -1240,10 +1277,9 @@ bool ABlasterCharacter::IsHoldingAFlag() const
 
 ETeam ABlasterCharacter::GetTeam()
 {
-	PlayerState = PlayerState == nullptr ? GetPlayerState<ABlasterPlayerState>() : PlayerState;
-	if(PlayerState)
+	if(GetPlayerState<ABlasterPlayerState>() )
 	{
-		return PlayerState->GetTeam();
+		return GetPlayerState<ABlasterPlayerState>()->GetTeam();
 	}
 
 	return ETeam::ET_NoTeam;
@@ -1255,3 +1291,4 @@ void ABlasterCharacter::SetHoldingTheFlag(bool bHolding)
 	CombatComp->bIsCarryingAFlag = bHolding;
 
 }
+

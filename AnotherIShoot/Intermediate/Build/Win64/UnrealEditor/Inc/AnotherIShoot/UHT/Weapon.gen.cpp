@@ -477,6 +477,35 @@ DEFINE_FUNCTION(AWeapon::execOnSphereOverlap)
 }
 // End Class AWeapon Function OnSphereOverlap
 
+// Begin Class AWeapon Function OnTimerWeaponDissolveEnd
+struct Z_Construct_UFunction_AWeapon_OnTimerWeaponDissolveEnd_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Weapon/Weapon.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AWeapon_OnTimerWeaponDissolveEnd_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AWeapon, nullptr, "OnTimerWeaponDissolveEnd", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AWeapon_OnTimerWeaponDissolveEnd_Statics::Function_MetaDataParams), Z_Construct_UFunction_AWeapon_OnTimerWeaponDissolveEnd_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AWeapon_OnTimerWeaponDissolveEnd()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AWeapon_OnTimerWeaponDissolveEnd_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AWeapon::execOnTimerWeaponDissolveEnd)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnTimerWeaponDissolveEnd();
+	P_NATIVE_END;
+}
+// End Class AWeapon Function OnTimerWeaponDissolveEnd
+
 // Begin Class AWeapon
 void AWeapon::StaticRegisterNativesAWeapon()
 {
@@ -488,6 +517,7 @@ void AWeapon::StaticRegisterNativesAWeapon()
 		{ "OnRep_WeaponStateChange", &AWeapon::execOnRep_WeaponStateChange },
 		{ "OnSphereEndOverlap", &AWeapon::execOnSphereEndOverlap },
 		{ "OnSphereOverlap", &AWeapon::execOnSphereOverlap },
+		{ "OnTimerWeaponDissolveEnd", &AWeapon::execOnTimerWeaponDissolveEnd },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -531,6 +561,10 @@ struct Z_Construct_UClass_AWeapon_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Team_MetaData[] = {
 		{ "Category", "Weapon Properties" },
+		{ "ModuleRelativePath", "Weapon/Weapon.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TimeToDissolveWeaponAfterDropped_MetaData[] = {
+		{ "Category", "WeaponProperties" },
 		{ "ModuleRelativePath", "Weapon/Weapon.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeaponType_MetaData[] = {
@@ -662,6 +696,7 @@ struct Z_Construct_UClass_AWeapon_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BlasterOwnerController;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_Team_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_Team;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_TimeToDissolveWeaponAfterDropped;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_WeaponType_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_WeaponType;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_WeaponName;
@@ -699,6 +734,7 @@ struct Z_Construct_UClass_AWeapon_Statics
 		{ &Z_Construct_UFunction_AWeapon_OnRep_WeaponStateChange, "OnRep_WeaponStateChange" }, // 32960097
 		{ &Z_Construct_UFunction_AWeapon_OnSphereEndOverlap, "OnSphereEndOverlap" }, // 2032713708
 		{ &Z_Construct_UFunction_AWeapon_OnSphereOverlap, "OnSphereOverlap" }, // 2636706067
+		{ &Z_Construct_UFunction_AWeapon_OnTimerWeaponDissolveEnd, "OnTimerWeaponDissolveEnd" }, // 445932809
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -719,6 +755,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_Static
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_BlasterOwnerController = { "BlasterOwnerController", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon, BlasterOwnerController), Z_Construct_UClass_ABlasterPlayerController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BlasterOwnerController_MetaData), NewProp_BlasterOwnerController_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_Team_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_Team = { "Team", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon, Team), Z_Construct_UEnum_AnotherIShoot_ETeam, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Team_MetaData), NewProp_Team_MetaData) }; // 1690429139
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_TimeToDissolveWeaponAfterDropped = { "TimeToDissolveWeaponAfterDropped", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon, TimeToDissolveWeaponAfterDropped), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TimeToDissolveWeaponAfterDropped_MetaData), NewProp_TimeToDissolveWeaponAfterDropped_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_WeaponType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_WeaponType = { "WeaponType", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon, WeaponType), Z_Construct_UEnum_AnotherIShoot_EWeaponType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponType_MetaData), NewProp_WeaponType_MetaData) }; // 1012533644
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_WeaponName = { "WeaponName", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon, WeaponName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponName_MetaData), NewProp_WeaponName_MetaData) };
@@ -763,6 +800,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWeapon_S
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_BlasterOwnerController,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_Team_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_Team,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_TimeToDissolveWeaponAfterDropped,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_WeaponType_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_WeaponType,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_Statics::NewProp_WeaponName,
@@ -844,10 +882,10 @@ struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_Anothe
 		{ EFireType_StaticEnum, TEXT("EFireType"), &Z_Registration_Info_UEnum_EFireType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1671601674U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWeapon, AWeapon::StaticClass, TEXT("AWeapon"), &Z_Registration_Info_UClass_AWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeapon), 1484397562U) },
+		{ Z_Construct_UClass_AWeapon, AWeapon::StaticClass, TEXT("AWeapon"), &Z_Registration_Info_UClass_AWeapon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeapon), 1559021272U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_Weapon_h_2630661291(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_Weapon_h_4146639739(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_Weapon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_Weapon_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_Weapon_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_Weapon_h_Statics::EnumInfo));

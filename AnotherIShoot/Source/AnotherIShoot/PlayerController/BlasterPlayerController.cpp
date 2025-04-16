@@ -75,12 +75,15 @@ void ABlasterPlayerController::PollInit()
 				if(bInitializeCarriedAmmo) SetHUDCarriedAmmo(HUDCarriedAmmo);
 				if(bInitializeHUDWepAmmo) SetHUDWeaponAmmo(HUDWeapAmmo);
 				if(bInitializeHUDTextureAmmo) SetHUDWeaponType(HUDWeaponName, HUDWeaponTypeTexture);
+				if(bInitializeHUDTeamText) SetHUDTeam(HUDTeam);
 
 				ABlasterCharacter* BlasterCharacter = Cast<ABlasterCharacter>(GetPawn());
 				if(BlasterCharacter && BlasterCharacter->GetCombatComponent())
 				{
 					SetHUDGrenade(BlasterCharacter->GetCombatComponent()->GetGrenades());
 				}
+
+				ShowPlayerOverHead();
 			}
 		}
 	}
@@ -162,7 +165,6 @@ void ABlasterPlayerController::OnMatchStateSet(FName State, bool bTeamsMatch)
 {
 	MatchState = State;
 	
-	
 	if(MatchState == MatchState::InProgress)
 	{
 		HandleMatchHasStarted(bTeamsMatch);
@@ -218,6 +220,7 @@ void ABlasterPlayerController::HandleMatchHasStarted(bool bTeamsMatch)
 		{
 			HideTeamScore();
 		}
+
 		
 	}
 }
@@ -614,6 +617,50 @@ void ABlasterPlayerController::SetHUDGrenade(int32 Grenade)
 	}
 }
 
+void ABlasterPlayerController::SetHUDTeam(ETeam TeamToSet)
+{
+	BlasterHUD = BlasterHUD == nullptr ? Cast<ABlasterHUD>(GetHUD()) : BlasterHUD;
+	bool bHudValid = BlasterHUD &&
+		BlasterHUD->CharacterOverlay &&
+			BlasterHUD->CharacterOverlay->TeamText;
+	if(bHudValid)
+	{
+		// if(!HasAuthority() && GetPawn()->IsLocallyControlled())
+		// {
+		// 	UE_LOG(LogTemp, Warning, TEXT("%s --> Team: %s"),
+		// 		*GetPlayerState<ABlasterPlayerState>()->GetPlayerName()
+		// 		,*UEnum::GetValueAsString(TeamToSet));
+		// }
+		
+		FSlateColor TextColor = FColor::White;
+		switch (TeamToSet) {
+		case ETeam::ET_RedTeam:
+				BlasterHUD->CharacterOverlay->TeamText->SetText(FText::FromString("Red Team"));
+				TextColor = FColor::Red;
+				BlasterHUD->CharacterOverlay->TeamText->SetColorAndOpacity(TextColor);
+				break;
+			case ETeam::ET_BlueTeam:
+				BlasterHUD->CharacterOverlay->TeamText->SetText(FText::FromString("Blue Team"));
+				TextColor = FColor::Blue;
+				BlasterHUD->CharacterOverlay->TeamText->SetColorAndOpacity(TextColor);
+				break;
+				
+			case ETeam::ET_NoTeam:
+				BlasterHUD->CharacterOverlay->TeamText->SetText(FText::FromString(""));
+				break;
+			case ETeam::ET_MAX:
+				break;
+		}
+	}
+	else
+	{
+		HUDTeam = TeamToSet;
+		bInitializeHUDTeamText = true;
+	}
+}
+
+
+
 void ABlasterPlayerController::SetHUDMatchCountdown(float CountdownTime)
 {
 	BlasterHUD = BlasterHUD == nullptr ? Cast<ABlasterHUD>(GetHUD()) : BlasterHUD;
@@ -828,6 +875,8 @@ void ABlasterPlayerController::ShowReturnToMainMenu()
 	
 }
 
+
+
 void ABlasterPlayerController::OnRep_ShowTeamScore()
 {
 	if(bShowTeamScore)
@@ -841,14 +890,39 @@ void ABlasterPlayerController::OnRep_ShowTeamScore()
 }
 
 
+void ABlasterPlayerController::ShowPlayerOverHead()
+{
+	ABlasterCharacter* BlasterCharacter = Cast<ABlasterCharacter>(GetPawn());
+
+	if(BlasterCharacter == nullptr || BlasterCharacter->GetTeam() == ETeam::ET_NoTeam) return;
+	
+	for(auto Src : UGameplayStatics::GetGameState(this)->PlayerArray)
+	{
+		ABlasterPlayerState* BlasterPlayerState = Cast<ABlasterPlayerState>(Src);
+		if(BlasterPlayerState && BlasterPlayerState->GetTeam() == BlasterCharacter->GetTeam())
+		{
+			ABlasterCharacter* curChar = Cast<ABlasterCharacter>(BlasterPlayerState->GetPawn());
+			if(curChar)
+			{
+				curChar->ActivateOverheadWidget();
+			}
+			//UE_LOG(LogTemp, Warning, TEXT("Player: %s ->  Activate Overhead-> %s"),*BlasterCharacter->GetPlayerState()->GetPlayerName(), *BlasterPlayerState->GetPlayerName());
+		}
+	
+		//UE_LOG(LogTemp, Warning, TEXT("%s"), * Src->GetPlayerName());
+	}
+	
+}
+
 
 void ABlasterPlayerController::BroadcastElim(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim)
 {
 	Client_ElimAnnouncement(Attacker, Victim);
 }
 
+
 void ABlasterPlayerController::Client_ElimAnnouncement_Implementation(ABlasterPlayerState* Attacker,
-	ABlasterPlayerState* Victim)
+                                                                      ABlasterPlayerState* Victim)
 {
 	APlayerState* Self = GetPlayerState<APlayerState>();
 	

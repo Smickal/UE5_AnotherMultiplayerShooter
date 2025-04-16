@@ -64,6 +64,7 @@ public:
 	void UpdateHUDHealth();
 	void UpdateHUDShield();
 	void UpdateHUDAmmo();
+	void UpdateHUDTeam(ETeam TeamToSet);
 	
 	void SpawnDefaultWeapon();
 
@@ -127,6 +128,7 @@ public:
 	TMap<FName, UBoxComponent*> HitCollisionBoxes;
 
 	bool bFinishedSwapping = false; 
+
 	
 protected:
 	// Called when the game starts or when spawned
@@ -288,6 +290,7 @@ protected:
 	//
 	UFUNCTION()
 	void ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatorController, AActor* DamageCauser);
+	
 private:
 	//RPC For clients that want to equip a weapon
 	UFUNCTION(Server, Reliable)
@@ -326,13 +329,18 @@ private:
 
 	UPROPERTY()
 	class ABlasterGameMode* BlasterGameMode;
-	
+
 public:
 	ABlasterPlayerState* PlayerState;
 
 	UPROPERTY(Replicated)
 	bool bDisableGameplay = false;
 	
+	//Poll for any relevant classes and initilize HUD
+	void PollInit();
+
+	void ActivateOverheadWidget();
+
 protected:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
@@ -352,11 +360,10 @@ protected:
 	void GrenadeButtonPressed();
 	virtual void Jump() override;
 
-	//Poll for any relevant classes and initilize HUD
-	void PollInit();
+	
 
 	void SetSpawnPoint();
-	void OnPlayerStateInitialize();
+	void OnPlayerStateInitialized();
 	
 	//Setters
 public:
@@ -378,6 +385,7 @@ public:
 	FORCEINLINE UStaticMeshComponent* GetAttachedGrenade() const {return AttachedGrenade;}
 	FORCEINLINE UBuffComponent* GetBuffComponent() const {return BuffComp;}
 	FORCEINLINE ULagCompensationComponent* GetLapComp() const {return LagCompensation;}
+	FORCEINLINE UWidgetComponent* GetOverheadWidget() const {return OverheadWidget;}
 	FORCEINLINE bool IsHoldingAFlag() const;
 	void SetHoldingTheFlag(bool bHolding);
 	bool IsLocallyReloading();

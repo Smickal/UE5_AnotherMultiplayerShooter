@@ -129,6 +129,14 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
 	ETeam Team;
+
+	UPROPERTY(EditAnywhere, Category = "WeaponProperties")
+	float TimeToDissolveWeaponAfterDropped = 5.f;
+
+	FTimerHandle WeaponDissolveTHandler;
+
+	UFUNCTION()
+	void OnTimerWeaponDissolveEnd();
 public:
 	//Variables
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")

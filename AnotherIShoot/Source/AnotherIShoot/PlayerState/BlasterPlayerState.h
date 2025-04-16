@@ -29,6 +29,7 @@ public:
 
 	UFUNCTION()
 	void OnRep_Team();
+
 private:
 	UPROPERTY()
 	class ABlasterCharacter* Character;

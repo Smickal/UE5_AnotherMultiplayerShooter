@@ -20,6 +20,7 @@ struct FHitResult;
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_Weapon_h_41_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void Client_AddAmmo_Implementation(int32 AmmoToAdd); \
 	virtual void Client_UpdateAmmo_Implementation(int32 ServerAmmo); \
+	DECLARE_FUNCTION(execOnTimerWeaponDissolveEnd); \
 	DECLARE_FUNCTION(execOnPingTooHigh); \
 	DECLARE_FUNCTION(execClient_AddAmmo); \
 	DECLARE_FUNCTION(execClient_UpdateAmmo); \

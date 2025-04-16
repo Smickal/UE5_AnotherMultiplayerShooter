@@ -5,6 +5,7 @@
 
 #include "AnotherIShoot/Character/BlasterCharacter.h"
 #include "AnotherIShoot/PlayerController/BlasterPlayerController.h"
+#include "GameFramework/GameStateBase.h"
 #include "Net/UnrealNetwork.h"
 
 void ABlasterPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -87,13 +88,15 @@ void ABlasterPlayerState::OnRep_Defeats()
 void ABlasterPlayerState::SetTeam(ETeam TeamToSet)
 {
 	Team = TeamToSet;
-	//UE_LOG(LogTemp, Warning, TEXT("%s -> team set %d"), *GetPlayerName(), );
+	//UE_LOG(LogTemp, Warning, TEXT("%s -> team set %s"), *GetPlayerName(), *UEnum::GetValueAsString(TeamToSet));
 	
 	ABlasterCharacter* BCharacter = Cast<ABlasterCharacter>(GetPawn());
 	if(BCharacter)
 	{
 		BCharacter->SetTeamColor(Team);
 	}
+
+	
 
 	
 }
@@ -104,7 +107,6 @@ void ABlasterPlayerState::OnRep_Team()
 	{
 		BCharacter->SetTeamColor(Team);
 	}
-
 	
 }
 

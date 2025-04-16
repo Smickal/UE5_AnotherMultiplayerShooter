@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AnotherIShoot/BlasterTypes/Team.h"
 #include "GameFramework/PlayerController.h"
 #include "BlasterPlayerController.generated.h"
 
@@ -20,9 +21,9 @@ class ANOTHERISHOOT_API ABlasterPlayerController : public APlayerController
 	GENERATED_BODY()
 
 public:
-	
-	
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	
+	
 	void SetHUDHealth(float CurrHealth, float MaxHealh);
 	void SetHUDShield(float CurrShield, float MaxShield);
 	
@@ -39,6 +40,9 @@ public:
 	void SetHUDCarriedAmmo(int32 Ammo);
 	void SetHUDWeaponType(FString WeaponName, UTexture2D* WeaponTexture);
 	void SetHUDGrenade(int32 Grenade);
+	void SetHUDTeam(ETeam TeamToSet);
+	void ActivatePlayerName();
+	
 	
 	void SetHUDMatchCountdown(float CountdownTime);
 	void SetHUDAnnoucementCountdown(float CountdownTime);
@@ -57,6 +61,8 @@ public:
 	FHighPingDelegate HighPingDelegate;
 
 	void BroadcastElim(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim);
+
+	void ShowPlayerOverHead();
 	
 protected:
 	virtual void BeginPlay() override;
@@ -90,6 +96,8 @@ protected:
 
 	UFUNCTION(Client, Reliable)
 	void Client_ElimAnnouncement(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim);
+
+	
 
 	UPROPERTY(ReplicatedUsing = OnRep_ShowTeamScore)
 	bool bShowTeamScore = false;
@@ -170,6 +178,7 @@ protected:
 	bool bInitializeCarriedAmmo = false;
 	bool bInitializeHUDWepAmmo = false;
 	bool bInitializeHUDTextureAmmo = false;
+	bool bInitializeHUDTeamText = false;
 	
 	float HUDHealth;
 	float HUDMaxHealth;
@@ -180,6 +189,7 @@ protected:
 	int32 HUDGrenades;
 	int32 HUDCarriedAmmo;
 	int32 HUDWeapAmmo;
+	ETeam HUDTeam{ETeam::ET_NoTeam};
 	
 	UPROPERTY()
 	UTexture2D* HUDWeaponTypeTexture;

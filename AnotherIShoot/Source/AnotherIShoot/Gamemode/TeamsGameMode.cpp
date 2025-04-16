@@ -3,7 +3,9 @@
 
 #include "TeamsGameMode.h"
 
+#include "AnotherIShoot/Character/BlasterCharacter.h"
 #include "AnotherIShoot/GameState/BlasterGameState.h"
+#include "AnotherIShoot/HUD/OverheadWidget.h"
 #include "AnotherIShoot/PlayerState/BlasterPlayerState.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -67,6 +69,7 @@ void ATeamsGameMode::HandleMatchHasStarted()
 	{
 		for(auto PState : BlasterGameState->PlayerArray)
 		{
+			// Set Team Color when match has started!
 			ABlasterPlayerState* BPState = Cast<ABlasterPlayerState>(PState.Get());
 			if(BPState && BPState->GetTeam() == ETeam::ET_NoTeam)
 			{
@@ -81,7 +84,10 @@ void ATeamsGameMode::HandleMatchHasStarted()
 					BPState->SetTeam(ETeam::ET_BlueTeam);
 				}
 			}
+			
 		}
+
+		
 	}
 }
 
