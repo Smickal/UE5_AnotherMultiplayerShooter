@@ -57,7 +57,7 @@ private:
 
 	UFUNCTION()
 	void BindOverlapTimeFinished();
-	
+
 public:	
 
 

@@ -23,6 +23,7 @@
 			"CombatState.gen.cpp.obj",
 			"ElimmedAnnoucement.gen.cpp.obj",
 			"Flag.gen.cpp.obj",
+			"FlagZone.gen.cpp.obj",
 			"HealthPickup.gen.cpp.obj",
 			"HitScanWeapon.gen.cpp.obj",
 			"InteractWithCrosshairInterface.gen.cpp.obj",
@@ -57,6 +58,7 @@
 			"LagCompensationComponent.cpp.obj"
 		],
 		"Module.AnotherIShoot.3.cpp.obj": [
+			"FlagZone.cpp.obj",
 			"BlasterAnimInstance.cpp.obj",
 			"BlasterCharacter.cpp.obj",
 			"BlasterGameMode.cpp.obj",

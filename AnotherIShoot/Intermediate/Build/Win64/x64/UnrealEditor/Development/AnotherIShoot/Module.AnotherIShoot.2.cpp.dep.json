@@ -166,6 +166,9 @@
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\projectileweapon.gen.cpp",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\weapon\\projectileweapon.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\projectileweapon.generated.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\respawnablepickup.gen.cpp",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\pickups\\respawnablepickup.h",
+            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\respawnablepickup.generated.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\intermediate\\build\\win64\\unrealeditor\\inc\\anotherishoot\\uht\\returntomainmenu.gen.cpp",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\hud\\returntomainmenu.h",
             "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\plugins\\multiplayersessions\\source\\multiplayersessions\\public\\multiplayersessionssubsystem.h",
@@ -299,8 +302,7 @@
             "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\audioextensions\\public\\iaudioparametertransmitter.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\sound\\soundnode.h",
             "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\soundnode.generated.h",
-            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\soundcue.generated.h",
-            "c:\\unreal projects\\third person shooter\\ue5_anothermultiplayershooter\\anotherishoot\\source\\anotherishoot\\blastercomponent\\lagcompensationcomponent.cpp"
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\soundcue.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

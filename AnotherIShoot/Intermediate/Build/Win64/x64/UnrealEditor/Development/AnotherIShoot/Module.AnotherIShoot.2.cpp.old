@@ -2,6 +2,7 @@
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/CombatState.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/ElimmedAnnoucement.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/Flag.gen.cpp"
+#include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/FlagZone.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/HealthPickup.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/HitScanWeapon.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/InteractWithCrosshairInterface.gen.cpp"

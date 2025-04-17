@@ -283,6 +283,12 @@
     <ClCompile Include="..\..\Source\AnotherIShoot\PickUps\PickupSpawnPoint.h">
       <Filter>Source\AnotherIShoot\PickUps</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\PickUps\RespawnablePickup.cpp">
+      <Filter>Source\AnotherIShoot\PickUps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\PickUps\RespawnablePickup.h">
+      <Filter>Source\AnotherIShoot\PickUps</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\PickUps\ShieldPickup.cpp">
       <Filter>Source\AnotherIShoot\PickUps</Filter>
     </ClCompile>
