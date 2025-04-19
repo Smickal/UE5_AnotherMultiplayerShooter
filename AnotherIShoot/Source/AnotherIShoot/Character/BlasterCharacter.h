@@ -37,6 +37,7 @@ public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 	
 	void SetOverlappingWeapon(class AWeapon* Weapon);
+	void SetOverlappingPickupItem(class ARespawnablePickup* RespawnablePickup, bool bIsWeapon);
 
 	bool IsWeaponEquipped();
 	bool IsAiming();
@@ -141,6 +142,9 @@ private:
 	UFUNCTION()
 	void OnRep_OverlappingWeapon(AWeapon* LastWeapon);
 
+	UFUNCTION()
+	void OnRep_OverlappingRespawnablePickUp(ARespawnablePickup* Pickup);
+
 	void HideCharacterIfCameraClose();
 	//Variables
 	//
@@ -157,6 +161,9 @@ private:
 
 	UPROPERTY(ReplicatedUsing = OnRep_OverlappingWeapon)
 	AWeapon* OverlappingWeapon;
+
+	UPROPERTY(ReplicatedUsing = OnRep_OverlappingRespawnablePickUp)
+	ARespawnablePickup* OverlappingPickup;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UCombatComponent* CombatComp;

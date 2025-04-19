@@ -12,6 +12,7 @@
 #include "AnotherIShoot/Gamemode/BlasterGameMode.h"
 #include "AnotherIShoot/GameState/BlasterGameState.h"
 #include "AnotherIShoot/HUD/OverheadWidget.h"
+#include "AnotherIShoot/PickUps/RespawnablePickup.h"
 #include "AnotherIShoot/PlayerController/BlasterPlayerController.h"
 #include "AnotherIShoot/PlayerStart/TeamPlayerStart.h"
 #include "AnotherIShoot/PlayerState/BlasterPlayerState.h"
@@ -167,6 +168,7 @@ void ABlasterCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME_CONDITION(ABlasterCharacter, OverlappingWeapon, COND_OwnerOnly);
+	DOREPLIFETIME_CONDITION(ABlasterCharacter, OverlappingPickup, COND_OwnerOnly);
 	DOREPLIFETIME(ABlasterCharacter, CurrentHealth);
 	DOREPLIFETIME(ABlasterCharacter, CurrentShield);
 	DOREPLIFETIME(ABlasterCharacter, bDisableGameplay);
@@ -966,6 +968,23 @@ void ABlasterCharacter::SetOverlappingWeapon(AWeapon* Weapon)
 	}
 }
 
+void ABlasterCharacter::SetOverlappingPickupItem(ARespawnablePickup* RespawnablePickup, bool bIsWeapon)
+{
+	if(bIsWeapon)
+	{
+		if(OverlappingPickup)
+		{
+			OverlappingPickup->SetRadialVisibility(false);
+		}
+
+		OverlappingPickup = RespawnablePickup;
+		if(IsLocallyControlled() && OverlappingPickup)
+		{
+			OverlappingPickup->SetRadialVisibility(true);
+		}
+	}
+}
+
 
 void ABlasterCharacter::OnRep_OverlappingWeapon(AWeapon* LastWeapon)
 {
@@ -979,6 +998,20 @@ void ABlasterCharacter::OnRep_OverlappingWeapon(AWeapon* LastWeapon)
 		LastWeapon->ShowPickUpWidget(false);
 	}
 }
+
+void ABlasterCharacter::OnRep_OverlappingRespawnablePickUp(ARespawnablePickup* Pickup)
+{
+	if(OverlappingPickup)
+	{
+		OverlappingPickup->SetRadialVisibility(true);
+	}
+
+	if(Pickup != nullptr)
+	{
+		Pickup->SetRadialVisibility(false);
+	}
+}
+
 
 void ABlasterCharacter::HideCharacterIfCameraClose()
 {

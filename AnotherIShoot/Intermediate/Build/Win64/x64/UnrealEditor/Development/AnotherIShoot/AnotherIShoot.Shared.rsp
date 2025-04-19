@@ -321,6 +321,8 @@
 /I "..\Plugins\Online\OnlineSubsystemUtils\Source"
 /I "..\Plugins\Online\OnlineSubsystemUtils\Source\OnlineSubsystemUtils\Classes"
 /I "..\Plugins\Online\OnlineSubsystemUtils\Source\OnlineSubsystemUtils\Public"
+/I "..\Intermediate\Build\Win64\UnrealEditor\Inc\AdvancedWidgets\UHT"
+/I "Runtime\AdvancedWidgets\Public"
 /external:W0
 /external:I "ThirdParty\GuidelinesSupportLibrary\GSL-1144\include"
 /external:I "ThirdParty\RapidJSON\1.1.0"

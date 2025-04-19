@@ -10,8 +10,11 @@
 #include "GameFramework/Actor.h"
 #include "Weapon.generated.h"
 
+class ARespawnablePickup;
 enum class EWeaponType : uint8;
 class ABulletCasing;
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPickUpDelegate);
 
 UENUM(BlueprintType)
 enum class EWeaponState : uint8
@@ -175,6 +178,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
 	UTexture2D* WeaponTypeTexture;
 	//Public setter/Getter
+
+	FOnPickUpDelegate PickUpDelegate;
 public:
 	FORCEINLINE USphereComponent* GetSphereComponent ()const {return AreaSphere;}
 	FORCEINLINE USkeletalMeshComponent* GetWeaponMesh() const {return WeaponMesh;}

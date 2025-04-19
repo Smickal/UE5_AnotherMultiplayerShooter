@@ -11,6 +11,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 class AController;
+class ARespawnablePickup;
 class AWeapon;
 class UDamageType;
 #ifdef ANOTHERISHOOT_BlasterCharacter_generated_h
@@ -33,6 +34,7 @@ ANOTHERISHOOT_API void FOnLeftGame_DelegateWrapper(const FMulticastScriptDelegat
 	DECLARE_FUNCTION(execServer_EquipButtonPressed); \
 	DECLARE_FUNCTION(execReceiveDamage); \
 	DECLARE_FUNCTION(execUpdateDissolveMaterial); \
+	DECLARE_FUNCTION(execOnRep_OverlappingRespawnablePickUp); \
 	DECLARE_FUNCTION(execOnRep_OverlappingWeapon); \
 	DECLARE_FUNCTION(execMulticast_LostTheLead); \
 	DECLARE_FUNCTION(execMulticast_GainedTheLead); \
@@ -53,6 +55,7 @@ public: \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
 		OverlappingWeapon=NETFIELD_REP_START, \
+		OverlappingPickup, \
 		CurrentHealth, \
 		CurrentShield, \
 		bDisableGameplay, \

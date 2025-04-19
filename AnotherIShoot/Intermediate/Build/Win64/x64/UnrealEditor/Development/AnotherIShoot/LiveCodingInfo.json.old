@@ -38,6 +38,7 @@
 			"ProjectileGrenade.gen.cpp.obj",
 			"ProjectileRocket.gen.cpp.obj",
 			"ProjectileWeapon.gen.cpp.obj",
+			"RespawnablePickup.gen.cpp.obj",
 			"ReturnToMainMenu.gen.cpp.obj",
 			"RocketMovementComponent.gen.cpp.obj",
 			"SandboxGameMode.gen.cpp.obj",
@@ -54,10 +55,10 @@
 			"AnotherIShoot.cpp.obj",
 			"AnotherIShootCharacter.cpp.obj",
 			"BuffComponent.cpp.obj",
-			"CombatComponent.cpp.obj",
-			"LagCompensationComponent.cpp.obj"
+			"CombatComponent.cpp.obj"
 		],
 		"Module.AnotherIShoot.3.cpp.obj": [
+			"LagCompensationComponent.cpp.obj",
 			"FlagZone.cpp.obj",
 			"BlasterAnimInstance.cpp.obj",
 			"BlasterCharacter.cpp.obj",
@@ -79,6 +80,7 @@
 			"JumpPickup.cpp.obj",
 			"Pickup.cpp.obj",
 			"PickupSpawnPoint.cpp.obj",
+			"RespawnablePickup.cpp.obj",
 			"ShieldPickup.cpp.obj",
 			"SpeedPickup.cpp.obj",
 			"BlasterPlayerController.cpp.obj",

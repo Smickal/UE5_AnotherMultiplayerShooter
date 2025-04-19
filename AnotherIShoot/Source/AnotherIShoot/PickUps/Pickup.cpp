@@ -95,5 +95,6 @@ void APickup::Destroyed()
 			GetActorRotation()
 			);
 	}
+
 }
 

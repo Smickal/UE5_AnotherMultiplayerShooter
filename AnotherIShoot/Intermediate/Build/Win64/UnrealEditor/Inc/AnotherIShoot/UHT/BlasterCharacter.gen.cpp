@@ -14,6 +14,7 @@ ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterCharacter();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterCharacter_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterGameMode_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_ABlasterPlayerController_NoRegister();
+ANOTHERISHOOT_API UClass* Z_Construct_UClass_ARespawnablePickup_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_AWeapon_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_UBuffComponent_NoRegister();
 ANOTHERISHOOT_API UClass* Z_Construct_UClass_UCombatComponent_NoRegister();
@@ -277,6 +278,48 @@ DEFINE_FUNCTION(ABlasterCharacter::execOnRep_CurrentShield)
 	P_NATIVE_END;
 }
 // End Class ABlasterCharacter Function OnRep_CurrentShield
+
+// Begin Class ABlasterCharacter Function OnRep_OverlappingRespawnablePickUp
+struct Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics
+{
+	struct BlasterCharacter_eventOnRep_OverlappingRespawnablePickUp_Parms
+	{
+		ARespawnablePickup* Pickup;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Pickup;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::NewProp_Pickup = { "Pickup", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterCharacter_eventOnRep_OverlappingRespawnablePickUp_Parms, Pickup), Z_Construct_UClass_ARespawnablePickup_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::NewProp_Pickup,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "OnRep_OverlappingRespawnablePickUp", nullptr, nullptr, Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::BlasterCharacter_eventOnRep_OverlappingRespawnablePickUp_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::BlasterCharacter_eventOnRep_OverlappingRespawnablePickUp_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execOnRep_OverlappingRespawnablePickUp)
+{
+	P_GET_OBJECT(ARespawnablePickup,Z_Param_Pickup);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnRep_OverlappingRespawnablePickUp(Z_Param_Pickup);
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function OnRep_OverlappingRespawnablePickUp
 
 // Begin Class ABlasterCharacter Function OnRep_OverlappingWeapon
 struct Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingWeapon_Statics
@@ -566,6 +609,7 @@ void ABlasterCharacter::StaticRegisterNativesABlasterCharacter()
 		{ "Multicast_LostTheLead", &ABlasterCharacter::execMulticast_LostTheLead },
 		{ "OnRep_CurrentHealth", &ABlasterCharacter::execOnRep_CurrentHealth },
 		{ "OnRep_CurrentShield", &ABlasterCharacter::execOnRep_CurrentShield },
+		{ "OnRep_OverlappingRespawnablePickUp", &ABlasterCharacter::execOnRep_OverlappingRespawnablePickUp },
 		{ "OnRep_OverlappingWeapon", &ABlasterCharacter::execOnRep_OverlappingWeapon },
 		{ "ReceiveDamage", &ABlasterCharacter::execReceiveDamage },
 		{ "Server_EquipButtonPressed", &ABlasterCharacter::execServer_EquipButtonPressed },
@@ -704,6 +748,9 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlappingWeapon_MetaData[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlappingPickup_MetaData[] = {
 		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CombatComp_MetaData[] = {
@@ -919,6 +966,7 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverheadWidget;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverlappingWeapon;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverlappingPickup;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CombatComp;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BuffComp;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_LagCompensation;
@@ -963,6 +1011,7 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 		{ &Z_Construct_UFunction_ABlasterCharacter_Multicast_LostTheLead, "Multicast_LostTheLead" }, // 2608169735
 		{ &Z_Construct_UFunction_ABlasterCharacter_OnRep_CurrentHealth, "OnRep_CurrentHealth" }, // 2051116199
 		{ &Z_Construct_UFunction_ABlasterCharacter_OnRep_CurrentShield, "OnRep_CurrentShield" }, // 1024766230
+		{ &Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp, "OnRep_OverlappingRespawnablePickUp" }, // 1527901742
 		{ &Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingWeapon, "OnRep_OverlappingWeapon" }, // 2013650438
 		{ &Z_Construct_UFunction_ABlasterCharacter_ReceiveDamage, "ReceiveDamage" }, // 4017579604
 		{ &Z_Construct_UFunction_ABlasterCharacter_Server_EquipButtonPressed, "Server_EquipButtonPressed" }, // 409215074
@@ -1002,6 +1051,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharac
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Camera_MetaData), NewProp_Camera_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OverheadWidget = { "OverheadWidget", nullptr, (EPropertyFlags)0x004000000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, OverheadWidget), Z_Construct_UClass_UWidgetComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverheadWidget_MetaData), NewProp_OverheadWidget_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OverlappingWeapon = { "OverlappingWeapon", "OnRep_OverlappingWeapon", (EPropertyFlags)0x0040000100000020, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, OverlappingWeapon), Z_Construct_UClass_AWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlappingWeapon_MetaData), NewProp_OverlappingWeapon_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OverlappingPickup = { "OverlappingPickup", "OnRep_OverlappingRespawnablePickUp", (EPropertyFlags)0x0040000100000020, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, OverlappingPickup), Z_Construct_UClass_ARespawnablePickup_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlappingPickup_MetaData), NewProp_OverlappingPickup_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_CombatComp = { "CombatComp", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, CombatComp), Z_Construct_UClass_UCombatComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CombatComp_MetaData), NewProp_CombatComp_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_BuffComp = { "BuffComp", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, BuffComp), Z_Construct_UClass_UBuffComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BuffComp_MetaData), NewProp_BuffComp_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_LagCompensation = { "LagCompensation", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, LagCompensation), Z_Construct_UClass_ULagCompensationComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LagCompensation_MetaData), NewProp_LagCompensation_MetaData) };
@@ -1067,6 +1117,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABlasterC
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_Camera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OverheadWidget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OverlappingWeapon,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OverlappingPickup,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_CombatComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_BuffComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_LagCompensation,
@@ -1142,11 +1193,13 @@ template<> ANOTHERISHOOT_API UClass* StaticClass<ABlasterCharacter>()
 void ABlasterCharacter::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
 {
 	static const FName Name_OverlappingWeapon(TEXT("OverlappingWeapon"));
+	static const FName Name_OverlappingPickup(TEXT("OverlappingPickup"));
 	static const FName Name_CurrentHealth(TEXT("CurrentHealth"));
 	static const FName Name_CurrentShield(TEXT("CurrentShield"));
 	static const FName Name_bDisableGameplay(TEXT("bDisableGameplay"));
 	const bool bIsValid = true
 		&& Name_OverlappingWeapon == ClassReps[(int32)ENetFields_Private::OverlappingWeapon].Property->GetFName()
+		&& Name_OverlappingPickup == ClassReps[(int32)ENetFields_Private::OverlappingPickup].Property->GetFName()
 		&& Name_CurrentHealth == ClassReps[(int32)ENetFields_Private::CurrentHealth].Property->GetFName()
 		&& Name_CurrentShield == ClassReps[(int32)ENetFields_Private::CurrentShield].Property->GetFName()
 		&& Name_bDisableGameplay == ClassReps[(int32)ENetFields_Private::bDisableGameplay].Property->GetFName();
@@ -1160,10 +1213,10 @@ ABlasterCharacter::~ABlasterCharacter() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABlasterCharacter, ABlasterCharacter::StaticClass, TEXT("ABlasterCharacter"), &Z_Registration_Info_UClass_ABlasterCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterCharacter), 1308928619U) },
+		{ Z_Construct_UClass_ABlasterCharacter, ABlasterCharacter::StaticClass, TEXT("ABlasterCharacter"), &Z_Registration_Info_UClass_ABlasterCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterCharacter), 1504421114U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_2567764297(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_2912576787(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

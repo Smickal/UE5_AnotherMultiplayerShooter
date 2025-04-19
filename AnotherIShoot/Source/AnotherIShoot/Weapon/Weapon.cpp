@@ -145,6 +145,11 @@ void AWeapon::OnEquipHandleState()
 		}
 	}
 
+	if(HasAuthority() && PickUpDelegate.IsBound())
+	{
+		PickUpDelegate.Broadcast();
+		PickUpDelegate.Clear();
+	}
 	
 }
 
@@ -175,6 +180,12 @@ void AWeapon::OnEquipSecondaryHandleState()
 		{
 			BlasterOwnerController->HighPingDelegate.RemoveDynamic(this, &AWeapon::OnPingTooHigh);
 		}
+	}
+
+	if(HasAuthority() && PickUpDelegate.IsBound())
+	{
+		PickUpDelegate.Broadcast();
+		PickUpDelegate.Clear();
 	}
 }
 

@@ -20,6 +20,7 @@ ANOTHERISHOOT_API UEnum* Z_Construct_UEnum_AnotherIShoot_EFireType();
 ANOTHERISHOOT_API UEnum* Z_Construct_UEnum_AnotherIShoot_ETeam();
 ANOTHERISHOOT_API UEnum* Z_Construct_UEnum_AnotherIShoot_EWeaponState();
 ANOTHERISHOOT_API UEnum* Z_Construct_UEnum_AnotherIShoot_EWeaponType();
+ANOTHERISHOOT_API UFunction* Z_Construct_UDelegateFunction_AnotherIShoot_OnPickUpDelegate__DelegateSignature();
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
@@ -33,6 +34,32 @@ ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 UMG_API UClass* Z_Construct_UClass_UWidgetComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_AnotherIShoot();
 // End Cross Module References
+
+// Begin Delegate FOnPickUpDelegate
+struct Z_Construct_UDelegateFunction_AnotherIShoot_OnPickUpDelegate__DelegateSignature_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Weapon/Weapon.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_AnotherIShoot_OnPickUpDelegate__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_AnotherIShoot, nullptr, "OnPickUpDelegate__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_AnotherIShoot_OnPickUpDelegate__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_AnotherIShoot_OnPickUpDelegate__DelegateSignature_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UDelegateFunction_AnotherIShoot_OnPickUpDelegate__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_AnotherIShoot_OnPickUpDelegate__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FOnPickUpDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnPickUpDelegate)
+{
+	OnPickUpDelegate.ProcessMulticastDelegate<UObject>(NULL);
+}
+// End Delegate FOnPickUpDelegate
 
 // Begin Enum EWeaponState
 static FEnumRegistrationInfo Z_Registration_Info_UEnum_EWeaponState;

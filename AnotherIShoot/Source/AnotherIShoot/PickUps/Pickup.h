@@ -8,6 +8,7 @@
 
 class USphereComponent;
 
+
 UCLASS()
 class ANOTHERISHOOT_API APickup : public AActor
 {

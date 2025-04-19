@@ -235,6 +235,12 @@
     <ClCompile Include="..\..\Source\AnotherIShoot\HUD\OverheadWidget.h">
       <Filter>Source\AnotherIShoot\HUD</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\HUD\RadialCooldown.cpp">
+      <Filter>Source\AnotherIShoot\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\HUD\RadialCooldown.h">
+      <Filter>Source\AnotherIShoot\HUD</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\AnotherIShoot\HUD\ReturnToMainMenu.cpp">
       <Filter>Source\AnotherIShoot\HUD</Filter>
     </ClCompile>
