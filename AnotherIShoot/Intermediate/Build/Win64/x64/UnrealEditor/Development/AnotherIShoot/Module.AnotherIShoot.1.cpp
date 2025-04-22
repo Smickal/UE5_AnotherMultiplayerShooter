@@ -6,6 +6,7 @@
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BlasterAnimInstance.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BlasterCharacter.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BlasterGameMode.gen.cpp"
+#include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BlasterGameSave.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BlasterGameState.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BlasterHUD.gen.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Intermediate/Build/Win64/UnrealEditor/Inc/AnotherIShoot/UHT/BlasterPlayerController.gen.cpp"

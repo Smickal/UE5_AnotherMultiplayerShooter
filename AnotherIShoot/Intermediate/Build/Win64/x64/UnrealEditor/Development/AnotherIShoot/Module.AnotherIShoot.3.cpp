@@ -34,6 +34,7 @@
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Source/AnotherIShoot/PlayerController/BlasterPlayerController.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Source/AnotherIShoot/PlayerStart/TeamPlayerStart.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Source/AnotherIShoot/PlayerState/BlasterPlayerState.cpp"
+#include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Source/AnotherIShoot/SaveGame/BlasterGameSave.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Source/AnotherIShoot/Weapon/BulletCasing.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Source/AnotherIShoot/Weapon/Flag.cpp"
 #include "C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Source/AnotherIShoot/Weapon/HitScanWeapon.cpp"

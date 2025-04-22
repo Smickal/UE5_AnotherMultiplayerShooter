@@ -48,10 +48,10 @@ void ARespawnablePickup::BeginPlay()
 		RadialCooldownWidget = Cast<URadialCooldown>(WidgetComponent->GetUserWidgetObject());
 	}
 	WidgetComponent->SetVisibility(false);
-	StartSpawnPickUpTimer();
+
+	//Spawn initial weapon/item
+	SpawnPickUpTimerFinished();
 }
-
-
 
 
 // Called every frame

@@ -334,6 +334,15 @@
     <ClCompile Include="..\..\Source\AnotherIShoot\PlayerState\BlasterPlayerState.h">
       <Filter>Source\AnotherIShoot\PlayerState</Filter>
     </ClCompile>
+    <Filter Include="Source\AnotherIShoot\SaveGame">
+      <UniqueIdentifier>{B93DB137-E20E-3FD1-B687-0AA8BC64B985}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\AnotherIShoot\SaveGame\BlasterGameSave.cpp">
+      <Filter>Source\AnotherIShoot\SaveGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AnotherIShoot\SaveGame\BlasterGameSave.h">
+      <Filter>Source\AnotherIShoot\SaveGame</Filter>
+    </ClCompile>
     <Filter Include="Source\AnotherIShoot\Weapon">
       <UniqueIdentifier>{FE6D3274-3485-373D-93A7-C29F743E72FF}</UniqueIdentifier>
     </Filter>
