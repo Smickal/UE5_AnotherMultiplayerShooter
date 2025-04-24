@@ -38,6 +38,8 @@ ENGINE_API UClass* Z_Construct_UClass_USoundCue_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UTimelineComponent_NoRegister();
+ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
+ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 NIAGARA_API UClass* Z_Construct_UClass_UNiagaraComponent_NoRegister();
 NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UWidgetComponent_NoRegister();
@@ -69,6 +71,406 @@ void FOnLeftGame_DelegateWrapper(const FMulticastScriptDelegate& OnLeftGame)
 	OnLeftGame.ProcessMulticastDelegate<UObject>(NULL);
 }
 // End Delegate FOnLeftGame
+
+// Begin Class ABlasterCharacter Function AimButtonPressed
+struct Z_Construct_UFunction_ABlasterCharacter_AimButtonPressed_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_AimButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "AimButtonPressed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_AimButtonPressed_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_AimButtonPressed_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_AimButtonPressed()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_AimButtonPressed_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execAimButtonPressed)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->AimButtonPressed();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function AimButtonPressed
+
+// Begin Class ABlasterCharacter Function AimButtonReleased
+struct Z_Construct_UFunction_ABlasterCharacter_AimButtonReleased_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_AimButtonReleased_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "AimButtonReleased", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_AimButtonReleased_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_AimButtonReleased_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_AimButtonReleased()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_AimButtonReleased_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execAimButtonReleased)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->AimButtonReleased();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function AimButtonReleased
+
+// Begin Class ABlasterCharacter Function AimOffset
+struct Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics
+{
+	struct BlasterCharacter_eventAimOffset_Parms
+	{
+		float DeltaTime;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DeltaTime;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::NewProp_DeltaTime = { "DeltaTime", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterCharacter_eventAimOffset_Parms, DeltaTime), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::NewProp_DeltaTime,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "AimOffset", nullptr, nullptr, Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::BlasterCharacter_eventAimOffset_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::BlasterCharacter_eventAimOffset_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABlasterCharacter_AimOffset()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_AimOffset_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execAimOffset)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_DeltaTime);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->AimOffset(Z_Param_DeltaTime);
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function AimOffset
+
+// Begin Class ABlasterCharacter Function CalculateAO_Pitch
+struct Z_Construct_UFunction_ABlasterCharacter_CalculateAO_Pitch_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_CalculateAO_Pitch_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "CalculateAO_Pitch", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_CalculateAO_Pitch_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_CalculateAO_Pitch_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_CalculateAO_Pitch()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_CalculateAO_Pitch_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execCalculateAO_Pitch)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->CalculateAO_Pitch();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function CalculateAO_Pitch
+
+// Begin Class ABlasterCharacter Function CrouchButtonPressed
+struct Z_Construct_UFunction_ABlasterCharacter_CrouchButtonPressed_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_CrouchButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "CrouchButtonPressed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_CrouchButtonPressed_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_CrouchButtonPressed_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_CrouchButtonPressed()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_CrouchButtonPressed_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execCrouchButtonPressed)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->CrouchButtonPressed();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function CrouchButtonPressed
+
+// Begin Class ABlasterCharacter Function EquipButtonPressed
+struct Z_Construct_UFunction_ABlasterCharacter_EquipButtonPressed_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_EquipButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "EquipButtonPressed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_EquipButtonPressed_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_EquipButtonPressed_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_EquipButtonPressed()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_EquipButtonPressed_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execEquipButtonPressed)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->EquipButtonPressed();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function EquipButtonPressed
+
+// Begin Class ABlasterCharacter Function FireButtonPressed
+struct Z_Construct_UFunction_ABlasterCharacter_FireButtonPressed_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_FireButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "FireButtonPressed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_FireButtonPressed_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_FireButtonPressed_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_FireButtonPressed()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_FireButtonPressed_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execFireButtonPressed)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->FireButtonPressed();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function FireButtonPressed
+
+// Begin Class ABlasterCharacter Function FireButtonReleased
+struct Z_Construct_UFunction_ABlasterCharacter_FireButtonReleased_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_FireButtonReleased_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "FireButtonReleased", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_FireButtonReleased_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_FireButtonReleased_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_FireButtonReleased()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_FireButtonReleased_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execFireButtonReleased)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->FireButtonReleased();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function FireButtonReleased
+
+// Begin Class ABlasterCharacter Function GrenadeButtonPressed
+struct Z_Construct_UFunction_ABlasterCharacter_GrenadeButtonPressed_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_GrenadeButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "GrenadeButtonPressed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_GrenadeButtonPressed_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_GrenadeButtonPressed_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_GrenadeButtonPressed()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_GrenadeButtonPressed_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execGrenadeButtonPressed)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->GrenadeButtonPressed();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function GrenadeButtonPressed
+
+// Begin Class ABlasterCharacter Function LookUp
+struct Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics
+{
+	struct BlasterCharacter_eventLookUp_Parms
+	{
+		float Value;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Value;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterCharacter_eventLookUp_Parms, Value), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::NewProp_Value,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "LookUp", nullptr, nullptr, Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::BlasterCharacter_eventLookUp_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::BlasterCharacter_eventLookUp_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABlasterCharacter_LookUp()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_LookUp_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execLookUp)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_Value);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->LookUp(Z_Param_Value);
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function LookUp
+
+// Begin Class ABlasterCharacter Function MoveForward
+struct Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics
+{
+	struct BlasterCharacter_eventMoveForward_Parms
+	{
+		float Value;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Value;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterCharacter_eventMoveForward_Parms, Value), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::NewProp_Value,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "MoveForward", nullptr, nullptr, Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::BlasterCharacter_eventMoveForward_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::BlasterCharacter_eventMoveForward_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABlasterCharacter_MoveForward()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_MoveForward_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execMoveForward)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_Value);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->MoveForward(Z_Param_Value);
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function MoveForward
+
+// Begin Class ABlasterCharacter Function MoveRight
+struct Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics
+{
+	struct BlasterCharacter_eventMoveRight_Parms
+	{
+		float Value;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Value;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterCharacter_eventMoveRight_Parms, Value), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::NewProp_Value,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "MoveRight", nullptr, nullptr, Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::BlasterCharacter_eventMoveRight_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::BlasterCharacter_eventMoveRight_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABlasterCharacter_MoveRight()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_MoveRight_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execMoveRight)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_Value);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->MoveRight(Z_Param_Value);
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function MoveRight
 
 // Begin Class ABlasterCharacter Function Multicast_Elim
 struct BlasterCharacter_eventMulticast_Elim_Parms
@@ -434,6 +836,35 @@ DEFINE_FUNCTION(ABlasterCharacter::execReceiveDamage)
 }
 // End Class ABlasterCharacter Function ReceiveDamage
 
+// Begin Class ABlasterCharacter Function ReloadButtonPressed
+struct Z_Construct_UFunction_ABlasterCharacter_ReloadButtonPressed_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_ReloadButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "ReloadButtonPressed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_ReloadButtonPressed_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_ReloadButtonPressed_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_ReloadButtonPressed()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_ReloadButtonPressed_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execReloadButtonPressed)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ReloadButtonPressed();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function ReloadButtonPressed
+
 // Begin Class ABlasterCharacter Function Server_EquipButtonPressed
 static const FName NAME_ABlasterCharacter_Server_EquipButtonPressed = FName(TEXT("Server_EquipButtonPressed"));
 void ABlasterCharacter::Server_EquipButtonPressed()
@@ -491,7 +922,7 @@ struct Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "Server_LeaveGame", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00220CC0, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "Server_LeaveGame", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04220CC0, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -557,6 +988,119 @@ UFunction* Z_Construct_UFunction_ABlasterCharacter_ShowSniperScopeWidget()
 }
 // End Class ABlasterCharacter Function ShowSniperScopeWidget
 
+// Begin Class ABlasterCharacter Function SimProxiesTurn
+struct Z_Construct_UFunction_ABlasterCharacter_SimProxiesTurn_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_SimProxiesTurn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "SimProxiesTurn", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_SimProxiesTurn_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_SimProxiesTurn_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ABlasterCharacter_SimProxiesTurn()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_SimProxiesTurn_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execSimProxiesTurn)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SimProxiesTurn();
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function SimProxiesTurn
+
+// Begin Class ABlasterCharacter Function Turn
+struct Z_Construct_UFunction_ABlasterCharacter_Turn_Statics
+{
+	struct BlasterCharacter_eventTurn_Parms
+	{
+		float Value;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Value;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterCharacter_eventTurn_Parms, Value), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::NewProp_Value,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "Turn", nullptr, nullptr, Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::BlasterCharacter_eventTurn_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::BlasterCharacter_eventTurn_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABlasterCharacter_Turn()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_Turn_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execTurn)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_Value);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->Turn(Z_Param_Value);
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function Turn
+
+// Begin Class ABlasterCharacter Function TurnInPlace
+struct Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics
+{
+	struct BlasterCharacter_eventTurnInPlace_Parms
+	{
+		float DeltaTime;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DeltaTime;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::NewProp_DeltaTime = { "DeltaTime", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BlasterCharacter_eventTurnInPlace_Parms, DeltaTime), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::NewProp_DeltaTime,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlasterCharacter, nullptr, "TurnInPlace", nullptr, nullptr, Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::BlasterCharacter_eventTurnInPlace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::BlasterCharacter_eventTurnInPlace_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABlasterCharacter_TurnInPlace()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABlasterCharacter_TurnInPlace_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABlasterCharacter::execTurnInPlace)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_DeltaTime);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->TurnInPlace(Z_Param_DeltaTime);
+	P_NATIVE_END;
+}
+// End Class ABlasterCharacter Function TurnInPlace
+
 // Begin Class ABlasterCharacter Function UpdateDissolveMaterial
 struct Z_Construct_UFunction_ABlasterCharacter_UpdateDissolveMaterial_Statics
 {
@@ -604,6 +1148,18 @@ void ABlasterCharacter::StaticRegisterNativesABlasterCharacter()
 {
 	UClass* Class = ABlasterCharacter::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "AimButtonPressed", &ABlasterCharacter::execAimButtonPressed },
+		{ "AimButtonReleased", &ABlasterCharacter::execAimButtonReleased },
+		{ "AimOffset", &ABlasterCharacter::execAimOffset },
+		{ "CalculateAO_Pitch", &ABlasterCharacter::execCalculateAO_Pitch },
+		{ "CrouchButtonPressed", &ABlasterCharacter::execCrouchButtonPressed },
+		{ "EquipButtonPressed", &ABlasterCharacter::execEquipButtonPressed },
+		{ "FireButtonPressed", &ABlasterCharacter::execFireButtonPressed },
+		{ "FireButtonReleased", &ABlasterCharacter::execFireButtonReleased },
+		{ "GrenadeButtonPressed", &ABlasterCharacter::execGrenadeButtonPressed },
+		{ "LookUp", &ABlasterCharacter::execLookUp },
+		{ "MoveForward", &ABlasterCharacter::execMoveForward },
+		{ "MoveRight", &ABlasterCharacter::execMoveRight },
 		{ "Multicast_Elim", &ABlasterCharacter::execMulticast_Elim },
 		{ "Multicast_GainedTheLead", &ABlasterCharacter::execMulticast_GainedTheLead },
 		{ "Multicast_LostTheLead", &ABlasterCharacter::execMulticast_LostTheLead },
@@ -612,8 +1168,12 @@ void ABlasterCharacter::StaticRegisterNativesABlasterCharacter()
 		{ "OnRep_OverlappingRespawnablePickUp", &ABlasterCharacter::execOnRep_OverlappingRespawnablePickUp },
 		{ "OnRep_OverlappingWeapon", &ABlasterCharacter::execOnRep_OverlappingWeapon },
 		{ "ReceiveDamage", &ABlasterCharacter::execReceiveDamage },
+		{ "ReloadButtonPressed", &ABlasterCharacter::execReloadButtonPressed },
 		{ "Server_EquipButtonPressed", &ABlasterCharacter::execServer_EquipButtonPressed },
 		{ "Server_LeaveGame", &ABlasterCharacter::execServer_LeaveGame },
+		{ "SimProxiesTurn", &ABlasterCharacter::execSimProxiesTurn },
+		{ "Turn", &ABlasterCharacter::execTurn },
+		{ "TurnInPlace", &ABlasterCharacter::execTurnInPlace },
 		{ "UpdateDissolveMaterial", &ABlasterCharacter::execUpdateDissolveMaterial },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -629,6 +1189,9 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "Character/BlasterCharacter.h" },
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnLeftGame_MetaData[] = {
 		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_head_box_MetaData[] = {
@@ -729,6 +1292,27 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_HitCollisionBoxes_MetaData[] = {
 		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BlasterMappingContext_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Enchance Input Action\n" },
+#endif
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Enchance Input Action" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MoveAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LookAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
 		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CameraBoom_MetaData[] = {
@@ -904,6 +1488,8 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BlasterPlayerController_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "BlasterCharacter" },
 		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentHealth_MetaData[] = {
@@ -941,6 +1527,7 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 		{ "ModuleRelativePath", "Character/BlasterCharacter.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnLeftGame;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_head_box;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_pelvis_box;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_spine_02_box;
@@ -962,6 +1549,9 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_HitCollisionBoxes_ValueProp;
 	static const UECodeGen_Private::FNamePropertyParams NewProp_HitCollisionBoxes_Key_KeyProp;
 	static const UECodeGen_Private::FMapPropertyParams NewProp_HitCollisionBoxes;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_BlasterMappingContext;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MoveAction;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_LookAction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraBoom;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverheadWidget;
@@ -1006,6 +1596,18 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_ABlasterCharacter_AimButtonPressed, "AimButtonPressed" }, // 1253890652
+		{ &Z_Construct_UFunction_ABlasterCharacter_AimButtonReleased, "AimButtonReleased" }, // 1644720528
+		{ &Z_Construct_UFunction_ABlasterCharacter_AimOffset, "AimOffset" }, // 4021458709
+		{ &Z_Construct_UFunction_ABlasterCharacter_CalculateAO_Pitch, "CalculateAO_Pitch" }, // 3239565029
+		{ &Z_Construct_UFunction_ABlasterCharacter_CrouchButtonPressed, "CrouchButtonPressed" }, // 4196854998
+		{ &Z_Construct_UFunction_ABlasterCharacter_EquipButtonPressed, "EquipButtonPressed" }, // 2890086870
+		{ &Z_Construct_UFunction_ABlasterCharacter_FireButtonPressed, "FireButtonPressed" }, // 2770174073
+		{ &Z_Construct_UFunction_ABlasterCharacter_FireButtonReleased, "FireButtonReleased" }, // 3711185179
+		{ &Z_Construct_UFunction_ABlasterCharacter_GrenadeButtonPressed, "GrenadeButtonPressed" }, // 2172563480
+		{ &Z_Construct_UFunction_ABlasterCharacter_LookUp, "LookUp" }, // 936151557
+		{ &Z_Construct_UFunction_ABlasterCharacter_MoveForward, "MoveForward" }, // 1398487884
+		{ &Z_Construct_UFunction_ABlasterCharacter_MoveRight, "MoveRight" }, // 979213477
 		{ &Z_Construct_UFunction_ABlasterCharacter_Multicast_Elim, "Multicast_Elim" }, // 787184055
 		{ &Z_Construct_UFunction_ABlasterCharacter_Multicast_GainedTheLead, "Multicast_GainedTheLead" }, // 1748300467
 		{ &Z_Construct_UFunction_ABlasterCharacter_Multicast_LostTheLead, "Multicast_LostTheLead" }, // 2608169735
@@ -1014,9 +1616,13 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 		{ &Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingRespawnablePickUp, "OnRep_OverlappingRespawnablePickUp" }, // 1527901742
 		{ &Z_Construct_UFunction_ABlasterCharacter_OnRep_OverlappingWeapon, "OnRep_OverlappingWeapon" }, // 2013650438
 		{ &Z_Construct_UFunction_ABlasterCharacter_ReceiveDamage, "ReceiveDamage" }, // 4017579604
+		{ &Z_Construct_UFunction_ABlasterCharacter_ReloadButtonPressed, "ReloadButtonPressed" }, // 1011088805
 		{ &Z_Construct_UFunction_ABlasterCharacter_Server_EquipButtonPressed, "Server_EquipButtonPressed" }, // 409215074
-		{ &Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame, "Server_LeaveGame" }, // 2572655062
+		{ &Z_Construct_UFunction_ABlasterCharacter_Server_LeaveGame, "Server_LeaveGame" }, // 1357750440
 		{ &Z_Construct_UFunction_ABlasterCharacter_ShowSniperScopeWidget, "ShowSniperScopeWidget" }, // 559336879
+		{ &Z_Construct_UFunction_ABlasterCharacter_SimProxiesTurn, "SimProxiesTurn" }, // 700669674
+		{ &Z_Construct_UFunction_ABlasterCharacter_Turn, "Turn" }, // 533212467
+		{ &Z_Construct_UFunction_ABlasterCharacter_TurnInPlace, "TurnInPlace" }, // 495171146
 		{ &Z_Construct_UFunction_ABlasterCharacter_UpdateDissolveMaterial, "UpdateDissolveMaterial" }, // 3633237763
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -1026,6 +1632,7 @@ struct Z_Construct_UClass_ABlasterCharacter_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OnLeftGame = { "OnLeftGame", nullptr, (EPropertyFlags)0x0010100010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, OnLeftGame), Z_Construct_UDelegateFunction_AnotherIShoot_OnLeftGame__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnLeftGame_MetaData), NewProp_OnLeftGame_MetaData) }; // 4280603360
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_head_box = { "head_box", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, head_box), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_head_box_MetaData), NewProp_head_box_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_pelvis_box = { "pelvis_box", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, pelvis_box), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_pelvis_box_MetaData), NewProp_pelvis_box_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_spine_02_box = { "spine_02_box", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, spine_02_box), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_spine_02_box_MetaData), NewProp_spine_02_box_MetaData) };
@@ -1047,6 +1654,9 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharac
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_HitCollisionBoxes_ValueProp = { "HitCollisionBoxes", nullptr, (EPropertyFlags)0x0000000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_HitCollisionBoxes_Key_KeyProp = { "HitCollisionBoxes_Key", nullptr, (EPropertyFlags)0x0000000000080008, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_HitCollisionBoxes = { "HitCollisionBoxes", nullptr, (EPropertyFlags)0x0010008000000008, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, HitCollisionBoxes), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_HitCollisionBoxes_MetaData), NewProp_HitCollisionBoxes_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_BlasterMappingContext = { "BlasterMappingContext", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, BlasterMappingContext), Z_Construct_UClass_UInputMappingContext_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BlasterMappingContext_MetaData), NewProp_BlasterMappingContext_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_MoveAction = { "MoveAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, MoveAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MoveAction_MetaData), NewProp_MoveAction_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LookAction_MetaData), NewProp_LookAction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraBoom_MetaData), NewProp_CameraBoom_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Camera_MetaData), NewProp_Camera_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OverheadWidget = { "OverheadWidget", nullptr, (EPropertyFlags)0x004000000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, OverheadWidget), Z_Construct_UClass_UWidgetComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverheadWidget_MetaData), NewProp_OverheadWidget_MetaData) };
@@ -1080,7 +1690,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharac
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_CrownComponent = { "CrownComponent", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, CrownComponent), Z_Construct_UClass_UNiagaraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CrownComponent_MetaData), NewProp_CrownComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_AttachedGrenade = { "AttachedGrenade", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, AttachedGrenade), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttachedGrenade_MetaData), NewProp_AttachedGrenade_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_MaxHealth = { "MaxHealth", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, MaxHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHealth_MetaData), NewProp_MaxHealth_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_BlasterPlayerController = { "BlasterPlayerController", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, BlasterPlayerController), Z_Construct_UClass_ABlasterPlayerController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BlasterPlayerController_MetaData), NewProp_BlasterPlayerController_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_BlasterPlayerController = { "BlasterPlayerController", nullptr, (EPropertyFlags)0x0040000000000014, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, BlasterPlayerController), Z_Construct_UClass_ABlasterPlayerController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BlasterPlayerController_MetaData), NewProp_BlasterPlayerController_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_CurrentHealth = { "CurrentHealth", "OnRep_CurrentHealth", (EPropertyFlags)0x0040000100020021, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, CurrentHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentHealth_MetaData), NewProp_CurrentHealth_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_MaxShield = { "MaxShield", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, MaxShield), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxShield_MetaData), NewProp_MaxShield_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_CurrentShield = { "CurrentShield", "OnRep_CurrentShield", (EPropertyFlags)0x0040000100000021, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterCharacter, CurrentShield), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentShield_MetaData), NewProp_CurrentShield_MetaData) };
@@ -1092,6 +1702,7 @@ void Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_bDisableGameplay_SetB
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_bDisableGameplay = { "bDisableGameplay", nullptr, (EPropertyFlags)0x0010000000000020, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABlasterCharacter), &Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_bDisableGameplay_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bDisableGameplay_MetaData), NewProp_bDisableGameplay_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABlasterCharacter_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OnLeftGame,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_head_box,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_pelvis_box,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_spine_02_box,
@@ -1113,6 +1724,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABlasterC
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_HitCollisionBoxes_ValueProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_HitCollisionBoxes_Key_KeyProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_HitCollisionBoxes,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_BlasterMappingContext,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_MoveAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_LookAction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_CameraBoom,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_Camera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterCharacter_Statics::NewProp_OverheadWidget,
@@ -1213,10 +1827,10 @@ ABlasterCharacter::~ABlasterCharacter() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABlasterCharacter, ABlasterCharacter::StaticClass, TEXT("ABlasterCharacter"), &Z_Registration_Info_UClass_ABlasterCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterCharacter), 1504421114U) },
+		{ Z_Construct_UClass_ABlasterCharacter, ABlasterCharacter::StaticClass, TEXT("ABlasterCharacter"), &Z_Registration_Info_UClass_ABlasterCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterCharacter), 289062000U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_2912576787(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_3406157326(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Character_BlasterCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

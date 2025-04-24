@@ -16,6 +16,7 @@ struct FHitResult;
 #define ANOTHERISHOOT_ProjectileGrenade_generated_h
 
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_ProjectileGrenade_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnTimerHandleEnd); \
 	DECLARE_FUNCTION(execOnBounce);
 
 

@@ -19,6 +19,7 @@ void ABlasterHUD::BeginPlay()
 	
 }
 
+
 void ABlasterHUD::AddCharacterOverlay()
 {
 	APlayerController* PlayerController =  GetOwningPlayerController();

@@ -3,6 +3,8 @@
 
 #include "BlasterCharacter.h"
 
+#include "EnhancedInputComponent.h"
+#include "EnhancedInputSubsystems.h"
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
 #include "AnotherIShoot/AnotherIShoot.h"
@@ -174,26 +176,41 @@ void ABlasterCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 	DOREPLIFETIME(ABlasterCharacter, bDisableGameplay);
 }
 
+void ABlasterCharacter::NotifyControllerChanged()
+{
+	Super::NotifyControllerChanged();
+
+	// if(APlayerController* PlayerController = Cast<APlayerController>(Controller))
+	// {
+	// 	if(UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+	// 	{
+	// 		Subsystem->AddMappingContext(BlasterMappingContext, 0);
+	// 	}
+	// }
+}
+
 
 // Called to bind functionality to input
 void ABlasterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	
-	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ThisClass::MoveForward);
-	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &ThisClass::MoveRight);
-	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ThisClass::Turn);
-	PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &ThisClass::LookUp);
 
-	PlayerInputComponent->BindAction(TEXT("Jump"),IE_Pressed,this, &ABlasterCharacter::Jump );
-	PlayerInputComponent->BindAction(TEXT("Equip"),IE_Pressed,this, &ABlasterCharacter::EquipButtonPressed);
-	PlayerInputComponent->BindAction(TEXT("Crouch"), IE_Pressed, this, &ABlasterCharacter::CrouchButtonPressed);
-	PlayerInputComponent->BindAction(TEXT("Aim"), IE_Pressed, this, &ABlasterCharacter::AimButtonPressed);
-	PlayerInputComponent->BindAction(TEXT("Aim"), IE_Released, this, &ABlasterCharacter::AimButtonReleased);
-	PlayerInputComponent->BindAction(TEXT("Fire"), IE_Pressed, this, &ABlasterCharacter::FireButtonPressed);
-	PlayerInputComponent->BindAction(TEXT("Fire"), IE_Released, this, &ABlasterCharacter::FireButtonReleased);
-	PlayerInputComponent->BindAction(TEXT("Reload"), IE_Pressed, this, &ABlasterCharacter::ReloadButtonPressed);
-	PlayerInputComponent->BindAction(TEXT("ThrowGrenade"), IE_Pressed, this, &ABlasterCharacter::GrenadeButtonPressed);
+	//Changed to use enhance Input Component + InitialiE in Blueprint BP_BlasterCharacter
+	
+	//PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ThisClass::MoveForward);
+	//PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &ThisClass::MoveRight);
+	//PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ThisClass::Turn);
+	//PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &ThisClass::LookUp);
+
+	//PlayerInputComponent->BindAction(TEXT("Jump"),IE_Pressed,this, &ABlasterCharacter::Jump );
+	//layerInputComponent->BindAction(TEXT("Equip"),IE_Pressed,this, &ABlasterCharacter::EquipButtonPressed);
+	//PlayerInputComponent->BindAction(TEXT("Crouch"), IE_Pressed, this, &ABlasterCharacter::CrouchButtonPressed);
+	//PlayerInputComponent->BindAction(TEXT("Aim"), IE_Pressed, this, &ABlasterCharacter::AimButtonPressed);
+	//PlayerInputComponent->BindAction(TEXT("Aim"), IE_Released, this, &ABlasterCharacter::AimButtonReleased);
+	//PlayerInputComponent->BindAction(TEXT("Fire"), IE_Pressed, this, &ABlasterCharacter::FireButtonPressed);
+	//PlayerInputComponent->BindAction(TEXT("Fire"), IE_Released, this, &ABlasterCharacter::FireButtonReleased);
+	//PlayerInputComponent->BindAction(TEXT("Reload"), IE_Pressed, this, &ABlasterCharacter::ReloadButtonPressed);
+	//PlayerInputComponent->BindAction(TEXT("ThrowGrenade"), IE_Pressed, this, &ABlasterCharacter::GrenadeButtonPressed);
 	
 }
 
@@ -870,8 +887,10 @@ void ABlasterCharacter::EquipButtonPressed()
 		if(bSwap)
 		{
 			PlaySwapWeaponMontage();
-			CombatComp->CombatState = ECombatState::ECS_SwappingWeapon;
+
+			
 			bFinishedSwapping = false;
+			CombatComp->CombatState = ECombatState::ECS_SwappingWeapon;
 		}
 	}
 }

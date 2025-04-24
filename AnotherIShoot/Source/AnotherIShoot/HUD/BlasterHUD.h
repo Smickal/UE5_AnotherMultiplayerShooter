@@ -36,11 +36,16 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Player Stat")
 	TSubclassOf<class  UUserWidget> CharacterOverlayClass;
-
-
+	
 	UPROPERTY(EditAnywhere, Category = "Announcements")
 	TSubclassOf<class  UUserWidget> AnnouncementOverlayClass;
-	
+
+
+	UPROPERTY(EditAnywhere, Category = "In-Game PauseMenu")
+	TSubclassOf<UUserWidget> PauseGameClass;
+
+
+	void AddPauseGameClass();
 	void AddCharacterOverlay();
 	void AddAnnoucement();
 	void AddElimAnnouncement(ABlasterPlayerState* AttackerPState, ABlasterPlayerState* VictimPState);

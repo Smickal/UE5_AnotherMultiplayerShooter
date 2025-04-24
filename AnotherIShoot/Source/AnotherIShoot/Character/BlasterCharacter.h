@@ -12,6 +12,8 @@
 #include "AnotherIShoot/PlayerState/BlasterPlayerState.h"
 #include "BlasterCharacter.generated.h"
 
+class UInputAction;
+class UInputMappingContext;
 class UNiagaraComponent;
 class UNiagaraSystem;
 class UBoxComponent;
@@ -70,8 +72,10 @@ public:
 	void SpawnDefaultWeapon();
 
 	
-	UFUNCTION(Server, Reliable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
 	void Server_LeaveGame();
+	
+	UPROPERTY(BlueprintCallable, BlueprintAssignable)
 	FOnLeftGame OnLeftGame;
 
 	UFUNCTION(NetMulticast, Reliable)
@@ -138,6 +142,8 @@ protected:
 
 	virtual void PostInitializeComponents() override;
 
+	virtual void NotifyControllerChanged() override;
+
 private:
 	UFUNCTION()
 	void OnRep_OverlappingWeapon(AWeapon* LastWeapon);
@@ -150,6 +156,20 @@ private:
 	//
 	//
 private:
+
+
+	//Enchance Input Action
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputMappingContext* BlasterMappingContext;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* MoveAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* LookAction;
+	
+	
+	
 	UPROPERTY(VisibleAnywhere, Category = Camera)
 	class USpringArmComponent* CameraBoom;
 
@@ -308,7 +328,7 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Player Stats")
 	float MaxHealth = 100.f;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	ABlasterPlayerController* BlasterPlayerController;
 
 	UPROPERTY(ReplicatedUsing = OnRep_CurrentHealth, VisibleAnywhere, Category = "Player Stats")
@@ -349,22 +369,42 @@ public:
 	void ActivateOverheadWidget();
 
 protected:
+	UFUNCTION(BlueprintCallable)
 	void MoveForward(float Value);
+	
+	UFUNCTION(BlueprintCallable)
 	void MoveRight(float Value);
+	
+	UFUNCTION(BlueprintCallable)
 	void Turn(float Value);
+	
+	UFUNCTION(BlueprintCallable)
 	void LookUp(float Value);
+	UFUNCTION(BlueprintCallable)
 	void CalculateAO_Pitch();
+	UFUNCTION(BlueprintCallable)
 	void EquipButtonPressed();
+	UFUNCTION(BlueprintCallable)
 	void CrouchButtonPressed();
+	UFUNCTION(BlueprintCallable)
 	void AimButtonPressed();
+	UFUNCTION(BlueprintCallable)
 	void AimButtonReleased();
+	UFUNCTION(BlueprintCallable)
 	void FireButtonPressed();
+	UFUNCTION(BlueprintCallable)
 	void FireButtonReleased();
+	UFUNCTION(BlueprintCallable)
 	void ReloadButtonPressed();
+	UFUNCTION(BlueprintCallable)
 	void AimOffset(float DeltaTime);
+	UFUNCTION(BlueprintCallable)
 	void TurnInPlace(float DeltaTime);
+	UFUNCTION(BlueprintCallable)
 	void SimProxiesTurn();
+	UFUNCTION(BlueprintCallable)
 	void GrenadeButtonPressed();
+	
 	virtual void Jump() override;
 
 	

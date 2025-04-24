@@ -12,20 +12,20 @@ void UReturnToMainMenu::MenuSetup()
 {
 	AddToViewport();
 	SetVisibility(ESlateVisibility::Visible);
-	SetIsFocusable(true); // bIsFocusable = true;
+	//SetIsFocusable(true); // bIsFocusable = true;
 
-	UWorld* World = GetWorld();
-	if(World)
-	{
-		PlayerController = PlayerController == nullptr ? World->GetFirstPlayerController() : PlayerController;
-		if(PlayerController)
-		{
-			FInputModeGameAndUI InputModeData;
-			InputModeData.SetWidgetToFocus(TakeWidget());
-			PlayerController->SetInputMode(InputModeData);
-			PlayerController->SetShowMouseCursor(true);
-		}
-	}
+	//UWorld* World = GetWorld();
+	// if(World)
+	// {
+	// 	PlayerController = PlayerController == nullptr ? World->GetFirstPlayerController() : PlayerController;
+	// 	if(PlayerController)
+	// 	{
+	// 		FInputModeGameAndUI InputModeData;
+	// 		InputModeData.SetWidgetToFocus(TakeWidget());
+	// 		PlayerController->SetInputMode(InputModeData);
+	// 		PlayerController->SetShowMouseCursor(true);
+	// 	}
+	// }
 
 	UGameInstance* GameInstance = GetGameInstance();
 	if(GameInstance)
@@ -58,6 +58,7 @@ void UReturnToMainMenu::OnDestroySessionComplete(bool bWasSuccessfull)
 {
 	if(!bWasSuccessfull)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Un-Successfull"));	
 		ReturnButton->SetIsEnabled(true);
 		return;
 	}
@@ -114,6 +115,7 @@ void UReturnToMainMenu::MenuTearDown()
 
 void UReturnToMainMenu::OnReturnButtonPressed()
 {
+	
 	ReturnButton->SetIsEnabled(false);
 	
 	UWorld* World = GetWorld();
@@ -139,7 +141,7 @@ void UReturnToMainMenu::OnReturnButtonPressed()
 
 void UReturnToMainMenu::OnPlayerLeftGame()
 {
-	
+
 	if(MultiplayerSessionsSubsystem)
 	{
 		MultiplayerSessionsSubsystem->DestroySession();

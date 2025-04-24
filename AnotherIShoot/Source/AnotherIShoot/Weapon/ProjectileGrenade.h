@@ -32,8 +32,19 @@ protected:
 	void OnBounce(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
 
 	virtual void Destroyed() override;
+
+	virtual void DisableCollisionAFewSecondAfterThrow();
+
+	UFUNCTION()
+	virtual void OnTimerHandleEnd();
 private:
 
 	UPROPERTY(EditAnywhere)
 	class USoundCue* BounceSound;
+
+
+	UPROPERTY(EditAnywhere)
+	float TimeToEnableCollision = 0.1f;
+
+	FTimerHandle EnableCollisiontimerHandle;
 };

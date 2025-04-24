@@ -279,6 +279,19 @@ void UCombatComponent::SwapWeapon()
 	EquippedWeapon = SecondaryWeapon;
 	SecondaryWeapon = TempWeapon;
 
+	if(TempWeapon->WeaponType == EWeaponType::EWT_SniperRifle && bIsAiming)
+	{
+		PlayerCharacter->ShowSniperScopeWidget(false);
+		PlayerController->HideBlasterHUD(false);
+		
+	}
+
+	if(EquippedWeapon->WeaponType == EWeaponType::EWT_SniperRifle && bIsAiming)
+	{
+		PlayerCharacter->ShowSniperScopeWidget(true);
+		PlayerController->HideBlasterHUD(true);
+	}
+	
 	if(SecondaryWeapon)
 	{
 		SecondaryWeapon->EnableCustomDepth(false);
@@ -480,6 +493,7 @@ void UCombatComponent::SetAiming(bool bAiming)
 	if(PlayerCharacter->IsLocallyControlled() && EquippedWeapon->GetWeaponType() == EWeaponType::EWT_SniperRifle)
 	{
 		PlayerCharacter->ShowSniperScopeWidget(bIsAiming);
+		PlayerController->HideBlasterHUD(bIsAiming);
 	}
 
 	if(PlayerCharacter->IsLocallyControlled())

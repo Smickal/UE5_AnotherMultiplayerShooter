@@ -17,6 +17,7 @@ class ANOTHERISHOOT_API UReturnToMainMenu : public UUserWidget
 	GENERATED_BODY()
 
 public:
+	UFUNCTION(BlueprintCallable )
 	void MenuSetup();
 	void MenuTearDown();
 
@@ -32,7 +33,7 @@ private:
 	UPROPERTY(meta = (BindWidget))
 	UButton* ReturnButton;
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void OnReturnButtonPressed();
 
 	UPROPERTY()

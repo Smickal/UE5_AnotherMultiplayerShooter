@@ -19,6 +19,35 @@ UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_AnotherIShoot();
 // End Cross Module References
 
+// Begin Class UReturnToMainMenu Function MenuSetup
+struct Z_Construct_UFunction_UReturnToMainMenu_MenuSetup_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "HUD/ReturnToMainMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UReturnToMainMenu_MenuSetup_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UReturnToMainMenu, nullptr, "MenuSetup", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UReturnToMainMenu_MenuSetup_Statics::Function_MetaDataParams), Z_Construct_UFunction_UReturnToMainMenu_MenuSetup_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UReturnToMainMenu_MenuSetup()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UReturnToMainMenu_MenuSetup_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UReturnToMainMenu::execMenuSetup)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->MenuSetup();
+	P_NATIVE_END;
+}
+// End Class UReturnToMainMenu Function MenuSetup
+
 // Begin Class UReturnToMainMenu Function OnDestroySessionComplete
 struct Z_Construct_UFunction_UReturnToMainMenu_OnDestroySessionComplete_Statics
 {
@@ -105,7 +134,7 @@ struct Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UReturnToMainMenu, nullptr, "OnReturnButtonPressed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed_Statics::Function_MetaDataParams), Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UReturnToMainMenu, nullptr, "OnReturnButtonPressed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed_Statics::Function_MetaDataParams), Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -129,6 +158,7 @@ void UReturnToMainMenu::StaticRegisterNativesUReturnToMainMenu()
 {
 	UClass* Class = UReturnToMainMenu::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "MenuSetup", &UReturnToMainMenu::execMenuSetup },
 		{ "OnDestroySessionComplete", &UReturnToMainMenu::execOnDestroySessionComplete },
 		{ "OnPlayerLeftGame", &UReturnToMainMenu::execOnPlayerLeftGame },
 		{ "OnReturnButtonPressed", &UReturnToMainMenu::execOnReturnButtonPressed },
@@ -168,9 +198,10 @@ struct Z_Construct_UClass_UReturnToMainMenu_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UReturnToMainMenu_MenuSetup, "MenuSetup" }, // 2697192190
 		{ &Z_Construct_UFunction_UReturnToMainMenu_OnDestroySessionComplete, "OnDestroySessionComplete" }, // 1751746685
 		{ &Z_Construct_UFunction_UReturnToMainMenu_OnPlayerLeftGame, "OnPlayerLeftGame" }, // 3511627313
-		{ &Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed, "OnReturnButtonPressed" }, // 2592607054
+		{ &Z_Construct_UFunction_UReturnToMainMenu_OnReturnButtonPressed, "OnReturnButtonPressed" }, // 2805159745
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -228,10 +259,10 @@ UReturnToMainMenu::~UReturnToMainMenu() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ReturnToMainMenu_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UReturnToMainMenu, UReturnToMainMenu::StaticClass, TEXT("UReturnToMainMenu"), &Z_Registration_Info_UClass_UReturnToMainMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UReturnToMainMenu), 3846328748U) },
+		{ Z_Construct_UClass_UReturnToMainMenu, UReturnToMainMenu::StaticClass, TEXT("UReturnToMainMenu"), &Z_Registration_Info_UClass_UReturnToMainMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UReturnToMainMenu), 3375854195U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ReturnToMainMenu_h_984011588(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ReturnToMainMenu_h_96297119(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ReturnToMainMenu_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ReturnToMainMenu_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

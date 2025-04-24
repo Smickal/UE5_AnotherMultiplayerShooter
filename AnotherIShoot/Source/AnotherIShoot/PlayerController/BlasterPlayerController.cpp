@@ -38,16 +38,6 @@ void ABlasterPlayerController::BeginPlay()
 	
 }
 
-void ABlasterPlayerController::SetupInputComponent()
-{
-	Super::SetupInputComponent();
-	if(InputComponent == nullptr )return;
-
-	InputComponent->BindAction("Quit", IE_Pressed, this, &ABlasterPlayerController::ShowReturnToMainMenu);
-}
-
-
-
 void ABlasterPlayerController::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
@@ -58,6 +48,15 @@ void ABlasterPlayerController::Tick(float DeltaSeconds)
 
 	CheckPing(DeltaSeconds);
 }
+
+void ABlasterPlayerController::SetupInputComponent()
+{
+	Super::SetupInputComponent();
+	if(InputComponent == nullptr )return;
+
+	InputComponent->BindAction("Quit", IE_Pressed, this, &ABlasterPlayerController::ShowReturnToMainMenu);
+}
+
 
 void ABlasterPlayerController::PollInit()
 {
@@ -209,6 +208,12 @@ void ABlasterPlayerController::HandleMatchHasStarted(bool bTeamsMatch)
 		{
 			BlasterHUD->CharacterOverlay->PlayBlinkAnimation(false);
 		}
+		
+
+		if(PauseMenuInGameWidget && PauseHUD == nullptr)
+		{
+			CreatePauseMenuHUD();
+		}
 
 		if(!HasAuthority()) return;
 		
@@ -338,6 +343,8 @@ FString ABlasterPlayerController::GetTeamsInfoText(ABlasterGameState* BlasterGam
 
 	return InfoTextString;
 }
+
+
 
 void ABlasterPlayerController::CheckTimeSync(float DeltaSeconds)
 {
@@ -659,6 +666,20 @@ void ABlasterPlayerController::SetHUDTeam(ETeam TeamToSet)
 	}
 }
 
+void ABlasterPlayerController::SetHUDPauseGame(bool bIsActivated)
+{
+	if(PauseHUD == nullptr) return;
+	
+	if(bIsActivated)
+	{
+		CreatePauseMenuHUD();
+		PauseHUD->SetVisibility(ESlateVisibility::Visible);
+	}
+	else
+	{
+		PauseHUD->RemoveFromParent();
+	}
+}
 
 
 void ABlasterPlayerController::SetHUDMatchCountdown(float CountdownTime)
@@ -914,6 +935,23 @@ void ABlasterPlayerController::ShowPlayerOverHead()
 	
 }
 
+void ABlasterPlayerController::HideBlasterHUD(bool bIsHide)
+{
+	BlasterHUD = BlasterHUD == nullptr ?  Cast<ABlasterHUD>(GetHUD()) : BlasterHUD;
+	if(BlasterHUD)
+	{
+		if(bIsHide)
+		{
+			BlasterHUD->CharacterOverlay->SetVisibility(ESlateVisibility::Hidden);
+		}
+		else
+		{
+			BlasterHUD->CharacterOverlay->SetVisibility(ESlateVisibility::Visible);
+			
+		}
+	}
+}
+
 
 void ABlasterPlayerController::BroadcastElim(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim)
 {
@@ -957,6 +995,17 @@ void ABlasterPlayerController::Client_ElimAnnouncement_Implementation(ABlasterPl
 	}
 }
 
+void ABlasterPlayerController::CreatePauseMenuHUD()
+{
+	if(PauseMenuInGameWidget)
+	{
+		PauseHUD = CreateWidget(this, PauseMenuInGameWidget);
+		PauseHUD->AddToViewport();
+		PauseHUD->SetVisibility(ESlateVisibility::Hidden);
+		
+		PauseHUD->SetOwningPlayer(this);
+	}
+}
 
 
 

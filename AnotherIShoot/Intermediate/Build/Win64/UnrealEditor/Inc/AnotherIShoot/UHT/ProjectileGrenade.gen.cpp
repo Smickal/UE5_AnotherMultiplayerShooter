@@ -74,12 +74,42 @@ DEFINE_FUNCTION(AProjectileGrenade::execOnBounce)
 }
 // End Class AProjectileGrenade Function OnBounce
 
+// Begin Class AProjectileGrenade Function OnTimerHandleEnd
+struct Z_Construct_UFunction_AProjectileGrenade_OnTimerHandleEnd_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Weapon/ProjectileGrenade.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AProjectileGrenade_OnTimerHandleEnd_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AProjectileGrenade, nullptr, "OnTimerHandleEnd", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AProjectileGrenade_OnTimerHandleEnd_Statics::Function_MetaDataParams), Z_Construct_UFunction_AProjectileGrenade_OnTimerHandleEnd_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AProjectileGrenade_OnTimerHandleEnd()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AProjectileGrenade_OnTimerHandleEnd_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AProjectileGrenade::execOnTimerHandleEnd)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnTimerHandleEnd();
+	P_NATIVE_END;
+}
+// End Class AProjectileGrenade Function OnTimerHandleEnd
+
 // Begin Class AProjectileGrenade
 void AProjectileGrenade::StaticRegisterNativesAProjectileGrenade()
 {
 	UClass* Class = AProjectileGrenade::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "OnBounce", &AProjectileGrenade::execOnBounce },
+		{ "OnTimerHandleEnd", &AProjectileGrenade::execOnTimerHandleEnd },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -107,13 +137,19 @@ struct Z_Construct_UClass_AProjectileGrenade_Statics
 		{ "Category", "ProjectileGrenade" },
 		{ "ModuleRelativePath", "Weapon/ProjectileGrenade.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TimeToEnableCollision_MetaData[] = {
+		{ "Category", "ProjectileGrenade" },
+		{ "ModuleRelativePath", "Weapon/ProjectileGrenade.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileMovementComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BounceSound;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_TimeToEnableCollision;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AProjectileGrenade_OnBounce, "OnBounce" }, // 2619760300
+		{ &Z_Construct_UFunction_AProjectileGrenade_OnTimerHandleEnd, "OnTimerHandleEnd" }, // 2903478230
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -123,9 +159,11 @@ struct Z_Construct_UClass_AProjectileGrenade_Statics
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectileGrenade_Statics::NewProp_ProjectileMovementComponent = { "ProjectileMovementComponent", nullptr, (EPropertyFlags)0x00200800000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileGrenade, ProjectileMovementComponent), Z_Construct_UClass_UProjectileMovementComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileMovementComponent_MetaData), NewProp_ProjectileMovementComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectileGrenade_Statics::NewProp_BounceSound = { "BounceSound", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileGrenade, BounceSound), Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BounceSound_MetaData), NewProp_BounceSound_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AProjectileGrenade_Statics::NewProp_TimeToEnableCollision = { "TimeToEnableCollision", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileGrenade, TimeToEnableCollision), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TimeToEnableCollision_MetaData), NewProp_TimeToEnableCollision_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AProjectileGrenade_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileGrenade_Statics::NewProp_ProjectileMovementComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileGrenade_Statics::NewProp_BounceSound,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileGrenade_Statics::NewProp_TimeToEnableCollision,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AProjectileGrenade_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AProjectileGrenade_Statics::DependentSingletons[])() = {
@@ -168,10 +206,10 @@ AProjectileGrenade::~AProjectileGrenade() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_ProjectileGrenade_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AProjectileGrenade, AProjectileGrenade::StaticClass, TEXT("AProjectileGrenade"), &Z_Registration_Info_UClass_AProjectileGrenade, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectileGrenade), 1008346835U) },
+		{ Z_Construct_UClass_AProjectileGrenade, AProjectileGrenade::StaticClass, TEXT("AProjectileGrenade"), &Z_Registration_Info_UClass_AProjectileGrenade, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectileGrenade), 315578176U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_ProjectileGrenade_h_398795631(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_ProjectileGrenade_h_3014782449(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_ProjectileGrenade_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Weapon_ProjectileGrenade_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

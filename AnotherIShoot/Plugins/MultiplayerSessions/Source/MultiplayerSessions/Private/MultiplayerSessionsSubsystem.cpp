@@ -106,6 +106,7 @@ void UMultiplayerSessionsSubsystem::DestroySession()
 {
 	if (!SessionInterface.IsValid())
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Failed! no session valid to destroy"));
 		MultiplayerOnDestroySessionComplete.Broadcast(false);
 		return;
 	}
@@ -114,6 +115,7 @@ void UMultiplayerSessionsSubsystem::DestroySession()
 
 	if (!SessionInterface->DestroySession(NAME_GameSession))
 	{
+		UE_LOG(LogTemp, Warning, TEXT("failed to destroy session"));
 		SessionInterface->ClearOnDestroySessionCompleteDelegate_Handle(DestroySessionCompleteDelegateHandle);
 		MultiplayerOnDestroySessionComplete.Broadcast(false);
 	}

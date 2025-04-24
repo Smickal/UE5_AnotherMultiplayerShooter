@@ -40,7 +40,9 @@ void AProjectileGrenade::PostEditChangeProperty(FPropertyChangedEvent& PropertyC
 void AProjectileGrenade::BeginPlay()
 {
 	AActor::BeginPlay();
+	DisableCollisionAFewSecondAfterThrow();
 
+	
 	StartDestroyTimer();
 	SpawnTrailSystem();
 	ProjectileMovementComponent->OnProjectileBounce.AddDynamic(this, &AProjectileGrenade::OnBounce);
@@ -64,5 +66,24 @@ void AProjectileGrenade::Destroyed()
 	PlayParticleAndSound(nullptr);
 	
 	Super::Destroyed();
+}
+
+void AProjectileGrenade::DisableCollisionAFewSecondAfterThrow()
+{
+	if(HasAuthority())
+	{
+		CollisionBox->SetCollisionEnabled(ECollisionEnabled::Type::NoCollision);
+		GetWorldTimerManager().SetTimer(
+			EnableCollisiontimerHandle,
+			this,
+			&AProjectileGrenade::OnTimerHandleEnd,
+			TimeToEnableCollision
+			);
+	}
+}
+
+void AProjectileGrenade::OnTimerHandleEnd()
+{
+	CollisionBox->SetCollisionEnabled(ECollisionEnabled::Type::QueryAndPhysics);	
 }
 

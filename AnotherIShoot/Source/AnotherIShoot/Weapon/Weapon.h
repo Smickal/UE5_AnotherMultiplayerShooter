@@ -142,7 +142,7 @@ protected:
 	void OnTimerWeaponDissolveEnd();
 public:
 	//Variables
-	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
+	UPROPERTY(EditAnywhere, Category = "Weapon Properties", BlueprintReadOnly)
 	EWeaponType WeaponType = EWeaponType::EWT_AssaultRifle;
 
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
@@ -208,7 +208,7 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float ZoomInterpSpeed = 20.f;
-
+	
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties" )
 	EFireType FireType;
 

@@ -153,7 +153,7 @@ public:
 	bool bIsLocallyReloading = false;
 
 private:
-	UPROPERTY(ReplicatedUsing = OnRep_EquippedWeapon)
+	UPROPERTY(ReplicatedUsing = OnRep_EquippedWeapon, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	AWeapon* EquippedWeapon;
 
 	UPROPERTY(ReplicatedUsing = OnRep_SecondaryWeapon)
@@ -169,7 +169,7 @@ private:
 	UPROPERTY()
 	ABlasterHUD* HUD;
 
-	UPROPERTY(ReplicatedUsing = OnRep_Aiming)
+	UPROPERTY(ReplicatedUsing = OnRep_Aiming, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	bool bIsAiming = false;
 
 	bool bLocalAimButtonPressed = false;

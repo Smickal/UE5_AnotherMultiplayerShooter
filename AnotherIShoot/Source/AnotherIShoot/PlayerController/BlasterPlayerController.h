@@ -7,6 +7,7 @@
 #include "GameFramework/PlayerController.h"
 #include "BlasterPlayerController.generated.h"
 
+class UBlasterGameSave;
 class ABlasterGameMode;
 class UCharacterOverlay;
 /**
@@ -41,7 +42,9 @@ public:
 	void SetHUDWeaponType(FString WeaponName, UTexture2D* WeaponTexture);
 	void SetHUDGrenade(int32 Grenade);
 	void SetHUDTeam(ETeam TeamToSet);
-	void ActivatePlayerName();
+
+	UFUNCTION(BlueprintCallable)
+	void SetHUDPauseGame(bool bIsActivated);
 	
 	
 	void SetHUDMatchCountdown(float CountdownTime);
@@ -63,6 +66,19 @@ public:
 	void BroadcastElim(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim);
 
 	void ShowPlayerOverHead();
+
+
+
+	void HideBlasterHUD(bool bIsHide);
+
+	UPROPERTY(BlueprintReadWrite)
+	float MouseXSensitivity = 1.f;
+	UPROPERTY(BlueprintReadWrite)
+	float MouseYSensitivity = 1.f;
+	UPROPERTY(BlueprintReadWrite)
+	float SniperZoomSensitivity = 1.f;
+
+	
 	
 protected:
 	virtual void BeginPlay() override;
@@ -98,7 +114,6 @@ protected:
 	void Client_ElimAnnouncement(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim);
 
 	
-
 	UPROPERTY(ReplicatedUsing = OnRep_ShowTeamScore)
 	bool bShowTeamScore = false;
 
@@ -107,6 +122,12 @@ protected:
 
 	FString GetInfoText(const TArray<ABlasterPlayerState*>& Players);
 	FString GetTeamsInfoText(class ABlasterGameState* BlasterGameState);
+	
+	UPROPERTY(BlueprintReadWrite)
+	UBlasterGameSave* BlasterGameSaveInstance;
+
+
+	void CreatePauseMenuHUD();
 private:
 	UPROPERTY()
 	class ABlasterHUD* BlasterHUD;
@@ -115,6 +136,12 @@ private:
 	UPROPERTY(EditAnywhere, Category = "HUD")
 	TSubclassOf<UUserWidget> ReturnToMainMenuWidget;
 
+	UPROPERTY(EditAnywhere, Category = "HUD")
+	TSubclassOf<UUserWidget> PauseMenuInGameWidget;
+
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UUserWidget* PauseHUD;
+	
 	UPROPERTY()
 	class UReturnToMainMenu* ReturnToMainMenu;
 
@@ -148,6 +175,9 @@ private:
 	float HighPingThreshold = 80.f;
 
 	float PingAnimationRunningTime = 0.f;
+
+	
+
 	
 protected:
 	//
@@ -194,4 +224,6 @@ protected:
 	UPROPERTY()
 	UTexture2D* HUDWeaponTypeTexture;
 	FString HUDWeaponName;
+
+	
 };
