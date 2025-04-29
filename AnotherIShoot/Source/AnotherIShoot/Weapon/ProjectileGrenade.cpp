@@ -3,6 +3,7 @@
 
 #include "ProjectileGrenade.h"
 
+#include "AnotherIShoot/Character/BlasterCharacter.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundCue.h"
@@ -56,6 +57,12 @@ void AProjectileGrenade::OnBounce(const FHitResult& ImpactResult, const FVector&
 			this,
 			BounceSound,
 			GetActorLocation());
+	}
+
+	ABlasterCharacter* ImpactCharacter = Cast<ABlasterCharacter>(ImpactResult.GetActor());
+	if(ImpactCharacter)
+	{
+		Destroy();
 	}
 }
 

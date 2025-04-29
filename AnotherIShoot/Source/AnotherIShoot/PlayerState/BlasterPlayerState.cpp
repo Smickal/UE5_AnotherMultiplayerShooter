@@ -95,9 +95,7 @@ void ABlasterPlayerState::SetTeam(ETeam TeamToSet)
 	{
 		BCharacter->SetTeamColor(Team);
 	}
-
 	
-
 	
 }
 void ABlasterPlayerState::OnRep_Team()

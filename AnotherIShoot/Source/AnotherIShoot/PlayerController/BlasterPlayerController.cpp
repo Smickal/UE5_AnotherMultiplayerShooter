@@ -26,6 +26,7 @@ void ABlasterPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProper
 
 	DOREPLIFETIME(ABlasterPlayerController, MatchState);
 	DOREPLIFETIME(ABlasterPlayerController, bShowTeamScore);
+	DOREPLIFETIME(ABlasterPlayerController, bIsLobby);
 }
 
 
@@ -98,6 +99,11 @@ void ABlasterPlayerController::OnPossess(APawn* InPawn)
 	if(BlasterCharacter)
 	{
 		SetHUDHealth(BlasterCharacter->GetCurrentHealth(), BlasterCharacter->GetMaxHealth());
+
+		if(PauseMenuInGameWidget)
+		{
+			CreatePauseMenuHUD();
+		}
 	}
 }
 
@@ -210,12 +216,11 @@ void ABlasterPlayerController::HandleMatchHasStarted(bool bTeamsMatch)
 		}
 		
 
-		if(PauseMenuInGameWidget && PauseHUD == nullptr)
+		if(PauseMenuInGameWidget)
 		{
 			CreatePauseMenuHUD();
 		}
-
-		if(!HasAuthority()) return;
+		
 		
 		if(bTeamsMatch)
 		{
@@ -668,8 +673,6 @@ void ABlasterPlayerController::SetHUDTeam(ETeam TeamToSet)
 
 void ABlasterPlayerController::SetHUDPauseGame(bool bIsActivated)
 {
-	if(PauseHUD == nullptr) return;
-	
 	if(bIsActivated)
 	{
 		CreatePauseMenuHUD();
@@ -997,13 +1000,34 @@ void ABlasterPlayerController::Client_ElimAnnouncement_Implementation(ABlasterPl
 
 void ABlasterPlayerController::CreatePauseMenuHUD()
 {
-	if(PauseMenuInGameWidget)
+	if(!GetPawn()->IsLocallyControlled()) return;
+
+	if(PauseHUD)
 	{
-		PauseHUD = CreateWidget(this, PauseMenuInGameWidget);
-		PauseHUD->AddToViewport();
-		PauseHUD->SetVisibility(ESlateVisibility::Hidden);
-		
-		PauseHUD->SetOwningPlayer(this);
+		PauseHUD->RemoveFromParent();
+	}
+	
+	if(!bIsLobby)
+	{
+		if(PauseMenuInGameWidget)
+		{
+			PauseHUD = CreateWidget(this, PauseMenuInGameWidget);
+			PauseHUD->AddToViewport();
+			PauseHUD->SetVisibility(ESlateVisibility::Hidden);
+			
+			PauseHUD->SetOwningPlayer(this);
+		}
+	}
+	else
+	{
+		if(LobbyPauseWidgetClass)
+		{
+			PauseHUD = CreateWidget(this, LobbyPauseWidgetClass);
+			PauseHUD->AddToViewport();
+			PauseHUD->SetVisibility(ESlateVisibility::Hidden);
+
+			PauseHUD->SetOwningPlayer(this);
+		}
 	}
 }
 

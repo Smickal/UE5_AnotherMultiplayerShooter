@@ -22,6 +22,8 @@ class ANOTHERISHOOT_API ABlasterPlayerController : public APlayerController
 	GENERATED_BODY()
 
 public:
+	FORCEINLINE void SetIsLobby(bool value) {bIsLobby = value;}
+	
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 	
 	
@@ -125,8 +127,7 @@ protected:
 	
 	UPROPERTY(BlueprintReadWrite)
 	UBlasterGameSave* BlasterGameSaveInstance;
-
-
+	
 	void CreatePauseMenuHUD();
 private:
 	UPROPERTY()
@@ -139,8 +140,14 @@ private:
 	UPROPERTY(EditAnywhere, Category = "HUD")
 	TSubclassOf<UUserWidget> PauseMenuInGameWidget;
 
+	UPROPERTY(EditAnywhere, Category = "HUD")
+	TSubclassOf<UUserWidget> LobbyPauseWidgetClass;
+ 
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UUserWidget* PauseHUD;
+
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UUserWidget* LobbyPauseHUD;
 	
 	UPROPERTY()
 	class UReturnToMainMenu* ReturnToMainMenu;
@@ -151,6 +158,9 @@ private:
 	float WarmUpTime = 0.f;
 	float LevelStartingTime = 0.f;
 	float CooldownTime = 0.f;
+
+	UPROPERTY(Replicated)
+	bool bIsLobby = false;
 	
 	uint32 CountdownInt = 0;
 

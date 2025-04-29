@@ -16,7 +16,20 @@
 				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Weapon/Projectiles/BP_ProjectileGrenade.uasset",
 				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Gamodes/BP_CTFGameMode.uasset",
 				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Character/Animation/ABP_BlasterCharacter.uasset",
-				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/WBP_CharacterOverlay.uasset"
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/WBP_CharacterOverlay.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Maps/BlasterMap_BuiltData.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Maps/BlasterMap.umap",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Assets/LearningKit_Games/Assets/Architecture/Walls/SM_Kit_Wall_Straight.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Assets/LearningKit_Games/Assets/Props/PuzzlePieces/PuzzleCube_A/SM_PuzzleCube_A.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Assets/LearningKit_Games/Assets/Architecture/Walls/SM_Kit_Wall_Window.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Assets/LearningKit_Games/Assets/Architecture/Walls/SM_Kit_Wall_Door.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Maps/Lobby.umap",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/Assets/LearningKit_Robots/Maps_Robots/Shared/Map_1-6_Challenge_Env.umap",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Gamodes/BP_LobbyGameMode.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/PlayerController/BP_LobbyBlasterPController.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/WBP_LobbyGamePause.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/HUD/WBP_PlayerName.uasset",
+				"C:/Unreal Projects/Third Person Shooter/UE5_AnotherMultiplayerShooter/AnotherIShoot/Content/_Blueprints/Character/BP_BlasterCharacterLobby.uasset"
 			]
 		}
 	]

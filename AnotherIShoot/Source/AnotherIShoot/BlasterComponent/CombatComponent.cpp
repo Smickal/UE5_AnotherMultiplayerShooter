@@ -740,8 +740,19 @@ void UCombatComponent::LineTraceUnderCrosshair(FHitResult& HitResult)
 		
 		if(HitResult.GetActor() && HitResult.GetActor()->Implements<UInteractWithCrosshairInterface>())
 		{
-			Package.CrosshairColor = FLinearColor::Red;
-			CrosshairAimAtEnemyFactor = -.1f;
+			ABlasterCharacter* HitCharacter = Cast<ABlasterCharacter>(HitResult.GetActor());
+			if(HitCharacter)
+			{
+				if(HitCharacter->GetTeam() == PlayerCharacter->GetTeam() && PlayerCharacter->GetTeam() != ETeam::ET_NoTeam)
+				{
+					Package.CrosshairColor = FLinearColor::Green;
+				}
+				else
+				{
+					Package.CrosshairColor = FLinearColor::Red;
+				}
+				CrosshairAimAtEnemyFactor = -.1f;
+			}
 		}
 		else
 		{

@@ -3,6 +3,7 @@
 #include "LobbyGameMode.h"
 
 #include "MultiplayerSessionsSubsystem.h"
+#include "AnotherIShoot/PlayerController/BlasterPlayerController.h"
 #include "GameFramework/GameStateBase.h"
 
 void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
@@ -40,6 +41,11 @@ void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
 			}
 		}
 	}
-	
+
+	ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(NewPlayer);
+	if(BlasterPlayerController)
+	{
+		BlasterPlayerController->SetIsLobby(true);
+	}
 	
 }

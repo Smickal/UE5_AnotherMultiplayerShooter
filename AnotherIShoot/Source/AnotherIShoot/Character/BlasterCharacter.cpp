@@ -1259,7 +1259,7 @@ void ABlasterCharacter::SetTeamColor(ETeam Team)
 			break;
 		case ETeam::ET_NoTeam:
 			GetMesh()->SetMaterial(0, OriginalMaterial);
-			DissolvedMaterialInstance = OriginalMaterial;
+			DissolvedMaterialInstance = BlueDissolveMatInst;
 			break;
 		case ETeam::ET_MAX:
 			break;
