@@ -82,7 +82,7 @@
 /DORIGINAL_FILE_NAME="UnrealEditor-AnotherIShoot.dll"
 /DBUILD_ICON_FILE_NAME="\"..\\Build\\Windows\\Resources\\Default.ico\""
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
-/DPROJECT_PRODUCT_NAME="Third Person Game Template"
+/DPROJECT_PRODUCT_NAME=ShotFrens
 /DPROJECT_PRODUCT_IDENTIFIER=AnotherIShoot
 /fo "C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Intermediate\Build\Win64\x64\UnrealEditor\Development\AnotherIShoot\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"

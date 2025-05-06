@@ -32,7 +32,8 @@ public: \
 		DefeatsAmount=NETFIELD_REP_START, \
 		AttackerNameToSave, \
 		Team, \
-		NETFIELD_REP_END=Team	}; \
+		bIsHost, \
+		NETFIELD_REP_END=bIsHost	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 

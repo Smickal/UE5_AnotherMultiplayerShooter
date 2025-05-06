@@ -17,10 +17,10 @@
 			"BuffComponent.gen.cpp.obj",
 			"BulletCasing.gen.cpp.obj",
 			"CaptureTheFlagGameMode.gen.cpp.obj",
-			"CharacterOverlay.gen.cpp.obj",
-			"CombatComponent.gen.cpp.obj"
+			"CharacterOverlay.gen.cpp.obj"
 		],
 		"Module.AnotherIShoot.2.cpp.obj": [
+			"CombatComponent.gen.cpp.obj",
 			"CombatState.gen.cpp.obj",
 			"ElimmedAnnoucement.gen.cpp.obj",
 			"Flag.gen.cpp.obj",
@@ -43,7 +43,9 @@
 			"RespawnablePickup.gen.cpp.obj",
 			"ReturnToMainMenu.gen.cpp.obj",
 			"RocketMovementComponent.gen.cpp.obj",
-			"SandboxGameMode.gen.cpp.obj",
+			"SandboxGameMode.gen.cpp.obj"
+		],
+		"Module.AnotherIShoot.3.cpp.obj": [
 			"ShieldPickup.gen.cpp.obj",
 			"ShotgunWeapon.gen.cpp.obj",
 			"SpeedPickup.gen.cpp.obj",
@@ -51,9 +53,7 @@
 			"TeamPlayerStart.gen.cpp.obj",
 			"TeamsGameMode.gen.cpp.obj",
 			"TurningInPlace.gen.cpp.obj",
-			"Weapon.gen.cpp.obj"
-		],
-		"Module.AnotherIShoot.3.cpp.obj": [
+			"Weapon.gen.cpp.obj",
 			"WeaponTypes.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
 			"AnotherIShoot.cpp.obj",

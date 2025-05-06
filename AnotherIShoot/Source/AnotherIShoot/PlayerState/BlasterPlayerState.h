@@ -48,8 +48,12 @@ private:
 	UPROPERTY(ReplicatedUsing = OnRep_Team)
 	ETeam Team = ETeam::ET_NoTeam;
 
+	UPROPERTY(Replicated, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	bool bIsHost = false;
 	
 public:
 	FORCEINLINE ETeam GetTeam() const {return Team;}
 	void SetTeam(ETeam TeamToSet);
+
+	FORCEINLINE void SetIsHost(bool value) {bIsHost = value;}
 };

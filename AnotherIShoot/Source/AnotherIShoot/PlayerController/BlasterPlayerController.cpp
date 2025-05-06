@@ -25,8 +25,9 @@ void ABlasterPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProper
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(ABlasterPlayerController, MatchState);
-	DOREPLIFETIME(ABlasterPlayerController, bShowTeamScore);
+	DOREPLIFETIME(ABlasterPlayerController, isShowingTeamScore);
 	DOREPLIFETIME(ABlasterPlayerController, bIsLobby);
+	
 }
 
 
@@ -104,6 +105,10 @@ void ABlasterPlayerController::OnPossess(APawn* InPawn)
 		{
 			CreatePauseMenuHUD();
 		}
+		
+
+		FInputModeGameOnly InputMode;
+		SetInputMode(InputMode);
 	}
 }
 
@@ -173,12 +178,14 @@ void ABlasterPlayerController::OnMatchStateSet(FName State, bool bTeamsMatch)
 	if(MatchState == MatchState::InProgress)
 	{
 		HandleMatchHasStarted(bTeamsMatch);
+		
 	}
 	else if(MatchState == MatchState::Cooldown)
 	{
 		HandleCooldownHasStarted();
 	}
-	
+
+	HandleShowTeamScoreHUD(bTeamsMatch);
 }
 //OnRep_ MatchState
 void ABlasterPlayerController::OnRep_MatchState()
@@ -196,7 +203,7 @@ void ABlasterPlayerController::OnRep_MatchState()
 
 void ABlasterPlayerController::HandleMatchHasStarted(bool bTeamsMatch)
 {
-	if(HasAuthority()) bShowTeamScore = bTeamsMatch;
+
 	BlasterHUD = BlasterHUD == nullptr ?  Cast<ABlasterHUD>(GetHUD()) : BlasterHUD;
 	if(BlasterHUD)
 	{
@@ -215,21 +222,22 @@ void ABlasterPlayerController::HandleMatchHasStarted(bool bTeamsMatch)
 			BlasterHUD->CharacterOverlay->PlayBlinkAnimation(false);
 		}
 		
-
-		if(PauseMenuInGameWidget)
-		{
-			CreatePauseMenuHUD();
-		}
 		
-		
-		if(bTeamsMatch)
-		{
-			InitTeamScore();
-		}
-		else
-		{
-			HideTeamScore();
-		}
+		// if(!HasAuthority() && isShowingTeamScore != 1)
+		// {
+		// 	HideTeamScore();
+		// }
+		// else
+		// {
+		// 	if(isShowingTeamScore)
+		// 	{
+		// 		InitTeamScore();
+		// 	}
+		// 	else
+		// 	{
+		// 		HideTeamScore();
+		// 	}
+		// }
 
 		
 	}
@@ -257,7 +265,7 @@ void ABlasterPlayerController::HandleCooldownHasStarted()
 			if(BlasterHUD->Annoucement->InfoText && GameState && BlasterPlayerState)
 			{
 				TArray<ABlasterPlayerState*> TopPlayers = GameState->TopScoringPlayer;
-				FString InfoTextString = bShowTeamScore ? GetTeamsInfoText(GameState) : GetInfoText(TopPlayers);
+				FString InfoTextString = isShowingTeamScore == 1 ? GetTeamsInfoText(GameState) : GetInfoText(TopPlayers);
 				
 				
 				BlasterHUD->Annoucement->InfoText->SetText(FText::FromString(InfoTextString));	
@@ -275,6 +283,27 @@ void ABlasterPlayerController::HandleCooldownHasStarted()
 	{
 		BlasterCharacter->bDisableGameplay = true;
 		BlasterCharacter->GetCombatComponent()->FireButtonPressed(false);
+	}
+}
+
+void ABlasterPlayerController::HandleShowTeamScoreHUD(bool bTeamsMatch)
+{
+	if(HasAuthority())
+	{
+		isShowingTeamScore = bTeamsMatch ? 1 : 0;
+		UE_LOG(LogTemp, Warning, TEXT("Autority : %d"),isShowingTeamScore);
+	}
+}
+
+void ABlasterPlayerController::OnRep_ShowTeamScore()
+{
+	if(isShowingTeamScore)
+	{
+		InitTeamScore();
+	}
+	else
+	{
+		HideTeamScore();
 	}
 }
 
@@ -348,8 +377,6 @@ FString ABlasterPlayerController::GetTeamsInfoText(ABlasterGameState* BlasterGam
 
 	return InfoTextString;
 }
-
-
 
 void ABlasterPlayerController::CheckTimeSync(float DeltaSeconds)
 {
@@ -440,6 +467,12 @@ void ABlasterPlayerController::HideTeamScore()
 			BlasterHUD->CharacterOverlay->RedTeamScore &&
 				BlasterHUD->CharacterOverlay->BlueTeamScore &&
 					BlasterHUD->CharacterOverlay->ScoreSpacerText;
+
+	if(!HasAuthority() && IsLocalPlayerController())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Local Client Hides Score HUD"));
+	}
+	
 	if(bHudValid)
 	{
 		BlasterHUD->CharacterOverlay->RedTeamScore->SetText(FText());
@@ -650,15 +683,18 @@ void ABlasterPlayerController::SetHUDTeam(ETeam TeamToSet)
 				BlasterHUD->CharacterOverlay->TeamText->SetText(FText::FromString("Red Team"));
 				TextColor = FColor::Red;
 				BlasterHUD->CharacterOverlay->TeamText->SetColorAndOpacity(TextColor);
+				InitTeamScore();
 				break;
 			case ETeam::ET_BlueTeam:
 				BlasterHUD->CharacterOverlay->TeamText->SetText(FText::FromString("Blue Team"));
 				TextColor = FColor::Blue;
 				BlasterHUD->CharacterOverlay->TeamText->SetColorAndOpacity(TextColor);
+				InitTeamScore();
 				break;
 				
 			case ETeam::ET_NoTeam:
 				BlasterHUD->CharacterOverlay->TeamText->SetText(FText::FromString(""));
+				HideTeamScore();
 				break;
 			case ETeam::ET_MAX:
 				break;
@@ -681,6 +717,22 @@ void ABlasterPlayerController::SetHUDPauseGame(bool bIsActivated)
 	else
 	{
 		PauseHUD->RemoveFromParent();
+	}
+}
+
+void ABlasterPlayerController::SetHUDSettingMainMenu(bool bIsActivated)
+{
+
+	if(bIsActivated)
+	{
+		SettingMainMenuHUD = CreateWidget(this, SettingMainMenuWidgetClass);
+		SettingMainMenuHUD->AddToViewport();
+		SettingMainMenuHUD->SetVisibility(ESlateVisibility::Visible);
+	}
+	else
+	{
+		SettingMainMenuHUD->RemoveFromParent();
+		SettingMainMenuHUD = nullptr;
 	}
 }
 
@@ -901,17 +953,7 @@ void ABlasterPlayerController::ShowReturnToMainMenu()
 
 
 
-void ABlasterPlayerController::OnRep_ShowTeamScore()
-{
-	if(bShowTeamScore)
-	{
-		InitTeamScore();
-	}
-	else
-	{
-		HideTeamScore();
-	}
-}
+
 
 
 void ABlasterPlayerController::ShowPlayerOverHead()
@@ -1005,11 +1047,12 @@ void ABlasterPlayerController::CreatePauseMenuHUD()
 	if(PauseHUD)
 	{
 		PauseHUD->RemoveFromParent();
+		PauseHUD = nullptr;
 	}
 	
 	if(!bIsLobby)
 	{
-		if(PauseMenuInGameWidget)
+		if(PauseMenuInGameWidget && PauseHUD == nullptr)
 		{
 			PauseHUD = CreateWidget(this, PauseMenuInGameWidget);
 			PauseHUD->AddToViewport();
@@ -1029,6 +1072,26 @@ void ABlasterPlayerController::CreatePauseMenuHUD()
 			PauseHUD->SetOwningPlayer(this);
 		}
 	}
+}
+
+void ABlasterPlayerController::CreateMainMenuSettingHUD()
+{
+	if(!GetPawn()->IsLocallyControlled()) return;
+
+	if(SettingMainMenuHUD)
+	{
+		SettingMainMenuHUD->RemoveFromParent();
+		SettingMainMenuHUD = nullptr;
+	}
+
+	
+	if(SettingMainMenuHUD == nullptr && SettingMainMenuWidgetClass)
+	{
+		
+
+		SettingMainMenuHUD->SetVisibility(ESlateVisibility::Hidden);
+	}
+	
 }
 
 

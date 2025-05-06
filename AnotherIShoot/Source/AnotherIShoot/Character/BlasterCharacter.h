@@ -309,8 +309,8 @@ private:
 	UStaticMeshComponent* AttachedGrenade;
 	
 public:
-	
 	void SetTeamColor(ETeam Team);
+	
 protected:
 	//functions
 	//
@@ -367,7 +367,7 @@ public:
 	void PollInit();
 
 	void ActivateOverheadWidget();
-
+	void SetSpawnPoint();
 protected:
 	UFUNCTION(BlueprintCallable)
 	void MoveForward(float Value);
@@ -409,7 +409,7 @@ protected:
 
 	
 
-	void SetSpawnPoint();
+	
 	void OnPlayerStateInitialized();
 	
 	//Setters

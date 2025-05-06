@@ -21,6 +21,16 @@ public:
 	void MenuSetup();
 	void MenuTearDown();
 
+
+	UFUNCTION(BlueprintCallable)
+	void TravelServer(FString MapName, FString MatchType);
+	
+	UPROPERTY(meta = (BindWidget), BlueprintReadWrite)
+	UButton* ReturnButton;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool bIsMainMenu = false;
+	
 protected:
 	virtual bool Initialize() override;
 
@@ -29,9 +39,12 @@ protected:
 
 	UFUNCTION()
 	void OnPlayerLeftGame();
+
+	UFUNCTION(BlueprintCallable)
+	void ServerTravelToLobby();
+
+	
 private:
-	UPROPERTY(meta = (BindWidget))
-	UButton* ReturnButton;
 
 	UFUNCTION(BlueprintCallable)
 	void OnReturnButtonPressed();

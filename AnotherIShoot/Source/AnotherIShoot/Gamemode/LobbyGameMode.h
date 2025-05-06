@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BlasterGameMode.h"
 #include "GameFramework/GameMode.h"
 #include "LobbyGameMode.generated.h"
 
@@ -16,6 +17,6 @@ class ANOTHERISHOOT_API ALobbyGameMode : public AGameMode
 
 public:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
-
+	virtual void HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer) override;
 	
 };

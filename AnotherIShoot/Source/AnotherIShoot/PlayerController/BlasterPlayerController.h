@@ -47,6 +47,10 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetHUDPauseGame(bool bIsActivated);
+
+
+	UFUNCTION(BlueprintCallable)
+	void SetHUDSettingMainMenu(bool bIsActivated);
 	
 	
 	void SetHUDMatchCountdown(float CountdownTime);
@@ -58,6 +62,9 @@ public:
 	
 	void HandleMatchHasStarted(bool bTeamsMatch = false);
 	void HandleCooldownHasStarted();
+
+	void HandleShowTeamScoreHUD(bool bTeamsMatch = false);
+	
 	
 	void OnMatchStateSet(FName State, bool bTeamsMatch = false);
 
@@ -114,11 +121,13 @@ protected:
 
 	UFUNCTION(Client, Reliable)
 	void Client_ElimAnnouncement(ABlasterPlayerState* Attacker, ABlasterPlayerState* Victim);
+	
+	//bool bShowTeamScore = false;
+
+	UPROPERTY(ReplicatedUsing = OnRep_ShowTeamScore)
+	int isShowingTeamScore = -1;
 
 	
-	UPROPERTY(ReplicatedUsing = OnRep_ShowTeamScore)
-	bool bShowTeamScore = false;
-
 	UFUNCTION()
 	void OnRep_ShowTeamScore();
 
@@ -129,6 +138,8 @@ protected:
 	UBlasterGameSave* BlasterGameSaveInstance;
 	
 	void CreatePauseMenuHUD();
+	void CreateMainMenuSettingHUD();
+	
 private:
 	UPROPERTY()
 	class ABlasterHUD* BlasterHUD;
@@ -142,12 +153,18 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "HUD")
 	TSubclassOf<UUserWidget> LobbyPauseWidgetClass;
+
+	UPROPERTY(EditAnywhere, Category = "HUD")
+	TSubclassOf<UUserWidget> SettingMainMenuWidgetClass;
  
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UUserWidget* PauseHUD;
 
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UUserWidget* LobbyPauseHUD;
+
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UUserWidget* SettingMainMenuHUD;
 	
 	UPROPERTY()
 	class UReturnToMainMenu* ReturnToMainMenu;

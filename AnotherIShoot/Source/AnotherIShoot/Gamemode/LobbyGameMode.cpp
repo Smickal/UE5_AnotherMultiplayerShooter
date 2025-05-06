@@ -4,6 +4,7 @@
 
 #include "MultiplayerSessionsSubsystem.h"
 #include "AnotherIShoot/PlayerController/BlasterPlayerController.h"
+#include "AnotherIShoot/PlayerState/BlasterPlayerState.h"
 #include "GameFramework/GameStateBase.h"
 
 void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
@@ -42,10 +43,25 @@ void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
 		}
 	}
 
+	
+	
+}
+
+void ALobbyGameMode::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
+{
+	Super::HandleStartingNewPlayer_Implementation(NewPlayer);
+
 	ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(NewPlayer);
 	if(BlasterPlayerController)
 	{
 		BlasterPlayerController->SetIsLobby(true);
 	}
-	
+
+	GEngine->AddOnScreenDebugMessage(
+		-1,
+		10.f,
+		FColor::Red,
+		FString::Printf(TEXT("%s is successfully joining a lobby!"), *NewPlayer->GetPlayerState<ABlasterPlayerState>()->GetPlayerName()));
 }
+
+

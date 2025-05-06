@@ -19,7 +19,11 @@ public:
 	
 	UPROPERTY(EditAnywhere)
 	ETeam TeamZone = ETeam::ET_NoTeam;
-
+	
+#if WITH_EDITOR
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+#endif 
+	
 protected:
 	virtual void BeginPlay() override;
 
@@ -43,5 +47,8 @@ private:
 	UPROPERTY(EditAnywhere)
 	USphereComponent* ZoneSphere;
 
+	UPROPERTY(EditAnywhere, Category = "FlagZone")
+	float SphereZoneRadius;
 
+	
 };

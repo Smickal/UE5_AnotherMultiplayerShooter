@@ -16,8 +16,25 @@ AFlagZone::AFlagZone()
 	ZoneSphere = CreateDefaultSubobject<USphereComponent>(TEXT("Flag Capture Zone"));
 	SetRootComponent(ZoneSphere);
 
+	SphereZoneRadius = ZoneSphere->GetUnscaledSphereRadius();
+}
+
+#if WITH_EDITOR
+void AFlagZone::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+{
+	Super::PostEditChangeProperty(PropertyChangedEvent);
+
+	FName PropertyName = PropertyChangedEvent.Property != nullptr ? PropertyChangedEvent.GetPropertyName() : NAME_None;
+	if(PropertyName == GET_MEMBER_NAME_CHECKED(AFlagZone, SphereZoneRadius))
+	{
+		if(ZoneSphere)
+		{
+			ZoneSphere->SetSphereRadius(SphereZoneRadius);
+		}
+	}
 	
 }
+#endif
 
 void AFlagZone::BeginPlay()
 {

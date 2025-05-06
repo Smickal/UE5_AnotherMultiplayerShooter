@@ -46,10 +46,16 @@ struct Z_Construct_UClass_ABlasterGameMode_Statics
 		{ "Category", "BlasterGameMode" },
 		{ "ModuleRelativePath", "Gamemode/BlasterGameMode.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bTeamsMatch_MetaData[] = {
+		{ "Category", "BlasterGameMode" },
+		{ "ModuleRelativePath", "Gamemode/BlasterGameMode.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_WarmUpTime;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MatchTime;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CooldownTime;
+	static void NewProp_bTeamsMatch_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bTeamsMatch;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -60,10 +66,16 @@ struct Z_Construct_UClass_ABlasterGameMode_Statics
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_WarmUpTime = { "WarmUpTime", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterGameMode, WarmUpTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WarmUpTime_MetaData), NewProp_WarmUpTime_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_MatchTime = { "MatchTime", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterGameMode, MatchTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MatchTime_MetaData), NewProp_MatchTime_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_CooldownTime = { "CooldownTime", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABlasterGameMode, CooldownTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CooldownTime_MetaData), NewProp_CooldownTime_MetaData) };
+void Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_bTeamsMatch_SetBit(void* Obj)
+{
+	((ABlasterGameMode*)Obj)->bTeamsMatch = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_bTeamsMatch = { "bTeamsMatch", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABlasterGameMode), &Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_bTeamsMatch_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bTeamsMatch_MetaData), NewProp_bTeamsMatch_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABlasterGameMode_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_WarmUpTime,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_MatchTime,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_CooldownTime,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlasterGameMode_Statics::NewProp_bTeamsMatch,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABlasterGameMode_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ABlasterGameMode_Statics::DependentSingletons[])() = {
@@ -106,10 +118,10 @@ ABlasterGameMode::~ABlasterGameMode() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Gamemode_BlasterGameMode_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABlasterGameMode, ABlasterGameMode::StaticClass, TEXT("ABlasterGameMode"), &Z_Registration_Info_UClass_ABlasterGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterGameMode), 3120334416U) },
+		{ Z_Construct_UClass_ABlasterGameMode, ABlasterGameMode::StaticClass, TEXT("ABlasterGameMode"), &Z_Registration_Info_UClass_ABlasterGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlasterGameMode), 4174237373U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Gamemode_BlasterGameMode_h_522649656(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Gamemode_BlasterGameMode_h_351435037(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Gamemode_BlasterGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_Gamemode_BlasterGameMode_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

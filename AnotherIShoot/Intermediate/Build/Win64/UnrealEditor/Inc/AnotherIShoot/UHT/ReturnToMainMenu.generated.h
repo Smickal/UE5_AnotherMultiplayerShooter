@@ -16,8 +16,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_HUD_ReturnToMainMenu_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnReturnButtonPressed); \
+	DECLARE_FUNCTION(execServerTravelToLobby); \
 	DECLARE_FUNCTION(execOnPlayerLeftGame); \
 	DECLARE_FUNCTION(execOnDestroySessionComplete); \
+	DECLARE_FUNCTION(execTravelServer); \
 	DECLARE_FUNCTION(execMenuSetup);
 
 

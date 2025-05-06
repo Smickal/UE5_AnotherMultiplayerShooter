@@ -34,6 +34,7 @@ ANOTHERISHOOT_API void FHighPingDelegate_DelegateWrapper(const FMulticastScriptD
 	DECLARE_FUNCTION(execClient_JoinMidGame); \
 	DECLARE_FUNCTION(execServer_CheckMatchState); \
 	DECLARE_FUNCTION(execOnRep_MatchState); \
+	DECLARE_FUNCTION(execSetHUDSettingMainMenu); \
 	DECLARE_FUNCTION(execSetHUDPauseGame);
 
 
@@ -48,7 +49,7 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		bShowTeamScore=NETFIELD_REP_START, \
+		isShowingTeamScore=NETFIELD_REP_START, \
 		bIsLobby, \
 		MatchState, \
 		NETFIELD_REP_END=MatchState	}; \

@@ -556,6 +556,7 @@ void ABlasterCharacter::OnElimTimerFinished()
 	
 }
 
+//runs only on the server
 void ABlasterCharacter::Server_LeaveGame_Implementation()
 {
 	BlasterGameMode =  BlasterGameMode == nullptr ? GetWorld()->GetAuthGameMode<ABlasterGameMode>() : BlasterGameMode;
@@ -763,6 +764,11 @@ void ABlasterCharacter::PollInit()
 			{
 				Multicast_GainedTheLead();
 			}
+
+			if(HasAuthority() && IsLocallyControlled())
+			{
+				PlayerState->SetIsHost(true);
+			}
 		}
 
 	}
@@ -820,23 +826,29 @@ void ABlasterCharacter::SetSpawnPoint()
 			}
 		}
 
+		// UE_LOG(LogTemp, Warning, TEXT("%s -> %s -> %d"),
+		// 	*GetPlayerState()->GetPlayerName(),
+		// 	*UEnum::GetValueAsString(GetTeam()),
+		// 	TeamPlayerStarts.Num());
+
+		
 		//Set Team RandomLoc
 		if(TeamPlayerStarts.Num() > 0)
 		{
 			ATeamPlayerStart* ChosenPlayerStart = TeamPlayerStarts[FMath::RandRange(0, TeamPlayerStarts.Num() - 1)];
 			if(ChosenPlayerStart)
 			{
-				FHitResult* OutSweepHitResult = nullptr;
 				SetActorLocationAndRotation(
 					ChosenPlayerStart->GetActorLocation(),
-					ChosenPlayerStart->GetActorRotation(),
-					true,
-					OutSweepHitResult
+					ChosenPlayerStart->GetActorRotation()
 					);
-				// if(OutSweepHitResult &&  OutSweepHitResult->bBlockingHit)
-				// {
-				// 	UE_LOG(LogTemp, Warning, TEXT("Spawn Loc Hit With Something!"));
-				// }
+
+				// UE_LOG(LogTemp, Warning, TEXT(" %s  \n ChosenPlayerStartLoc: %s\n"
+				// 				  "Current Player Location: %s"),
+				// 				  *PlayerState->GetPlayerName(),
+				// 				  *ChosenPlayerStart->GetActorLocation().ToString(),
+				// 				  *GetActorLocation().ToString());	
+				
 			}
 		}
 		

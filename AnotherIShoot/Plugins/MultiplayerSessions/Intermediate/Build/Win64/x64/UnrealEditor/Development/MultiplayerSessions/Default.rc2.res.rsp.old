@@ -84,5 +84,5 @@
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
 /DPROJECT_PRODUCT_NAME="Third Person Game Template"
 /DPROJECT_PRODUCT_IDENTIFIER=AnotherIShoot
-/fo "C:\Unreal Projects\MultiplayerCourse\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Default.rc2.res"
+/fo "C:\Unreal Projects\Third Person Shooter\UE5_AnotherMultiplayerShooter\AnotherIShoot\Plugins\MultiplayerSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerSessions\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"

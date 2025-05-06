@@ -197,10 +197,15 @@ struct Z_Construct_UClass_AFlagZone_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "CaptureTheFlag/FlagZone.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SphereZoneRadius_MetaData[] = {
+		{ "Category", "FlagZone" },
+		{ "ModuleRelativePath", "CaptureTheFlag/FlagZone.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FBytePropertyParams NewProp_TeamZone_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_TeamZone;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ZoneSphere;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_SphereZoneRadius;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -216,10 +221,12 @@ struct Z_Construct_UClass_AFlagZone_Statics
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AFlagZone_Statics::NewProp_TeamZone_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AFlagZone_Statics::NewProp_TeamZone = { "TeamZone", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFlagZone, TeamZone), Z_Construct_UEnum_AnotherIShoot_ETeam, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TeamZone_MetaData), NewProp_TeamZone_MetaData) }; // 1690429139
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFlagZone_Statics::NewProp_ZoneSphere = { "ZoneSphere", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFlagZone, ZoneSphere), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ZoneSphere_MetaData), NewProp_ZoneSphere_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFlagZone_Statics::NewProp_SphereZoneRadius = { "SphereZoneRadius", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFlagZone, SphereZoneRadius), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SphereZoneRadius_MetaData), NewProp_SphereZoneRadius_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFlagZone_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFlagZone_Statics::NewProp_TeamZone_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFlagZone_Statics::NewProp_TeamZone,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFlagZone_Statics::NewProp_ZoneSphere,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFlagZone_Statics::NewProp_SphereZoneRadius,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AFlagZone_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AFlagZone_Statics::DependentSingletons[])() = {
@@ -262,10 +269,10 @@ AFlagZone::~AFlagZone() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_CaptureTheFlag_FlagZone_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AFlagZone, AFlagZone::StaticClass, TEXT("AFlagZone"), &Z_Registration_Info_UClass_AFlagZone, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFlagZone), 1705439788U) },
+		{ Z_Construct_UClass_AFlagZone, AFlagZone::StaticClass, TEXT("AFlagZone"), &Z_Registration_Info_UClass_AFlagZone, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFlagZone), 500274118U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_CaptureTheFlag_FlagZone_h_311129335(TEXT("/Script/AnotherIShoot"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_CaptureTheFlag_FlagZone_h_961767894(TEXT("/Script/AnotherIShoot"),
 	Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_CaptureTheFlag_FlagZone_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Projects_Third_Person_Shooter_UE5_AnotherMultiplayerShooter_AnotherIShoot_Source_AnotherIShoot_CaptureTheFlag_FlagZone_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

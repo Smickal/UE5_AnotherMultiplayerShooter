@@ -23,6 +23,8 @@ ABlasterGameMode::ABlasterGameMode()
 	
 }
 
+
+
 void ABlasterGameMode::BeginPlay()
 {
 	Super::BeginPlay();
@@ -30,6 +32,23 @@ void ABlasterGameMode::BeginPlay()
 	LevelStartingTime = GetWorld()->GetTimeSeconds();
 }
 
+
+void ABlasterGameMode::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
+{
+	Super::HandleStartingNewPlayer_Implementation(NewPlayer);
+
+	ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(NewPlayer);
+	if(BlasterPlayerController)
+	{
+		BlasterPlayerController->SetIsLobby(false);
+
+		GEngine->AddOnScreenDebugMessage(
+		-1,
+		10.f,
+		FColor::Red,
+		FString::Printf(TEXT("%s is successfully joining a GameSession!"), *NewPlayer->GetPlayerState<ABlasterPlayerState>()->GetPlayerName()));
+	}
+}
 
 void ABlasterGameMode::Tick(float DeltaSeconds)
 {

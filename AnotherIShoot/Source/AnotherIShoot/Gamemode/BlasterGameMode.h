@@ -7,6 +7,7 @@
 #include "GameFramework/GameMode.h"
 #include "BlasterGameMode.generated.h"
 
+class ABlasterPlayerState;
 class ABlasterPlayerController;
 class ABlasterCharacter;
 /**
@@ -28,10 +29,12 @@ class ANOTHERISHOOT_API ABlasterGameMode : public AGameMode
 
 public:
 	ABlasterGameMode();
+
+	virtual void HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer) override;
 	virtual void Tick(float DeltaSeconds) override;
 	virtual void PlayerEliminated(ABlasterCharacter* VictimCharacter, ABlasterPlayerController* VictimController, ABlasterPlayerController* AttackerController);
 	virtual void RequestRespawn(ACharacter* CharacterToRespawn, AController* ElimmedController);
-	void PlayerLeftGame(ABlasterPlayerState* PlayerLeaving);
+	virtual void PlayerLeftGame(ABlasterPlayerState* PlayerLeaving);
 	virtual  float CalculateDamage(AController* Attacker, AController* Victim, float BaseDamage);
 
 public:
@@ -47,6 +50,7 @@ public:
 	
 	float LevelStartingTime = 0.f;
 	
+	UPROPERTY(EditDefaultsOnly)
 	bool bTeamsMatch = false;
 protected:
 	virtual void BeginPlay() override;

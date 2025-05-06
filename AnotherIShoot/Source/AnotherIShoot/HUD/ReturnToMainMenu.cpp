@@ -41,6 +41,11 @@ void UReturnToMainMenu::MenuSetup()
 	{
 		ReturnButton->OnClicked.AddDynamic(this, &UReturnToMainMenu::OnReturnButtonPressed);
 	}
+
+	if(bIsMainMenu)
+	{
+		ReturnButton->SetVisibility(ESlateVisibility::Hidden);
+	}
 }
 
 bool UReturnToMainMenu::Initialize()
@@ -113,6 +118,7 @@ void UReturnToMainMenu::MenuTearDown()
 }
 
 
+
 void UReturnToMainMenu::OnReturnButtonPressed()
 {
 	
@@ -148,3 +154,13 @@ void UReturnToMainMenu::OnPlayerLeftGame()
 	}
 }
 
+void UReturnToMainMenu::ServerTravelToLobby()
+{
+	GetWorld()->ServerTravel("/Game/Maps/Lobby?listen");
+}
+
+void UReturnToMainMenu::TravelServer(FString MapName, FString MatchType)
+{
+	FString PathToGameSession = FString::Printf(TEXT("%s_%s?listen"),*MapName, *MatchType);
+	GetWorld()->ServerTravel(PathToGameSession);	
+}
