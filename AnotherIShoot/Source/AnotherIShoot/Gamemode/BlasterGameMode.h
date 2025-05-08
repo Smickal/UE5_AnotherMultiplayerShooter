@@ -30,6 +30,7 @@ class ANOTHERISHOOT_API ABlasterGameMode : public AGameMode
 public:
 	ABlasterGameMode();
 
+	virtual void PostLogin(APlayerController* NewPlayer) override;
 	virtual void HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer) override;
 	virtual void Tick(float DeltaSeconds) override;
 	virtual void PlayerEliminated(ABlasterCharacter* VictimCharacter, ABlasterPlayerController* VictimController, ABlasterPlayerController* AttackerController);

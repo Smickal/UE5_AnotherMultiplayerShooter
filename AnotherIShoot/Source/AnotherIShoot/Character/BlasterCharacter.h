@@ -296,7 +296,7 @@ private:
 	UParticleSystemComponent* ElimBotComponent;
 
 	UPROPERTY(EditAnywhere, Category = "Elim")
-	USoundCue* ElimBotSound;
+	class USoundCue* ElimBotSound;
 
 	//CrownNiagara
 	UPROPERTY(EditAnywhere)

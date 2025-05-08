@@ -50,5 +50,8 @@
 			"Name": "AnimationLocomotionLibrary",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"Windows"
 	]
 }

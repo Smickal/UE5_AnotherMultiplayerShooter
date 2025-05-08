@@ -35,7 +35,7 @@ protected:
 
 
 	UPROPERTY(EditAnywhere)
-	USoundCue* ProjectileLoop;
+	class USoundCue* ProjectileLoop;
 
 	UPROPERTY()
 	UAudioComponent* ProjectileLoopComponent;

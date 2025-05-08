@@ -173,7 +173,7 @@ public:
 	bool bIsWeaponAutomatic = true;
 
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
-	USoundCue* EquipSound;
+	class USoundCue* EquipSound;
 
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
 	UTexture2D* WeaponTypeTexture;

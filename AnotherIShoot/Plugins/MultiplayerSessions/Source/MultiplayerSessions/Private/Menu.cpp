@@ -61,7 +61,7 @@ bool UMenu::Initialize()
 	{
 		JoinButton->OnClicked.AddDynamic(this, &ThisClass::JoinButtonClicked);
 	}
-
+	
 	return true;
 }
 
@@ -107,8 +107,14 @@ void UMenu::OnFindSessions(const TArray<FOnlineSessionSearchResult>& SessionResu
 	{
 		FString SettingsValue;
 		Result.Session.SessionSettings.Get(FName("MatchType"), SettingsValue);
+		
+		
 		if (SettingsValue == MatchType)
 		{
+			
+			Result.Session.SessionSettings.bUseLobbiesIfAvailable = true;
+			Result.Session.SessionSettings.bUsesPresence = true;
+			
 			MultiplayerSessionsSubsystem->JoinSession(Result);
 			return;
 		}
@@ -130,10 +136,21 @@ void UMenu::OnJoinSession(EOnJoinSessionCompleteResult::Type Result)
 			FString Address;
 			SessionInterface->GetResolvedConnectString(NAME_GameSession, Address);
 
+			GEngine->AddOnScreenDebugMessage(
+				3, 20.f,
+				FColor::Yellow,
+				FString::Printf(TEXT("Address: -> %s"), *Address));
+			
+
 			APlayerController* PlayerController = GetGameInstance()->GetFirstLocalPlayerController();
 			if (PlayerController)
 			{
-				PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
+				GEngine->AddOnScreenDebugMessage(
+				-1, 20.f,
+				FColor::Yellow,
+				FString::Printf(TEXT("Client trying to travel!")));
+				
+				PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Relative, true);
 			}
 		}
 	}
@@ -162,6 +179,7 @@ void UMenu::JoinButtonClicked()
 	if (MultiplayerSessionsSubsystem)
 	{
 		MultiplayerSessionsSubsystem->FindSessions(10000);
+
 	}
 }
 

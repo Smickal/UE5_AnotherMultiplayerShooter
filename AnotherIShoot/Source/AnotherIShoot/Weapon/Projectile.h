@@ -90,7 +90,7 @@ private:
 	class USoundCue* ImpactSound;
 
 	UPROPERTY(EditAnywhere)
-	USoundCue* BloodSound;
+	class USoundCue* BloodSound;
 
 	FTimerHandle DestroyTimerHandle;
 

@@ -36,10 +36,10 @@ protected:
 	UParticleSystem* MuzzleFlash;
 
 	UPROPERTY(EditAnywhere)
-	USoundCue* FireSound;
+	class USoundCue* FireSound;
 
 	UPROPERTY(EditAnywhere)
-	USoundCue* HitSound;
+	class USoundCue* HitSound;
 
 	//
 	//Trace end with Scatetr

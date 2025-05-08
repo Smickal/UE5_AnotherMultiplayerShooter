@@ -1042,7 +1042,7 @@ void ABlasterPlayerController::Client_ElimAnnouncement_Implementation(ABlasterPl
 
 void ABlasterPlayerController::CreatePauseMenuHUD()
 {
-	if(!GetPawn()->IsLocallyControlled()) return;
+	if(!GetPawn() ||  !GetPawn()->IsLocallyControlled()) return;
 
 	if(PauseHUD)
 	{
@@ -1076,7 +1076,7 @@ void ABlasterPlayerController::CreatePauseMenuHUD()
 
 void ABlasterPlayerController::CreateMainMenuSettingHUD()
 {
-	if(!GetPawn()->IsLocallyControlled()) return;
+	if(!GetPawn() ||  !GetPawn()->IsLocallyControlled()) return;
 
 	if(SettingMainMenuHUD)
 	{

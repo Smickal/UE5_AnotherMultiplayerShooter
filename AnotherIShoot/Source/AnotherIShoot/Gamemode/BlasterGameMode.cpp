@@ -25,6 +25,7 @@ ABlasterGameMode::ABlasterGameMode()
 
 
 
+
 void ABlasterGameMode::BeginPlay()
 {
 	Super::BeginPlay();
@@ -32,10 +33,15 @@ void ABlasterGameMode::BeginPlay()
 	LevelStartingTime = GetWorld()->GetTimeSeconds();
 }
 
-
-void ABlasterGameMode::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
+void ABlasterGameMode::PostLogin(APlayerController* NewPlayer)
 {
-	Super::HandleStartingNewPlayer_Implementation(NewPlayer);
+	Super::PostLogin(NewPlayer);
+
+	GEngine->AddOnScreenDebugMessage(
+		-1,
+		10.f,
+		FColor::Red,
+		FString::Printf(TEXT("Post Login Called!")));
 
 	ABlasterPlayerController* BlasterPlayerController = Cast<ABlasterPlayerController>(NewPlayer);
 	if(BlasterPlayerController)
@@ -48,6 +54,13 @@ void ABlasterGameMode::HandleStartingNewPlayer_Implementation(APlayerController*
 		FColor::Red,
 		FString::Printf(TEXT("%s is successfully joining a GameSession!"), *NewPlayer->GetPlayerState<ABlasterPlayerState>()->GetPlayerName()));
 	}
+}
+
+void ABlasterGameMode::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
+{
+	Super::HandleStartingNewPlayer_Implementation(NewPlayer);
+
+	
 }
 
 void ABlasterGameMode::Tick(float DeltaSeconds)
